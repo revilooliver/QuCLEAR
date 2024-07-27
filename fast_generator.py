@@ -847,11 +847,7 @@ def gen_tree_list(curr_pauli_inv: str, sorted_entanglers_params_inv: List[List[s
         next_commute_idx, next_pauli_idx = gen_next_pauli_idx(sorted_entanglers_params_inv, curr_commute_idx, curr_pauli_idx)
         if next_commute_idx == -1:
             break
-        next_pauli = sorted_entanglers_params_inv[next_commute_idx][next_pauli_idx][0][::-1] #TODO: change to next and update
-
-
-def next_and_update(sorted_entanglers_params: List[List[str]], commute_idx: int, pauli_idx: int, append_clifford):
-    
+        next_pauli = sorted_entanglers_params_inv[next_commute_idx][next_pauli_idx][0][::-1] #TODO: change to next and update   
 
 def find_single_tree_lookahead_adapt(base_entangler_inv: str, match_entangler_inv: str, sorted_entanglers_params: List[List[str]], commute_idx: int, pauli_idx: int, lookahead_size: int):
 
