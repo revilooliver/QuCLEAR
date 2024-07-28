@@ -743,15 +743,22 @@ def find_single_tree_lookahead(base_entangler_inv: str, match_entangler_inv: str
 
     return final_root, qc
 
-def find_leaves(sorted_entanglers_params_inv: List[List[str]], qc_tree, tree_list, commute_idx: int, pauli_idx: int, append_clifford):
-    next_tree_list = []
+def find_leaves(sorted_entanglers_params_inv: List[List[str]], curr_pauli, updated_paulis, qc_tree, tree_list, commute_idx: int, pauli_idx: int, append_clifford):
     X_leaves = []
     Y_leaves = []
     Z_leaves = []
     I_leaves = []
-    compare_pauli = sorted_entanglers_params_inv[commute_idx][pauli_idx][0][::-1]
+    try:
+        compare_pauli = updated_paulis[(commute_idx, pauli_idx)]
+    except:
+        initial_compare_pauli_inv = sorted_entanglers_params_inv[commute_idx][pauli_idx][0]
+        temp_pauli = update_paulis([initial_compare_pauli_inv], clifford_circuit = append_clifford, parameters = False)
+        pushed_sign, compare_pauli_inv = push_sq_pauli(entangler = temp_pauli[0], current_pauli = curr_pauli)
+        compare_pauli = compare_pauli_inv[::-1]
+        updated_paulis[(commute_idx, pauli_idx)] = compare_pauli
+
     #should update the compare pauli
-    next_commute_idx, next_pauli_idx = next_pauli_idx(sorted_entanglers_params_inv, commute_idx, pauli_idx)
+    next_commute_idx, next_pauli_idx = gen_next_pauli_idx(sorted_entanglers_params_inv, commute_idx, pauli_idx)
     # counter += 1 First test not limiting lookahead size.
     I_root = X_root = Y_root = Z_root = final_root = -1
     for index in tree_list:
@@ -767,24 +774,29 @@ def find_leaves(sorted_entanglers_params_inv: List[List[str]], qc_tree, tree_lis
     # if counter > lookahead_size:
     #     if len(X_leaves) > 0:
     #         X_root = X_leaves[0]
-
+    #print(compare_pauli, tree_list, X_leaves, Y_leaves, Z_leaves, I_leaves, next_commute_idx, next_pauli_idx)
+    if next_commute_idx == None:
+        #if there is no next pauli, connect all the leaves
+        for index in range(len(tree_list) - 1):
+            qc_tree.cx(tree_list[index], tree_list[index + 1])
+        return tree_list[-1]
     if len(X_leaves) == 1:
         X_root = X_leaves[0]
     elif len(X_leaves) > 1:
-        X_root = find_leaves(sorted_entanglers_params_inv, X_leaves, next_commute_idx, next_pauli_idx, append_clifford)
+        X_root = find_leaves(sorted_entanglers_params_inv, curr_pauli, updated_paulis, qc_tree, X_leaves, next_commute_idx, next_pauli_idx, append_clifford)
     if len(Y_leaves) == 1:
         Y_root = Y_leaves[0]
     elif len(Y_leaves) > 1:
-        Y_root = find_leaves(sorted_entanglers_params_inv, Y_leaves, next_commute_idx, next_pauli_idx, append_clifford)
+        Y_root = find_leaves(sorted_entanglers_params_inv, curr_pauli, updated_paulis, qc_tree, Y_leaves, next_commute_idx, next_pauli_idx, append_clifford)
     if len(Z_leaves) == 1:
         Z_root = Z_leaves[0]
     elif len(Z_leaves) > 1:
-        Z_root = find_leaves(sorted_entanglers_params_inv, Z_leaves, next_commute_idx, next_pauli_idx, append_clifford)
+        Z_root = find_leaves(sorted_entanglers_params_inv, curr_pauli, updated_paulis, qc_tree, Z_leaves, next_commute_idx, next_pauli_idx, append_clifford)
     if len(I_leaves) == 1:
         I_root = I_leaves[0]
-    elif len(Z_leaves) > 1:
-        I_root = find_leaves(sorted_entanglers_params_inv, I_leaves, next_commute_idx, next_pauli_idx, append_clifford)
-
+    elif len(I_leaves) > 1:
+        I_root = find_leaves(sorted_entanglers_params_inv, curr_pauli, updated_paulis, qc_tree, I_leaves, next_commute_idx, next_pauli_idx, append_clifford)
+    #print(next_commute_idx, next_pauli_idx, X_root, Y_root, Z_root, I_root)
     #Connect all the roots together:
     # Function to connect the roots based on priority and set the final root
     def connect_roots(qc, root_name, roots_dict, priorities):
@@ -804,7 +816,6 @@ def find_leaves(sorted_entanglers_params_inv: List[List[str]], qc_tree, tree_lis
         "I_root": I_root,
         "Y_root": Y_root,
         "X_root": X_root,
-        "N_root": N_root
     }
 
     final_root = None
@@ -814,13 +825,12 @@ def find_leaves(sorted_entanglers_params_inv: List[List[str]], qc_tree, tree_lis
         "Z_root": ["Y_root", "X_root", "I_root"],
         "I_root": ["X_root", "Y_root"],
         "Y_root": ["X_root"],
-        # "X_root": ["N_root"]
     }
 
     # Connect roots based on priority
     for root_name in ["Z_root", "I_root", "Y_root", "X_root"]:
         if root_name in priority_connections:
-            last_connected = connect_roots(qc, root_name, roots_dict, priority_connections[root_name])
+            last_connected = connect_roots(qc_tree, root_name, roots_dict, priority_connections[root_name])
             if last_connected != -1:
                 final_root = last_connected
 
@@ -839,167 +849,171 @@ def find_leaves(sorted_entanglers_params_inv: List[List[str]], qc_tree, tree_lis
     return final_root
 
 
-def gen_tree_list(curr_pauli_inv: str, sorted_entanglers_params_inv: List[List[str]], commute_idx: int, pauli_idx: int, lookahead_size: int):
-    counter = 0
-    while counter <= lookahead_size or ():
-        counter += 1
-        curr_commute_idx, curr_pauli_idx = next_commute_idx, next_pauli_idx
-        next_commute_idx, next_pauli_idx = gen_next_pauli_idx(sorted_entanglers_params_inv, curr_commute_idx, curr_pauli_idx)
-        if next_commute_idx == -1:
-            break
-        next_pauli = sorted_entanglers_params_inv[next_commute_idx][next_pauli_idx][0][::-1] #TODO: change to next and update   
-
-def find_single_tree_lookahead_adapt(base_entangler_inv: str, match_entangler_inv: str, sorted_entanglers_params: List[List[str]], commute_idx: int, pauli_idx: int, lookahead_size: int):
-
-    '''This function generates the best CNOT tree circuit for the base_entangler, maximizing the minimization of match_entangler.
-
-    Args:
-        base_entangler: the base entangler that searchers for the CNOT tree structure
-        match_entangler: the target entangler that we are matching and minimizing
-    Returns:
-        CNOT_tree: the CNOT tree circuit
-    '''
-    num_qubits  = len(base_entangler_inv)
-    I_list = []
-    X_list = []
-    Y_list = []
-    Z_list = []
-    N_list = []
-    match_entangler = match_entangler_inv[::-1]
-    base_entangler = base_entangler_inv[::-1]
-    curr_commute_idx = commute_idx
-    curr_pauli_idx = pauli_idx
-
-    #now lookahead_entanglers is not fixed size but adaptive based on the tree construction.
-    next_commute_idx, next_pauli_idx = next_pauli_idx(sorted_entanglers_params, curr_commute_idx, curr_pauli_idx)
-    lookahead_entanglers_inv = find_next_k_paulis(sorted_entanglers_params, commute_idx, pauli_idx, lookahead_size = 1)
-    lookahead_entanglers = [entangler[::-1] for entangler in lookahead_entanglers_inv]
-
-    updated_entanglers = update_paulis(Paulis_params_list = lookahead_entanglers, clifford_circuit = append_clifford, parameters = False)
-    #need to update the lookahead entanglers before finding CX tree:
-    for ent_idx, lookahead_entangler in enumerate(updated_entanglers):
-        #update all the lookahead paulis with single qubit gates:
-        pushed_sign, pushed_pauli = push_sq_pauli(entangler = lookahead_entangler, current_pauli = curr_pauli)
-        updated_entanglers[ent_idx] = pushed_pauli
-
-    # First, create a dictionary to store counts of each Pauli operator for each index
-    pauli_counts = {i: {'I': 0, 'X': 0, 'Y': 0, 'Z': 0} for i in range(num_qubits)}
-
-    # Iterate over lookahead_entanglers to fill in the pauli_counts
-    for idx, lookahead_pauli in enumerate(lookahead_entanglers):
-        for i in range(num_qubits):
-            pauli_counts[i][lookahead_pauli[i]] += 1 - idx/len(lookahead_entanglers_inv)
-
-    # Iterate over the base_entangler and find the non-I index
-    for i in range(num_qubits):
-        if base_entangler[i] != 'I':
-            match_char = match_entangler[i]
-            if match_char in pauli_counts[i]:
-                count = pauli_counts[i][match_char]
-                if match_char == 'I':
-                    I_list.append([i, count])
-                elif match_char == 'X':
-                    X_list.append([i, count])
-                elif match_char == 'Y':
-                    Y_list.append([i, count])
-                elif match_char == 'Z':
-                    Z_list.append([i, count])
-                else:
-                    raise Exception("Incorrect letter in entangler spotted", match_entangler)
-        else:
-            N_list.append(i)
-    # Sort the lists based on the count in descending order
-    I_list.sort(key=lambda x: x[1], reverse=True)
-    X_list.sort(key=lambda x: x[1], reverse=True)
-    Y_list.sort(key=lambda x: x[1], reverse=True)
-    Z_list.sort(key=lambda x: x[1], reverse=True)
-    #print("base_entangler", I_list, X_list, Y_list, Z_list)
-
-    #Based on the lists, construct the quantum circuit:
-    root_list = []
-    qc = QuantumCircuit(num_qubits)
-    I_root = X_root = Y_root = Z_root = N_root = final_root = -1
-    #iterate over the I list:
-    if len(I_list) == 1:
-        I_root = I_list[0][0]
-    elif len(I_list) > 1:
-        for i_idx in range(len(I_list) - 1):
-            qc.cx(I_list[i_idx][0], I_list[i_idx + 1][0])
-        I_root = I_list[-1][0]
-    #iterate over the Z list:
-    if len(Z_list) == 1:
-        Z_root = Z_list[0][0]
-    elif len(Z_list) > 1:
-        for z_idx in range(len(Z_list) - 1):
-            qc.cx(Z_list[z_idx][0], Z_list[z_idx + 1][0])
-        Z_root = Z_list[-1][0]
-    #iterate over the X list:
-    if len(X_list) == 1:
-        X_root = X_list[0][0]
-    elif len(X_list) > 1:
-        for x_idx in range(len(X_list) - 1):
-            qc.cx(X_list[x_idx][0], X_list[x_idx + 1][0])
-        X_root = X_list[-1][0]
-    #iterate over the Y list:
-    if len(Y_list) == 1:
-        Y_root = Y_list[0][0]
-    elif len(Y_list) > 1:
-        for y_idx in range(len(Y_list) - 1):
-            qc.cx(Y_list[y_idx][0], Y_list[y_idx + 1][0])
-        Y_root = Y_list[-1][0]
-
-    # Function to connect the roots based on priority and set the final root
-    def connect_roots(qc, root_name, roots_dict, priorities):
-        root_value = roots_dict[root_name]
-        if root_value > -1:
-            for other_root_name in priorities:
-                if roots_dict[other_root_name] > -1:
-                    qc.cx(root_value, roots_dict[other_root_name])
-                    # roots_dict[other_root_name] = -1
-                    roots_dict[root_name] = -1
-                    return roots_dict[other_root_name]
-        return -1
-
-    # Initialize the root dictionary
-    roots_dict = {
-        "Z_root": Z_root,
-        "I_root": I_root,
-        "Y_root": Y_root,
-        "X_root": X_root,
-        "N_root": N_root
-    }
-
-    final_root = None
-
-    # Connection priorities
-    priority_connections = {
-        "Z_root": ["Y_root", "X_root", "I_root"],
-        "I_root": ["X_root", "Y_root"],
-        "Y_root": ["X_root"],
-        # "X_root": ["N_root"]
-    }
-
-    # Connect roots based on priority
-    for root_name in ["Z_root", "I_root", "Y_root", "X_root"]:
-        if root_name in priority_connections:
-            last_connected = connect_roots(qc, root_name, roots_dict, priority_connections[root_name])
-            if last_connected != -1:
-                final_root = last_connected
-
-    # If any roots are still unconnected, set final_root
-    for root_name in ["Z_root", "I_root", "Y_root", "X_root"]:
-        if roots_dict[root_name] > -1:
-            final_root = roots_dict[root_name]
-            # print("final, root, rootes_dict[root_name]", final_root, roots_dict[root_name])
+# def gen_tree_list(curr_pauli_inv: str, sorted_entanglers_params_inv: List[List[str]], commute_idx: int, pauli_idx: int, lookahead_size: int):
+#     counter = 0
+#     while counter <= lookahead_size or ():
+#         counter += 1
+#         curr_commute_idx, curr_pauli_idx = next_commute_idx, next_pauli_idx
+#         next_commute_idx, next_pauli_idx = gen_next_pauli_idx(sorted_entanglers_params_inv, curr_commute_idx, curr_pauli_idx)
+#         if next_commute_idx == -1:
+#             break
+#         next_pauli = sorted_entanglers_params_inv[next_commute_idx][next_pauli_idx][0][::-1] #TODO: change to next and update
 
 
-    # Ensure final_root is set correctly if not already set
-    if final_root is None:
-        #final_root = X_root
-        raise Exception("final root not set")
+# def next_and_update(sorted_entanglers_params: List[List[str]], commute_idx: int, pauli_idx: int, append_clifford):
+    
+
+# def find_single_tree_lookahead_recur(base_entangler_inv: str, match_entangler_inv: str, sorted_entanglers_params: List[List[str]], commute_idx: int, pauli_idx: int, lookahead_size: int):
+
+#     '''This function generates the best CNOT tree circuit for the base_entangler, maximizing the minimization of match_entangler.
+
+#     Args:
+#         base_entangler: the base entangler that searchers for the CNOT tree structure
+#         match_entangler: the target entangler that we are matching and minimizing
+#     Returns:
+#         CNOT_tree: the CNOT tree circuit
+#     '''
+#     num_qubits  = len(base_entangler_inv)
+#     I_list = []
+#     X_list = []
+#     Y_list = []
+#     Z_list = []
+#     N_list = []
+#     match_entangler = match_entangler_inv[::-1]
+#     base_entangler = base_entangler_inv[::-1]
+#     curr_commute_idx = commute_idx
+#     curr_pauli_idx = pauli_idx
+
+#     #now lookahead_entanglers is not fixed size but recursive based on the tree construction.
+#     next_commute_idx, next_pauli_idx = next_pauli_idx(sorted_entanglers_params, curr_commute_idx, curr_pauli_idx)
+#     lookahead_entanglers_inv = find_next_k_paulis(sorted_entanglers_params, commute_idx, pauli_idx, lookahead_size = 1)
+#     lookahead_entanglers = [entangler[::-1] for entangler in lookahead_entanglers_inv]
+
+#     updated_entanglers = update_paulis(Paulis_params_list = lookahead_entanglers, clifford_circuit = append_clifford, parameters = False)
+#     #need to update the lookahead entanglers before finding CX tree:
+#     for ent_idx, lookahead_entangler in enumerate(updated_entanglers):
+#         #update all the lookahead paulis with single qubit gates:
+#         pushed_sign, pushed_pauli = push_sq_pauli(entangler = lookahead_entangler, current_pauli = curr_pauli)
+#         updated_entanglers[ent_idx] = pushed_pauli
+
+#     # First, create a dictionary to store counts of each Pauli operator for each index
+#     pauli_counts = {i: {'I': 0, 'X': 0, 'Y': 0, 'Z': 0} for i in range(num_qubits)}
+
+#     # Iterate over lookahead_entanglers to fill in the pauli_counts
+#     for idx, lookahead_pauli in enumerate(lookahead_entanglers):
+#         for i in range(num_qubits):
+#             pauli_counts[i][lookahead_pauli[i]] += 1 - idx/len(lookahead_entanglers_inv)
+
+#     # Iterate over the base_entangler and find the non-I index
+#     for i in range(num_qubits):
+#         if base_entangler[i] != 'I':
+#             match_char = match_entangler[i]
+#             if match_char in pauli_counts[i]:
+#                 count = pauli_counts[i][match_char]
+#                 if match_char == 'I':
+#                     I_list.append([i, count])
+#                 elif match_char == 'X':
+#                     X_list.append([i, count])
+#                 elif match_char == 'Y':
+#                     Y_list.append([i, count])
+#                 elif match_char == 'Z':
+#                     Z_list.append([i, count])
+#                 else:
+#                     raise Exception("Incorrect letter in entangler spotted", match_entangler)
+#         else:
+#             N_list.append(i)
+#     # Sort the lists based on the count in descending order
+#     I_list.sort(key=lambda x: x[1], reverse=True)
+#     X_list.sort(key=lambda x: x[1], reverse=True)
+#     Y_list.sort(key=lambda x: x[1], reverse=True)
+#     Z_list.sort(key=lambda x: x[1], reverse=True)
+#     #print("base_entangler", I_list, X_list, Y_list, Z_list)
+
+#     #Based on the lists, construct the quantum circuit:
+#     root_list = []
+#     qc = QuantumCircuit(num_qubits)
+#     I_root = X_root = Y_root = Z_root = N_root = final_root = -1
+#     #iterate over the I list:
+#     if len(I_list) == 1:
+#         I_root = I_list[0][0]
+#     elif len(I_list) > 1:
+#         for i_idx in range(len(I_list) - 1):
+#             qc.cx(I_list[i_idx][0], I_list[i_idx + 1][0])
+#         I_root = I_list[-1][0]
+#     #iterate over the Z list:
+#     if len(Z_list) == 1:
+#         Z_root = Z_list[0][0]
+#     elif len(Z_list) > 1:
+#         for z_idx in range(len(Z_list) - 1):
+#             qc.cx(Z_list[z_idx][0], Z_list[z_idx + 1][0])
+#         Z_root = Z_list[-1][0]
+#     #iterate over the X list:
+#     if len(X_list) == 1:
+#         X_root = X_list[0][0]
+#     elif len(X_list) > 1:
+#         for x_idx in range(len(X_list) - 1):
+#             qc.cx(X_list[x_idx][0], X_list[x_idx + 1][0])
+#         X_root = X_list[-1][0]
+#     #iterate over the Y list:
+#     if len(Y_list) == 1:
+#         Y_root = Y_list[0][0]
+#     elif len(Y_list) > 1:
+#         for y_idx in range(len(Y_list) - 1):
+#             qc.cx(Y_list[y_idx][0], Y_list[y_idx + 1][0])
+#         Y_root = Y_list[-1][0]
+
+#     # Function to connect the roots based on priority and set the final root
+#     def connect_roots(qc, root_name, roots_dict, priorities):
+#         root_value = roots_dict[root_name]
+#         if root_value > -1:
+#             for other_root_name in priorities:
+#                 if roots_dict[other_root_name] > -1:
+#                     qc.cx(root_value, roots_dict[other_root_name])
+#                     # roots_dict[other_root_name] = -1
+#                     roots_dict[root_name] = -1
+#                     return roots_dict[other_root_name]
+#         return -1
+
+#     # Initialize the root dictionary
+#     roots_dict = {
+#         "Z_root": Z_root,
+#         "I_root": I_root,
+#         "Y_root": Y_root,
+#         "X_root": X_root,
+#         "N_root": N_root
+#     }
+
+#     final_root = None
+
+#     # Connection priorities
+#     priority_connections = {
+#         "Z_root": ["Y_root", "X_root", "I_root"],
+#         "I_root": ["X_root", "Y_root"],
+#         "Y_root": ["X_root"],
+#         # "X_root": ["N_root"]
+#     }
+
+#     # Connect roots based on priority
+#     for root_name in ["Z_root", "I_root", "Y_root", "X_root"]:
+#         if root_name in priority_connections:
+#             last_connected = connect_roots(qc, root_name, roots_dict, priority_connections[root_name])
+#             if last_connected != -1:
+#                 final_root = last_connected
+
+#     # If any roots are still unconnected, set final_root
+#     for root_name in ["Z_root", "I_root", "Y_root", "X_root"]:
+#         if roots_dict[root_name] > -1:
+#             final_root = roots_dict[root_name]
+#             # print("final, root, rootes_dict[root_name]", final_root, roots_dict[root_name])
 
 
-    return final_root, qc
+#     # Ensure final_root is set correctly if not already set
+#     if final_root is None:
+#         #final_root = X_root
+#         raise Exception("final root not set")
+
+
+#     return final_root, qc
 
 
         
@@ -1298,9 +1312,8 @@ def calculate_opt_weight_fast(base_entangler_inv: str, match_entangler_inv: str)
     #assume we have already pushed the single qubit gates
     sq_index, init_cx_tree = find_single_tree(base_entangler_inv, match_entangler_inv)
     extracted_cx_tree = init_cx_tree.inverse()
-    optimized_pauli_withsign = update_paulis([match_entangler_inv], extracted_cx_tree, parameters = False)#construct_opt_pauli(entangler = match_entangler_inv, clifford_circuit = extracted_cx_tree)
-    optimized_pauli = optimized_pauli_withsign[0][2:]
-    return pauli_weight(optimized_pauli), optimized_pauli_withsign
+    optimized_paulis = update_paulis([match_entangler_inv], extracted_cx_tree, parameters = False)#construct_opt_pauli(entangler = match_entangler_inv, clifford_circuit = extracted_cx_tree)
+    return pauli_weight(optimized_paulis[0]), optimized_paulis[0]
 
 
 def find_best_pauli(base_entangler: str, commute_sets: List[List[str]]) -> int:
@@ -1344,13 +1357,13 @@ def find_best_pauli_index_fast(base_entangler: str, commute_sets: List[str]) -> 
         # weight = estimate_fc_reduction(base_entangler, entangler)
         # print(entangler, base_entangler)
         opt_sign, pushed_pauli = push_sq_pauli(entangler = entangler, current_pauli = base_entangler)
-        weight2 = calculate_opt_weight_fast(base_entangler, pushed_pauli)
+        weight2, optimized_pauli_with_sign = calculate_opt_weight_fast(base_entangler, pushed_pauli)
         # if weight != weight2[0]:
         #     print("weights", weight, weight2, "base_entangler", base_entangler, "entangler", entangler, "pushed_pauli", pushed_pauli)
         # for debuggin we also run the 
-        logger.debug('weight:%s, entangler_set:%s', weight2, entangler)
-        if weight2[0] < min_weight:
-            min_weight = weight2[0]
+        logger.debug('weight:%s, entangler_set:%s', weight2, entangler, optimized_pauli_with_sign)
+        if weight2 < min_weight:
+            min_weight = weight2
             min_index = idx
     # # Remove the element at the specified index
     # element = ordered_entanglers.pop(min_index)
@@ -1608,7 +1621,7 @@ def gen_next_pauli_idx(sorted_entanglers_params, commute_idx, pauli_idx):
         
         # If the outer index is at the last list, wrap around to the first list
         if next_outer_index >= len(sorted_entanglers_params):
-            next_outer_index = -1
+            next_outer_index = None
             
         return next_outer_index, 0
 
@@ -1955,7 +1968,7 @@ def fc_tree_commute_lookahead_fast(entanglers: List[str], params: List[float], b
     return opt_qc, append_clifford, sorted_entanglers_params
 
 
-def fc_tree_commute_adaptive_lookahead_fast(entanglers: List[str], params: List[float], barrier=False, lookahead_size=10):
+def fc_tree_commute_recur_lookahead(entanglers: List[str], params: List[float], barrier=False):
     '''This function defines the optimized fully connected tree block for hamtiltonian simulation in commute list format, also considering lookahead
     
     Args:
@@ -2026,7 +2039,7 @@ def fc_tree_commute_adaptive_lookahead_fast(entanglers: List[str], params: List[
                 #extract for the last block:
                 extracted_clif = construct_Clifford_subcircuit(curr_pauli)
                 #Add the extracted clifford to the beginning of the append_clifford at the end of the circuit
-                append_clifford = extracted_clif.compose(append_clifford)
+                append_clifford = extracted_clif.compose(append_clifford.to_circuit())
                 #The extracted circuit for the current block with index
                 extracted_qc = construct_extracted_subcircuit(entangler = curr_pauli, param = curr_param)
                 #Add the extracted circuit to the optimized circuit
@@ -2037,18 +2050,22 @@ def fc_tree_commute_adaptive_lookahead_fast(entanglers: List[str], params: List[
                 opt_qc.compose(extracted_qc, inplace = True)
 
             else:
-                lookahead_entanglers = find_next_k_paulis(sorted_entanglers_params, commute_idx, pauli_idx, lookahead_size)
-                #print("curr_pauli", curr_pauli, "Commute_size", len(sorted_list), "lookahead_entanglers", lookahead_entanglers)
-                updated_entanglers = update_paulis(Paulis_params_list = lookahead_entanglers, clifford_circuit = append_clifford, parameters = False)
-                #need to update the lookahead entanglers before finding CX tree:
-                for ent_idx, lookahead_entangler in enumerate(updated_entanglers):
-                    #update all the lookahead paulis with single qubit gates:
-                    pushed_sign, pushed_pauli = push_sq_pauli(entangler = lookahead_entangler, current_pauli = curr_pauli)
-                    updated_entanglers[ent_idx] = pushed_pauli
+                # lookahead_entanglers = find_next_k_paulis(sorted_entanglers_params, commute_idx, pauli_idx, lookahead_size)
+                # #print("curr_pauli", curr_pauli, "Commute_size", len(sorted_list), "lookahead_entanglers", lookahead_entanglers)
+                # updated_entanglers = update_paulis(Paulis_params_list = lookahead_entanglers, clifford_circuit = append_clifford, parameters = False)
+                # #need to update the lookahead entanglers before finding CX tree:
+                # for ent_idx, lookahead_entangler in enumerate(updated_entanglers):
+                #     #update all the lookahead paulis with single qubit gates:
+                #     pushed_sign, pushed_pauli = push_sq_pauli(entangler = lookahead_entangler, current_pauli = curr_pauli)
+                #     updated_entanglers[ent_idx] = pushed_pauli
                 # pushed_next_sign, pushed_next_pauli = push_sq_pauli(entangler = next_pauli[0], current_pauli = curr_pauli)
 
                 #print("before single tree", curr_pauli, updated_entanglers)
-                sq_index, init_cx_tree = find_single_tree_lookahead_adapt(base_entangler_inv = curr_pauli, match_entangler_inv = updated_entanglers[0], lookahead_entanglers_inv = updated_entanglers)
+                init_cx_tree = QuantumCircuit(len(entanglers[0]))
+                next_commute_idx, next_pauli_idx = gen_next_pauli_idx(sorted_entanglers_params,commute_idx, pauli_idx)
+                tree_list = [len(curr_pauli) - 1 - i for i in range(len(curr_pauli)) if curr_pauli[i] != 'I']
+                sq_index = find_leaves(sorted_entanglers_params, curr_pauli = curr_pauli, updated_paulis = {}, qc_tree = init_cx_tree, tree_list = tree_list, commute_idx = next_commute_idx, pauli_idx = next_pauli_idx, append_clifford = append_clifford)
+                #sq_index, init_cx_tree = find_single_tree_lookahead_adapt(base_entangler_inv = curr_pauli, match_entangler_inv = updated_entanglers[0], lookahead_entanglers_inv = updated_entanglers)
                 init_clif = sq_qc.inverse()
                 init_clif.compose(init_cx_tree, inplace = True)
                 extracted_cx_tree = init_cx_tree.inverse()
@@ -2075,6 +2092,246 @@ def fc_tree_commute_adaptive_lookahead_fast(entanglers: List[str], params: List[
                 
 
     return opt_qc, append_clifford, sorted_entanglers_params
+
+def find_best_pauli_index_threshold(base_entangler: str, commute_sets: List[List[str]], append_clifford, threshold = 1) -> int:
+    '''This function finds the best pauli entangler in a set of commuting paulis.
+    Args:
+        base_entangler: the base entangler that searchers for the CNOT tree structure
+        commute_entanglers: the target entangler that we are matching and minimizing
+    Returns:
+        ordered_entanglers: the ordered commute_entanglers after optimization
+    '''
+    ordered_entanglers = commute_sets.copy()
+    min_weight = float('inf')
+    min_index = None
+    for idx, entangler in enumerate(ordered_entanglers):
+        updated_entanglers = update_paulis(Paulis_params_list = [entangler], clifford_circuit = append_clifford, parameters = True)
+        opt_sign, pushed_pauli = push_sq_pauli(entangler = updated_entanglers[0], current_pauli = base_entangler)
+        weight, optimized_pauli_with_sign = calculate_opt_weight_fast(base_entangler, pushed_pauli)
+        logger.debug('weight:%s, entangler_set:%s', weight, entangler)
+        if weight <= threshold:
+            return idx
+        if weight < min_weight:
+            min_weight = weight
+            min_index = idx
+
+    return min_index
+
+def fc_tree_commute_recur_lookahead_fast(entanglers: List[str], params: List[float], barrier=False, threshold = 1):
+    '''This function defines the optimized fully connected tree block for hamtiltonian simulation in commute list format, also considering lookahead
+    
+    Args:
+        entanglers: list storing Pauli words for construction of optimized qcc_circuit.
+        params: parameters for the rotations
+        barrier: barriers between blocks of gates
+    Returns:
+        opt_qc, append_clifford, opt_paulis, opt_params
+    '''
+    commute_sets = convert_commute_sets(Paulis= entanglers, params = params)
+
+    opt_qc = QuantumCircuit(len(entanglers[0]))
+    append_clifford = QuantumCircuit(len(entanglers[0]))
+    append_clifford = Clifford(append_clifford)
+    # opt_params = params.copy()
+    sorted_entanglers_params = []
+
+    #sort all the paulis based on their weight:#TODO: need to resolve when two cases have the same weight
+    for commute_list in commute_sets:
+        sorted_list = sorted(commute_list, key=lambda x: pauli_weight(x[0]))
+        sorted_entanglers_params.append(sorted_list)
+
+    logging.debug("start_sorted_list: %s", sorted_entanglers_params)
+    next_pauli = 0
+    # Iterate over all the lists of commuting entanglers that need optimization
+    for commute_idx, sorted_list in enumerate(sorted_entanglers_params):
+        # updated_commute_list = [sorted_list[0]]  # Initialize with the first Pauli string
+        # remaining_commute_paulis = sorted_list[1:].copy()
+        
+        for pauli_idx in range(len(sorted_list)):
+            #here we start process for each current pauli
+            curr_pauli = sorted_entanglers_params[commute_idx][pauli_idx][0]
+            curr_param = sorted_entanglers_params[commute_idx][pauli_idx][1]
+            # print("curr_pauli", curr_pauli, curr_param, type(curr_param))
+            sq_qc = construct_sq_subcircuit(curr_pauli)  # Construct the single qubit subcircuit
+            #find the best next pauli:
+            #based on the pauli_idx determine which should be the next pauli, or the pauli in the next commuting list
+            if pauli_idx == len(sorted_list) - 1: # if this pauli is the last one in a commuting list, find the pauli in the next list
+                if commute_idx == len(sorted_entanglers_params) - 1:
+                    next_pauli = None
+                else:
+                    if len(sorted_entanglers_params[commute_idx + 1]) > 1:
+                        next_pauli_index = find_best_pauli_index_threshold(base_entangler = curr_pauli, commute_sets= sorted_entanglers_params[commute_idx + 1], append_clifford = append_clifford, threshold = threshold)
+                        element = sorted_entanglers_params[commute_idx + 1].pop(next_pauli_index)
+                        # Insert the element at the beginning of the list
+                        sorted_entanglers_params[commute_idx + 1].insert(0, element)
+            else: 
+                #UPDATE THE next commuting PAULIS:
+                next_pauli_index = find_best_pauli_index_threshold(base_entangler = curr_pauli, commute_sets= sorted_entanglers_params[commute_idx][pauli_idx + 1:], append_clifford = append_clifford, threshold = threshold)
+                # Remove the element at the specified index
+                element = sorted_entanglers_params[commute_idx].pop(pauli_idx + 1 + next_pauli_index)
+                # Insert the element at the beginning of the list
+                sorted_entanglers_params[commute_idx].insert(pauli_idx + 1, element)
+                # next_pauli = sorted_entanglers_params[commute_idx][0]
+            logging.debug("after_search_for_the best next: %s", sorted_entanglers_params)
+            logging.debug("next_pauli: %s", next_pauli)
+            #up to this step we haven't extracted any clifford circuit, just analysis with look up table, should be fast
+            if next_pauli == None:      
+                #extract for the last block:
+                extracted_clif = construct_Clifford_subcircuit(curr_pauli)
+                #Add the extracted clifford to the beginning of the append_clifford at the end of the circuit
+                append_clifford = extracted_clif.compose(append_clifford.to_circuit())
+                #The extracted circuit for the current block with index
+                extracted_qc = construct_extracted_subcircuit(entangler = curr_pauli, param = curr_param)
+                #Add the extracted circuit to the optimized circuit
+                logging.debug("final paulis: %s", curr_pauli)
+
+                if barrier == True:
+                    opt_qc.barrier()
+                opt_qc.compose(extracted_qc, inplace = True)
+
+            else:
+                #print("before single tree", curr_pauli, updated_entanglers)
+                init_cx_tree = QuantumCircuit(len(entanglers[0]))
+                next_commute_idx, next_pauli_idx = gen_next_pauli_idx(sorted_entanglers_params,commute_idx, pauli_idx)
+                tree_list = [len(curr_pauli) - 1 - i for i in range(len(curr_pauli)) if curr_pauli[i] != 'I']
+                sq_index = find_leaves(sorted_entanglers_params, curr_pauli = curr_pauli, updated_paulis = {}, qc_tree = init_cx_tree, tree_list = tree_list, commute_idx = next_commute_idx, pauli_idx = next_pauli_idx, append_clifford = append_clifford)
+                #sq_index, init_cx_tree = find_single_tree_lookahead_adapt(base_entangler_inv = curr_pauli, match_entangler_inv = updated_entanglers[0], lookahead_entanglers_inv = updated_entanglers)
+                init_clif = sq_qc.inverse()
+                init_clif.compose(init_cx_tree, inplace = True)
+                extracted_cx_tree = init_cx_tree.inverse()
+                extracted_clif = init_clif.inverse()
+                extracted_clif = Clifford(extracted_clif)
+                #Add the extracted_clifford to the append clifford
+                append_clifford = extracted_clif.compose(append_clifford)
+
+                init_clif.rz(curr_param, sq_index)
+
+                #Add the extracted circuit to the optimized circuit
+                if barrier == True:
+                    opt_qc.barrier()
+                opt_qc.compose(init_clif, inplace = True)
+
+                #Use append_clifford to update the next pauli:
+                # print(pauli_idx, len(sorted_list), sorted_list, sorted_entanglers_params)
+                if pauli_idx == len(sorted_list) - 1: 
+                    # print("before update", sorted_entanglers_params[commute_idx + 1][0])
+                    sorted_entanglers_params[commute_idx + 1][0] = update_pauli_param(Pauli_param = sorted_entanglers_params[commute_idx + 1][0], clifford_circuit = append_clifford)
+                else:
+                    # print("before update", sorted_entanglers_params[commute_idx][pauli_idx + 1])
+                    sorted_entanglers_params[commute_idx][pauli_idx + 1] = update_pauli_param(Pauli_param = sorted_entanglers_params[commute_idx][pauli_idx + 1], clifford_circuit = append_clifford)
+    return opt_qc, append_clifford, sorted_entanglers_params
+
+
+# def fc_tree_terminate_recur_lookahead_fast(entanglers: List[str], params: List[float], barrier=False, lookahead_size=10):
+#     '''This function defines the optimized fully connected tree block for hamtiltonian simulation in commute list format, also considering lookahead
+    
+#     Args:
+#         entanglers: list storing Pauli words for construction of optimized qcc_circuit.
+#         params: parameters for the rotations
+#         barrier: barriers between blocks of gates
+#     Returns:
+#         opt_qc, append_clifford, opt_paulis, opt_params
+#     '''
+#     commute_sets = convert_commute_sets(Paulis= entanglers, params = params)
+
+#     opt_qc = QuantumCircuit(len(entanglers[0]))
+#     append_clifford = QuantumCircuit(len(entanglers[0]))
+#     append_clifford = Clifford(append_clifford)
+#     # opt_params = params.copy()
+#     sorted_entanglers_params = []
+
+#     #sort all the paulis based on their weight:#TODO: need to resolve when two cases have the same weight
+#     for commute_list in commute_sets:
+#         sorted_list = sorted(commute_list, key=lambda x: pauli_weight(x[0]))
+#         sorted_entanglers_params.append(sorted_list)
+
+#     logging.debug("start_sorted_list: %s", sorted_entanglers_params)
+#     next_pauli = 0
+#     # Iterate over all the lists of commuting entanglers that need optimization
+#     for commute_idx, sorted_list in enumerate(sorted_entanglers_params):
+#         # updated_commute_list = [sorted_list[0]]  # Initialize with the first Pauli string
+#         # remaining_commute_paulis = sorted_list[1:].copy()
+        
+#         for pauli_idx in range(len(sorted_list)):
+#             #here we start process for each current pauli
+#             curr_pauli = sorted_entanglers_params[commute_idx][pauli_idx][0]
+#             curr_param = sorted_entanglers_params[commute_idx][pauli_idx][1]
+#             # print("curr_pauli", curr_pauli, curr_param, type(curr_param))
+#             sq_qc = construct_sq_subcircuit(curr_pauli)  # Construct the single qubit subcircuit
+#             #find the best next pauli:
+#             #based on the pauli_idx determine which should be the next pauli, or the pauli in the next commuting list
+#             if pauli_idx == len(sorted_list) - 1: # if this pauli is the last one in a commuting list, find the pauli in the next list
+#                 if commute_idx == len(sorted_entanglers_params) - 1:
+#                     next_pauli = None
+#                 else:
+#                     if len(sorted_entanglers_params[commute_idx + 1]) > 1:
+#                         next_pauli_index = find_best_pauli_index_threshold(base_entangler = curr_pauli, commute_sets= sorted_entanglers_params[commute_idx + 1], append_clifford = append_clifford, threshold = 2)
+#                         element = sorted_entanglers_params[commute_idx + 1].pop(next_pauli_index)
+#                         # Insert the element at the beginning of the list
+#                         sorted_entanglers_params[commute_idx + 1].insert(0, element)
+#                         # next_pauli = sorted_entanglers_params[commute_idx + 1][0]
+
+#             else: 
+#                 #UPDATE THE next commuting PAULIS:
+#                 next_pauli_index = find_best_pauli_index_threshold(base_entangler = curr_pauli, commute_sets= sorted_entanglers_params[commute_idx][pauli_idx + 1:], append_clifford = append_clifford, threshold = 2)
+ 
+#                 # Remove the element at the specified index
+#                 element = sorted_entanglers_params[commute_idx].pop(pauli_idx + 1 + next_pauli_index)
+#                 # Insert the element at the beginning of the list
+#                 sorted_entanglers_params[commute_idx].insert(pauli_idx + 1, element)
+#                 # next_pauli = sorted_entanglers_params[commute_idx][0]
+#             logging.debug("after_search_for_the best next: %s", sorted_entanglers_params)
+#             logging.debug("next_pauli: %s", next_pauli)
+#             #up to this step we haven't extracted any clifford circuit, just analysis with look up table, should be fast
+#             if next_pauli == None:      
+#                 #extract for the last block:
+#                 extracted_clif = construct_Clifford_subcircuit(curr_pauli)
+#                 #Add the extracted clifford to the beginning of the append_clifford at the end of the circuit
+#                 append_clifford = extracted_clif.compose(append_clifford.to_circuit())
+#                 #The extracted circuit for the current block with index
+#                 extracted_qc = construct_extracted_subcircuit(entangler = curr_pauli, param = curr_param)
+#                 #Add the extracted circuit to the optimized circuit
+#                 logging.debug("final paulis: %s", curr_pauli)
+
+#                 if barrier == True:
+#                     opt_qc.barrier()
+#                 opt_qc.compose(extracted_qc, inplace = True)
+
+#             else:
+#                 #print("before single tree", curr_pauli, updated_entanglers)
+#                 init_cx_tree = QuantumCircuit(len(entanglers[0]))
+#                 next_commute_idx, next_pauli_idx = gen_next_pauli_idx(sorted_entanglers_params,commute_idx, pauli_idx)
+#                 tree_list = [len(curr_pauli) - 1 - i for i in range(len(curr_pauli)) if curr_pauli[i] != 'I']
+#                 sq_index = find_leaves(sorted_entanglers_params, curr_pauli = curr_pauli, updated_paulis = {}, qc_tree = init_cx_tree, tree_list = tree_list, commute_idx = next_commute_idx, pauli_idx = next_pauli_idx, append_clifford = append_clifford)
+#                 #sq_index, init_cx_tree = find_single_tree_lookahead_adapt(base_entangler_inv = curr_pauli, match_entangler_inv = updated_entanglers[0], lookahead_entanglers_inv = updated_entanglers)
+#                 init_clif = sq_qc.inverse()
+#                 init_clif.compose(init_cx_tree, inplace = True)
+#                 extracted_cx_tree = init_cx_tree.inverse()
+#                 extracted_clif = init_clif.inverse()
+#                 extracted_clif = Clifford(extracted_clif)
+#                 #Add the extracted_clifford to the append clifford
+#                 append_clifford = extracted_clif.compose(append_clifford)
+
+#                 init_clif.rz(curr_param, sq_index)
+
+#                 #Add the extracted circuit to the optimized circuit
+#                 if barrier == True:
+#                     opt_qc.barrier()
+#                 opt_qc.compose(init_clif, inplace = True)
+
+#                 #Use append_clifford to update the next pauli:
+#                 # print(pauli_idx, len(sorted_list), sorted_list, sorted_entanglers_params)
+#                 if pauli_idx == len(sorted_list) - 1: 
+#                     # print("before update", sorted_entanglers_params[commute_idx + 1][0])
+#                     sorted_entanglers_params[commute_idx + 1][0] = update_pauli_param(Pauli_param = sorted_entanglers_params[commute_idx + 1][0], clifford_circuit = append_clifford)
+#                 else:
+#                     # print("before update", sorted_entanglers_params[commute_idx][pauli_idx + 1])
+#                     sorted_entanglers_params[commute_idx][pauli_idx + 1] = update_pauli_param(Pauli_param = sorted_entanglers_params[commute_idx][pauli_idx + 1], clifford_circuit = append_clifford)
+                
+
+#     return opt_qc, append_clifford, sorted_entanglers_params
+
+
 
 
 
@@ -2389,127 +2646,4 @@ def fc_tree_sort_lookahead_estimate(entanglers: List[str], params: List[float], 
 
             
     
-#TODO: change the code, we only need to update the next lookahead_size paulis instead of updating all the paulis, update teh circuit instead of paulis
-def fc_tree_limcommute_lookahead_estimate(entanglers: List[str], params: List[float], barrier=False, lookahead_size=10):
-    '''This function defines the optimized fully connected tree block for hamtiltonian simulation in commute list format, also considering lookahead
-    
-    Args:
-        entanglers: list storing Pauli words for construction of optimized qcc_circuit.
-        params: parameters for the rotations
-        barrier: barriers between blocks of gates
-    Returns:
-        opt_qc, append_clifford, opt_paulis, opt_params
-    '''
-    commute_sets = convert_commute_sets(Paulis= entanglers, params = params)
-
-    opt_qc = QuantumCircuit(len(entanglers[0]))
-    append_clifford = QuantumCircuit(len(entanglers[0]))
-    append_clifford = Clifford(append_clifford)
-    sorted_entanglers_params = []
-
-    #sort all the paulis based on their weight:#TODO: need to resolve when two cases have the same weight
-    for commute_list in commute_sets:
-        sorted_list = reorder_pauli_strings(commute_list) #sorted(commute_list, key=lambda x: pauli_weight(x[0])) #reorder_pauli_strings(commute_list)#
-        sorted_entanglers_params.append(sorted_list)
-
-
-
-    logging.debug("start_sorted_list: %s", sorted_entanglers_params)
-    next_pauli = 0
-    # Iterate over all the lists of commuting entanglers that need optimization
-    for commute_idx, sorted_list in enumerate(sorted_entanglers_params):
-        # updated_commute_list = [sorted_list[0]]  # Initialize with the first Pauli string
-        # remaining_commute_paulis = sorted_list[1:].copy()
-        
-        for pauli_idx in range(len(sorted_list)):
-            #here we start process for each current pauli
-            curr_pauli = sorted_entanglers_params[commute_idx][pauli_idx][0]
-            curr_param = sorted_entanglers_params[commute_idx][pauli_idx][1]
-            # print("curr_pauli", curr_pauli, curr_param, type(curr_param))
-            sq_qc = construct_sq_subcircuit(curr_pauli)  # Construct the single qubit subcircuit
-            #find the best next pauli:
-            #based on the pauli_idx determine which should be the next pauli, or the pauli in the next commuting list
-            if pauli_idx == len(sorted_list) - 1: # if this pauli is the last one in a commuting list, find the pauli in the next list
-                if commute_idx == len(sorted_entanglers_params) - 1:
-                    next_pauli = None
-                else:
-                    logging.debug("pauli_idx: %s, sorted_list: %s", pauli_idx, sorted_list)
-                    #UPDATE THE next commuting PAULIS:
-                    updated_entanglers = update_paulis(Paulis_params_list = sorted_entanglers_params[commute_idx + 1], clifford_circuit = append_clifford, parameters = True)
-                    if len(sorted_entanglers_params[commute_idx + 1]) > 1:
-
-                        next_pauli_index = find_best_pauli_index_fast_estimate(base_entangler = curr_pauli, commute_sets = updated_entanglers)
-                        # Remove the element at the specified index
-                        element = sorted_entanglers_params[commute_idx + 1].pop(next_pauli_index)
-                        # Insert the element at the beginning of the list
-                        sorted_entanglers_params[commute_idx + 1].insert(0, element)
-                        # next_pauli = sorted_entanglers_params[commute_idx + 1][0]
-                    logging.debug("ordered_entanglers in next: %s",sorted_entanglers_params)
-
-            else: # search within the current commuting list:
-                #UPDATE THE next commuting PAULIS:
-                updated_entanglers = update_paulis(Paulis_params_list = sorted_entanglers_params[commute_idx][pauli_idx + 1:], clifford_circuit = append_clifford, parameters = True)
-                # if (pauli_idx) != len(sorted_entanglers_params[commute_idx]):
-                next_pauli_index = find_best_pauli_index_fast_estimate(base_entangler = curr_pauli, commute_sets = updated_entanglers)
-                # Remove the element at the specified index
-                element = sorted_entanglers_params[commute_idx].pop(pauli_idx + 1 + next_pauli_index)
-                # Insert the element at the beginning of the list
-                sorted_entanglers_params[commute_idx].insert(pauli_idx + 1, element)
-                next_pauli = sorted_entanglers_params[commute_idx][0]
-            logging.debug("after_search_for_the best next: %s", sorted_entanglers_params)
-            logging.debug("next_pauli: %s", next_pauli)
-            #up to this step we haven't extracted any clifford circuit, just analysis with look up table, should be fast
-            if next_pauli == None:      
-                #extract for the last block:
-                extracted_clif = construct_Clifford_subcircuit(curr_pauli)
-                #Add the extracted clifford to the beginning of the append_clifford at the end of the circuit
-                append_clifford = extracted_clif.compose(append_clifford)
-                #The extracted circuit for the current block with index
-                extracted_qc = construct_extracted_subcircuit(entangler = curr_pauli, param = curr_param)
-                #Add the extracted circuit to the optimized circuit
-                logging.debug("final paulis: %s", curr_pauli)
-
-                if barrier == True:
-                    opt_qc.barrier()
-                opt_qc.compose(extracted_qc, inplace = True)
-
-            else:
-                lookahead_entanglers = find_next_k_paulis(sorted_entanglers_params, commute_idx, pauli_idx, lookahead_size)
-                #print("lookahead_entanglers", lookahead_entanglers)
-                updated_entanglers = update_paulis(Paulis_params_list = lookahead_entanglers, clifford_circuit = append_clifford, parameters = False)
-                #need to update the lookahead entanglers before finding CX tree:
-                for ent_idx, lookahead_entangler in enumerate(updated_entanglers):
-                    #update all the lookahead paulis with single qubit gates:
-                    pushed_sign, pushed_pauli = push_sq_pauli(entangler = lookahead_entangler, current_pauli = curr_pauli)
-                    updated_entanglers[ent_idx] = pushed_pauli
-                # pushed_next_sign, pushed_next_pauli = push_sq_pauli(entangler = next_pauli[0], current_pauli = curr_pauli)
-
-                #print("before single tree", curr_pauli, updated_entanglers)
-                sq_index, init_cx_tree = find_single_tree_lookahead(base_entangler_inv = curr_pauli, match_entangler_inv = updated_entanglers[0], lookahead_entanglers_inv = updated_entanglers)
-                init_clif = sq_qc.inverse()
-                init_clif.compose(init_cx_tree, inplace = True)
-                extracted_cx_tree = init_cx_tree.inverse()
-                extracted_clif = init_clif.inverse()
-                extracted_clif = Clifford(extracted_clif)
-                #Add the extracted_clifford to the append clifford
-                append_clifford = extracted_clif.compose(append_clifford)
-
-                init_clif.rz(curr_param, sq_index)
-
-                #Add the extracted circuit to the optimized circuit
-                if barrier == True:
-                    opt_qc.barrier()
-                opt_qc.compose(init_clif, inplace = True)
-
-                #Use append_clifford to update the next pauli:
-                # print(pauli_idx, len(sorted_list), sorted_list, sorted_entanglers_params)
-                if pauli_idx == len(sorted_list) - 1: 
-                    # print("before update", sorted_entanglers_params[commute_idx + 1][0])
-                    sorted_entanglers_params[commute_idx + 1][0] = update_pauli_param(Pauli_param = sorted_entanglers_params[commute_idx + 1][0], clifford_circuit = append_clifford)
-                else:
-                    # print("before update", sorted_entanglers_params[commute_idx][pauli_idx + 1])
-                    sorted_entanglers_params[commute_idx][pauli_idx + 1] = update_pauli_param(Pauli_param = sorted_entanglers_params[commute_idx][pauli_idx + 1], clifford_circuit = append_clifford)
-                
-
-    return opt_qc, append_clifford, sorted_entanglers_params
 
