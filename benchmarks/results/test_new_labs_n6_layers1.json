@@ -1,0 +1,41 @@
+[
+    [
+        "ZZIIZZ",
+        "ZZZZII",
+        "ZZIZZI",
+        "IIZZZZ",
+        "IZZIZZ",
+        "IZZZZI",
+        "ZIZZIZ",
+        "IIIZIZ",
+        "IIZIZI",
+        "ZIIIZI",
+        "ZIZIII",
+        "IZIZII",
+        "IZIIIZ",
+        "XIIIII",
+        "IXIIII",
+        "IIXIII",
+        "IIIXII",
+        "IIIIXI",
+        "IIIIIX"
+    ],
+    [
+        {
+            "num_paulis": 19,
+            "times": {
+                "our_time": 0.10685539245605469,
+                "combined_time": 0.14014720916748047
+            },
+            "gate_counts": {
+                "our_method": 21,
+                "combined_method": 21
+            },
+            "circuit_entangling_depth": {
+                "our_method": 13,
+                "combined_method": 13
+            },
+            "test_paulis_file": "benchmarks/results/test_new_labs_n6_layers1.json"
+        }
+    ]
+]

@@ -1,0 +1,34 @@
+[
+    [
+        "ZZIZZ",
+        "ZZZZI",
+        "IZZZZ",
+        "ZIZII",
+        "IZIZI",
+        "ZIIIZ",
+        "IIZIZ",
+        "XIIII",
+        "IXIII",
+        "IIXII",
+        "IIIXI",
+        "IIIIX"
+    ],
+    [
+        {
+            "num_paulis": 12,
+            "times": {
+                "our_time": 0.05602264404296875,
+                "combined_time": 0.0789492130279541
+            },
+            "gate_counts": {
+                "our_method": 12,
+                "combined_method": 12
+            },
+            "circuit_entangling_depth": {
+                "our_method": 10,
+                "combined_method": 10
+            },
+            "test_paulis_file": "benchmarks/results/test_new_labs_n5_layers1.json"
+        }
+    ]
+]
