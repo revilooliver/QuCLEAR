@@ -1,0 +1,31 @@
+[
+    [
+        "ZZIZZ",
+        "ZZZZI",
+        "IZZZZ",
+        "ZIZII",
+        "IZIZI",
+        "ZIIIZ",
+        "IIZIZ",
+        "XIIII",
+        "IXIII",
+        "IIXII",
+        "IIIXI",
+        "IIIIX"
+    ],
+    [
+        {
+            "num_paulis": 12,
+            "times": {
+                "paulihedral_time": 0.2713613510131836
+            },
+            "gate_counts": {
+                "paulihedral_method": 20
+            },
+            "circuit_depth": {
+                "paulihedral_method": 45
+            },
+            "test_paulis_file": "benchmarks/results/test_paulihedral_labs_n5_layers1.json"
+        }
+    ]
+]

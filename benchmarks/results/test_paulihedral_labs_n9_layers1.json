@@ -1,0 +1,78 @@
+[
+    [
+        "IZZIIIZZI",
+        "IIIIZIIIZ",
+        "ZIIIIIIIZ",
+        "ZIIIZIIII",
+        "ZIIZIZIIZ",
+        "IIIZIZIII",
+        "IZZZZIIII",
+        "IIIIIZZZZ",
+        "ZZIZZIIII",
+        "IIIIIIZIZ",
+        "IIIIIZIZI",
+        "ZZIIIIZZI",
+        "IIZZZZIII",
+        "ZZIIZZIII",
+        "IIZZIIIZZ",
+        "IZZIZZIII",
+        "IIIZIIIZI",
+        "ZIIIIIZII",
+        "ZZIIIZZII",
+        "IIIZZIIZZ",
+        "IZZIIZZII",
+        "ZIIZZIIZI",
+        "ZZIIIIIZZ",
+        "IIIZZZZII",
+        "IZZIIIIZZ",
+        "IIIIZIZII",
+        "IIIZZIZZI",
+        "IZIIIZIII",
+        "ZIZIIIIII",
+        "ZZZZIIIII",
+        "IIIIZZIZZ",
+        "IIZZIZZII",
+        "IZIIIIIZI",
+        "IIZZIIZZI",
+        "IZIIZZIIZ",
+        "IIIIZZZZI",
+        "IIZIIIIIZ",
+        "IZIZIIIII",
+        "IZIZIZIZI",
+        "ZIZIZIZII",
+        "ZIZIIZIZI",
+        "IZIZZIZII",
+        "ZIZIIIZIZ",
+        "IZIZIIZIZ",
+        "IIZIZZIZI",
+        "ZIZZIZIII",
+        "IIZIZIIII",
+        "IIIZIZZIZ",
+        "IIZIZIZIZ",
+        "IIZIIIZII",
+        "XIIIIIIII",
+        "IXIIIIIII",
+        "IIXIIIIII",
+        "IIIXIIIII",
+        "IIIIXIIII",
+        "IIIIIXIII",
+        "IIIIIIXII",
+        "IIIIIIIXI",
+        "IIIIIIIIX"
+    ],
+    [
+        {
+            "num_paulis": 59,
+            "times": {
+                "paulihedral_time": 2.504014253616333
+            },
+            "gate_counts": {
+                "paulihedral_method": 162
+            },
+            "circuit_depth": {
+                "paulihedral_method": 234
+            },
+            "test_paulis_file": "benchmarks/results/test_paulihedral_labs_n9_layers1.json"
+        }
+    ]
+]

@@ -1,0 +1,81 @@
+[
+    [
+        "IIIIII",
+        "IIIIIZ",
+        "IIIIYY",
+        "IIIIXX",
+        "IIIIZI",
+        "IIIZII",
+        "IIZIII",
+        "IYYIII",
+        "IXXIII",
+        "IZIIII",
+        "ZIIIII",
+        "IIIIZZ",
+        "IIIZIZ",
+        "IIZIIZ",
+        "IYYIIZ",
+        "IXXIIZ",
+        "IZIIIZ",
+        "ZIIIIZ",
+        "IIIZYY",
+        "IIIZXX",
+        "IIZIYY",
+        "IIZIXX",
+        "IYYIYY",
+        "IXXIYY",
+        "IYYIXX",
+        "IXXIXX",
+        "IZIIYY",
+        "IZIIXX",
+        "ZIIIYY",
+        "ZIIIXX",
+        "YZYYZY",
+        "XZXYZY",
+        "YZYXZX",
+        "XZXXZX",
+        "YYIYZY",
+        "XXIYZY",
+        "YYIXZX",
+        "XXIXZX",
+        "IIIZZI",
+        "IIZIZI",
+        "IYYIZI",
+        "IXXIZI",
+        "IZIIZI",
+        "ZIIIZI",
+        "YZYYYI",
+        "XZXYYI",
+        "YZYXXI",
+        "XZXXXI",
+        "YYIYYI",
+        "XXIYYI",
+        "YYIXXI",
+        "XXIXXI",
+        "IIZZII",
+        "IYYZII",
+        "IXXZII",
+        "IZIZII",
+        "ZIIZII",
+        "IZZIII",
+        "ZIZIII",
+        "ZYYIII",
+        "ZXXIII",
+        "ZZIIII"
+    ],
+    [
+        {
+            "num_paulis": 61,
+            "times": {
+                "paulihedral_time": 4.543070077896118
+            },
+            "gate_counts": {
+                "paulihedral_method": 117
+            },
+            "circuit_depth": {
+                "paulihedral_method": 373
+            },
+            "test_paulis_file": "benchmarks/results/test_paulihedral_LiH.json"
+        }
+    ]
+]
