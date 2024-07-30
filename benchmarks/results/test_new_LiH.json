@@ -64,42 +64,10 @@
     ],
     [
         {
-            "num_paulis": 1254,
-            "times": {
-                "our_time": 16.153993844985962,
-                "combined_time": 17.132431983947754
-            },
-            "gate_counts": {
-                "our_method": 2479,
-                "combined_method": 2470
-            },
-            "circuit_entangling_depth": {
-                "our_method": 1486,
-                "combined_method": 1481
-            },
-            "test_paulis_file": "benchmarks/results/test_new_benzene.json"
-        },
-        {
-            "num_paulis": 184,
-            "times": {
-                "our_time": 1.4060754776000977,
-                "combined_time": 1.7081072330474854
-            },
-            "gate_counts": {
-                "our_method": 277,
-                "combined_method": 274
-            },
-            "circuit_entangling_depth": {
-                "our_method": 191,
-                "combined_method": 189
-            },
-            "test_paulis_file": "benchmarks/results/test_new_H2O.json"
-        },
-        {
             "num_paulis": 61,
             "times": {
-                "our_time": 0.3292808532714844,
-                "combined_time": 0.40595006942749023
+                "our_time": 0.35505127906799316,
+                "combined_time": 0.399932861328125
             },
             "gate_counts": {
                 "our_method": 76,

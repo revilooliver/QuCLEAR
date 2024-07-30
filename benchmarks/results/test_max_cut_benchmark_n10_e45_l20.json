@@ -1105,10 +1105,10 @@
         {
             "num_paulis": 1100,
             "times": {
-                "our_time": 34.3043999671936,
-                "combined_time": 35.467081785202026,
-                "qiskit_time": 2.045874834060669,
-                "rustiq_time": 0.4717724323272705
+                "our_time": 38.17032027244568,
+                "combined_time": 39.617900133132935,
+                "qiskit_time": 2.16821026802063,
+                "rustiq_time": 0.592900276184082
             },
             "gate_counts": {
                 "our_method": 1017,
@@ -1120,7 +1120,7 @@
                 "our_method": 571,
                 "combined_method": 571,
                 "qiskit_method": 412,
-                "rustiq_method": 678
+                "rustiq_method": 681
             },
             "test_paulis_file": "benchmarks/results/test_max_cut_benchmark_n10_e45_l20.json"
         }

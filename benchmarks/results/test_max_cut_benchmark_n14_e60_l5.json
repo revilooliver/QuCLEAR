@@ -373,34 +373,12 @@
     ],
     [
         {
-            "num_paulis": 1100,
-            "times": {
-                "our_time": 34.3043999671936,
-                "combined_time": 35.467081785202026,
-                "qiskit_time": 2.045874834060669,
-                "rustiq_time": 0.4717724323272705
-            },
-            "gate_counts": {
-                "our_method": 1017,
-                "combined_method": 1017,
-                "qiskit_method": 1798,
-                "rustiq_method": 1119
-            },
-            "circuit_entangling_depth": {
-                "our_method": 571,
-                "combined_method": 571,
-                "qiskit_method": 412,
-                "rustiq_method": 678
-            },
-            "test_paulis_file": "benchmarks/results/test_max_cut_benchmark_n10_e45_l20.json"
-        },
-        {
             "num_paulis": 370,
             "times": {
-                "our_time": 18.521255254745483,
-                "combined_time": 17.65755343437195,
-                "qiskit_time": 0.5152554512023926,
-                "rustiq_time": 0.08677315711975098
+                "our_time": 20.270930528640747,
+                "combined_time": 18.800795078277588,
+                "qiskit_time": 0.5245645046234131,
+                "rustiq_time": 0.0857703685760498
             },
             "gate_counts": {
                 "our_method": 386,
@@ -412,7 +390,7 @@
                 "our_method": 195,
                 "combined_method": 195,
                 "qiskit_method": 200,
-                "rustiq_method": 278
+                "rustiq_method": 275
             },
             "test_paulis_file": "benchmarks/results/test_max_cut_benchmark_n14_e60_l5.json"
         }

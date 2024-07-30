@@ -1259,10 +1259,10 @@
         {
             "num_paulis": 1254,
             "times": {
-                "our_time": 21.56524968147278,
-                "combined_time": 25.271129846572876,
-                "qiskit_time": 12.614680767059326,
-                "rustiq_time": 3.8006927967071533
+                "our_time": 22.472973346710205,
+                "combined_time": 24.923808574676514,
+                "qiskit_time": 13.60697317123413,
+                "rustiq_time": 4.628634929656982
             },
             "gate_counts": {
                 "our_method": 3556,
@@ -1274,7 +1274,7 @@
                 "our_method": 2201,
                 "combined_method": 2192,
                 "qiskit_method": 7477,
-                "rustiq_method": 2313
+                "rustiq_method": 2321
             },
             "test_paulis_file": "benchmarks/results/test_benzene.json"
         }

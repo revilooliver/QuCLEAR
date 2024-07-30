@@ -373,26 +373,10 @@
     ],
     [
         {
-            "num_paulis": 1100,
-            "times": {
-                "our_time": 6.141399383544922,
-                "combined_time": 6.441468238830566
-            },
-            "gate_counts": {
-                "our_method": 1071,
-                "combined_method": 1071
-            },
-            "circuit_entangling_depth": {
-                "our_method": 521,
-                "combined_method": 521
-            },
-            "test_paulis_file": "benchmarks/results/test_new_max_cut_benchmark_n10_e45_l20.json"
-        },
-        {
             "num_paulis": 370,
             "times": {
-                "our_time": 7.7586681842803955,
-                "combined_time": 7.964403390884399
+                "our_time": 8.88126802444458,
+                "combined_time": 8.358665227890015
             },
             "gate_counts": {
                 "our_method": 380,

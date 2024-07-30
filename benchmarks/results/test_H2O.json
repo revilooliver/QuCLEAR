@@ -187,46 +187,24 @@
     ],
     [
         {
-            "num_paulis": 1254,
-            "times": {
-                "our_time": 21.56524968147278,
-                "combined_time": 25.271129846572876,
-                "qiskit_time": 12.614680767059326,
-                "rustiq_time": 3.8006927967071533
-            },
-            "gate_counts": {
-                "our_method": 3556,
-                "combined_method": 3545,
-                "qiskit_method": 7602,
-                "rustiq_method": 3356
-            },
-            "circuit_entangling_depth": {
-                "our_method": 2201,
-                "combined_method": 2192,
-                "qiskit_method": 7477,
-                "rustiq_method": 2313
-            },
-            "test_paulis_file": "benchmarks/results/test_benzene.json"
-        },
-        {
             "num_paulis": 184,
             "times": {
-                "our_time": 2.406379461288452,
-                "combined_time": 2.7244222164154053,
-                "qiskit_time": 1.5365500450134277,
-                "rustiq_time": 0.024934053421020508
+                "our_time": 2.5097482204437256,
+                "combined_time": 2.8512701988220215,
+                "qiskit_time": 1.5299115180969238,
+                "rustiq_time": 0.02593064308166504
             },
             "gate_counts": {
                 "our_method": 309,
                 "combined_method": 304,
                 "qiskit_method": 786,
-                "rustiq_method": 351
+                "rustiq_method": 350
             },
             "circuit_entangling_depth": {
                 "our_method": 214,
                 "combined_method": 211,
                 "qiskit_method": 769,
-                "rustiq_method": 269
+                "rustiq_method": 267
             },
             "test_paulis_file": "benchmarks/results/test_H2O.json"
         }

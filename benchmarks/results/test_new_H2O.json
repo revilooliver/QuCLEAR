@@ -187,26 +187,10 @@
     ],
     [
         {
-            "num_paulis": 1254,
-            "times": {
-                "our_time": 16.153993844985962,
-                "combined_time": 17.132431983947754
-            },
-            "gate_counts": {
-                "our_method": 2479,
-                "combined_method": 2470
-            },
-            "circuit_entangling_depth": {
-                "our_method": 1486,
-                "combined_method": 1481
-            },
-            "test_paulis_file": "benchmarks/results/test_new_benzene.json"
-        },
-        {
             "num_paulis": 184,
             "times": {
-                "our_time": 1.4060754776000977,
-                "combined_time": 1.7081072330474854
+                "our_time": 1.3753526210784912,
+                "combined_time": 1.7921802997589111
             },
             "gate_counts": {
                 "our_method": 277,
