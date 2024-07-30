@@ -11,13 +11,14 @@ def paulis_mixer(num_qubits):
         hamiltonian.append("".join(pauli_str))
     return hamiltonian
 
-def labs_pauli_layers(num_qubits, layers):
+def labs_pauli_layers(num_qubits, layers, seed):
     '''Returns the list of cost Hamiltonian followed by the mixer Hamiltonian repeated
     for the desired layers.
     Args:
         num_qubits: number of qubits in circuit.
-        totter_number: number of QAOA layers.'''
-    terms = get_gate_optimized_terms_greedy(num_qubits) # indices of Pauli Zs
+        layers: number of QAOA layers.
+        seed: seed for numpy random number generator'''
+    terms = get_gate_optimized_terms_greedy(num_qubits, seed=seed) # indices of Pauli Zs
     print(f"terms {terms}")
     cost_hamiltonian=[]
     for t in terms:
