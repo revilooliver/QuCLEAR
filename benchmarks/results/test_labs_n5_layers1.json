@@ -1,0 +1,40 @@
+[
+    [
+        "ZZIZZ",
+        "ZZZZI",
+        "IZZZZ",
+        "ZIZII",
+        "IZIZI",
+        "ZIIIZ",
+        "IIZIZ",
+        "XIIII",
+        "IXIII",
+        "IIXII",
+        "IIIXI",
+        "IIIIX"
+    ],
+    [
+        {
+            "num_paulis": 12,
+            "times": {
+                "our_time": 0.09824609756469727,
+                "combined_time": 0.10671567916870117,
+                "qiskit_time": 0.036153316497802734,
+                "rustiq_time": 0.002991914749145508
+            },
+            "gate_counts": {
+                "our_method": 14,
+                "combined_method": 14,
+                "qiskit_method": 20,
+                "rustiq_method": 12
+            },
+            "circuit_entangling_depth": {
+                "our_method": 12,
+                "combined_method": 12,
+                "qiskit_method": 17,
+                "rustiq_method": 9
+            },
+            "test_paulis_file": "benchmarks/results/test_labs_n5_layers1.json"
+        }
+    ]
+]

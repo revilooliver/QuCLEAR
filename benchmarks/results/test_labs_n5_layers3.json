@@ -1,0 +1,64 @@
+[
+    [
+        "ZZIZZ",
+        "ZZZZI",
+        "IZZZZ",
+        "ZIZII",
+        "IZIZI",
+        "ZIIIZ",
+        "IIZIZ",
+        "XIIII",
+        "IXIII",
+        "IIXII",
+        "IIIXI",
+        "IIIIX",
+        "ZZIZZ",
+        "ZZZZI",
+        "IZZZZ",
+        "ZIZII",
+        "IZIZI",
+        "ZIIIZ",
+        "IIZIZ",
+        "XIIII",
+        "IXIII",
+        "IIXII",
+        "IIIXI",
+        "IIIIX",
+        "ZZIZZ",
+        "ZZZZI",
+        "IZZZZ",
+        "ZIZII",
+        "IZIZI",
+        "ZIIIZ",
+        "IIZIZ",
+        "XIIII",
+        "IXIII",
+        "IIXII",
+        "IIIXI",
+        "IIIIX"
+    ],
+    [
+        {
+            "num_paulis": 36,
+            "times": {
+                "our_time": 0.33310937881469727,
+                "combined_time": 0.38305068016052246,
+                "qiskit_time": 0.06981229782104492,
+                "rustiq_time": 0.001994609832763672
+            },
+            "gate_counts": {
+                "our_method": 36,
+                "combined_method": 36,
+                "qiskit_method": 72,
+                "rustiq_method": 34
+            },
+            "circuit_entangling_depth": {
+                "our_method": 30,
+                "combined_method": 30,
+                "qiskit_method": 63,
+                "rustiq_method": 25
+            },
+            "test_paulis_file": "benchmarks/results/test_labs_n5_layers3.json"
+        }
+    ]
+]
