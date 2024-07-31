@@ -85,15 +85,24 @@
         {
             "num_paulis": 80,
             "times": {
-                "tetris_time": 3.159557580947876
+                "our_time": 3.684387445449829,
+                "combined_time": 1.7867670059204102,
+                "qiskit_time": 2.3295397758483887,
+                "rustiq_time": 2.8665735721588135
             },
             "gate_counts": {
-                "tetris_method": 208
+                "our_method": 427,
+                "combined_method": 218,
+                "qiskit_method": 158,
+                "rustiq_method": 621
             },
             "circuit_entangling_depth": {
-                "tetris_method": 208
+                "our_method": 307,
+                "combined_method": 179,
+                "qiskit_method": 146,
+                "rustiq_method": 455
             },
-            "test_paulis_file": "benchmarks/results/test_tetris_Paulis80.json"
+            "test_paulis_file": "benchmarks/results_hardware_topology/test_Paulis80.json"
         }
     ]
 ]

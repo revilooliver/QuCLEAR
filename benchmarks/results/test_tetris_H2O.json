@@ -190,7 +190,7 @@
         {
             "num_paulis": 184,
             "times": {
-                "tetris_time": 8.700249910354614
+                "tetris_time": 6.693113088607788
             },
             "gate_counts": {
                 "tetris_method": 872

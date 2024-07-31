@@ -15,13 +15,13 @@ from qiskit.quantum_info import Clifford
 from pytket import Circuit
 from pytket.extensions.quantinuum import QuantinuumBackend
 
-from utils import pauli_strings_commute
+from utilities import pauli_strings_commute
 
 from vqe_utils import read_from_file, MeasureCircuit, evaluation
 
 from pauli_utils import ChecksFinder
 
-from utils import convert_pauli_list
+from utilities import convert_pauli_list
 
 from collections import defaultdict
 from itertools import combinations

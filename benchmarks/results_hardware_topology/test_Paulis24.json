@@ -29,15 +29,24 @@
         {
             "num_paulis": 24,
             "times": {
-                "tetris_time": 0.8508553504943848
+                "our_time": 1.0338709354400635,
+                "combined_time": 0.5670363903045654,
+                "qiskit_time": 0.9095706939697266,
+                "rustiq_time": 0.7521183490753174
             },
             "gate_counts": {
-                "tetris_method": 53
+                "our_method": 108,
+                "combined_method": 45,
+                "qiskit_method": 41,
+                "rustiq_method": 81
             },
             "circuit_entangling_depth": {
-                "tetris_method": 53
+                "our_method": 82,
+                "combined_method": 45,
+                "qiskit_method": 41,
+                "rustiq_method": 75
             },
-            "test_paulis_file": "benchmarks/results/test_tetris_Paulis24.json"
+            "test_paulis_file": "benchmarks/results_hardware_topology/test_Paulis24.json"
         }
     ]
 ]

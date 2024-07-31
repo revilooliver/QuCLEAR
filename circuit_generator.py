@@ -12,14 +12,11 @@ from qiskit_aer import AerSimulator
 from pytket import Circuit
 from pytket.extensions.quantinuum import QuantinuumBackend
 
-from utils import pauli_strings_commute
+from utilities import pauli_strings_commute, convert_pauli_list
 
 from vqe_utils import read_from_file, MeasureCircuit, evaluation
 
 from pauli_utils import ChecksFinder
-
-from utils import convert_pauli_list
-
 
 import logging
 

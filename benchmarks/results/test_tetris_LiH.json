@@ -67,7 +67,7 @@
         {
             "num_paulis": 61,
             "times": {
-                "tetris_time": 1.8526732921600342
+                "tetris_time": 1.6615588665008545
             },
             "gate_counts": {
                 "tetris_method": 215
