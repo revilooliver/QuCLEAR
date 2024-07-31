@@ -188,15 +188,15 @@
     ],
     [
         {
-            "num_paulis": 184,
+            "num_paulis": 185,
             "times": {
-                "paulihedral_time": 16.393105030059814
+                "paulihedral_time": 1.4012553691864014
             },
             "gate_counts": {
-                "paulihedral_method": 428
+                "paulihedral_method": 471
             },
-            "circuit_depth": {
-                "paulihedral_method": 1201
+            "circuit_entangling_depth": {
+                "paulihedral_method": 461
             },
             "test_paulis_file": "benchmarks/results/test_paulihedral_H2O.json"
         }

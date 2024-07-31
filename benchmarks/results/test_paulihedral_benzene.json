@@ -1258,15 +1258,15 @@
     ],
     [
         {
-            "num_paulis": 1254,
+            "num_paulis": 1255,
             "times": {
-                "paulihedral_time": 286.829176902771
+                "paulihedral_time": 15.983575105667114
             },
             "gate_counts": {
-                "paulihedral_method": 3263
+                "paulihedral_method": 3267
             },
-            "circuit_depth": {
-                "paulihedral_method": 9476
+            "circuit_entangling_depth": {
+                "paulihedral_method": 3237
             },
             "test_paulis_file": "benchmarks/results/test_paulihedral_benzene.json"
         }

@@ -806,13 +806,13 @@
         {
             "num_paulis": 801,
             "times": {
-                "paulihedral_time": 20.29606795310974
+                "paulihedral_time": 1.2805755138397217
             },
             "gate_counts": {
                 "paulihedral_method": 958
             },
-            "circuit_depth": {
-                "paulihedral_method": 2149
+            "circuit_entangling_depth": {
+                "paulihedral_method": 864
             },
             "test_paulis_file": "benchmarks/results/test_paulihedral_labs_n15_layers3.json"
         }

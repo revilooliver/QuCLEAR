@@ -1,47 +1,41 @@
 [
     [
-        [
-            "YZXI",
-            "XZXI",
-            "YZYI",
-            "XZYI"
-        ],
-        [
-            "IYZX",
-            "IXZX",
-            "IYZY",
-            "IXZY"
-        ],
-        [
-            "YXYX",
-            "XXYX",
-            "YYYX",
-            "XYYX",
-            "YXYY",
-            "XXYY",
-            "YYYY",
-            "XYYY",
-            "YXXX",
-            "XXXX",
-            "YYXX",
-            "XYXX",
-            "YXXY",
-            "XXXY",
-            "YYXY",
-            "XYXY"
-        ]
+        "YZXI",
+        "XZXI",
+        "YZYI",
+        "XZYI",
+        "IYZX",
+        "IXZX",
+        "IYZY",
+        "IXZY",
+        "YXYX",
+        "XXYX",
+        "YYYX",
+        "XYYX",
+        "YXYY",
+        "XXYY",
+        "YYYY",
+        "XYYY",
+        "YXXX",
+        "XXXX",
+        "YYXX",
+        "XYXX",
+        "YXXY",
+        "XXXY",
+        "YYXY",
+        "XYXY"
     ],
     [
         {
             "num_paulis": 24,
             "times": {
-                "tetris_time": 0.8300061225891113
+                "tetris_time": 0.9966135025024414
             },
             "gate_counts": {
-                "tetris_method": 110
+                "tetris_method": 53
             },
             "circuit_entangling_depth": {
-                "tetris_method": 109
+                "tetris_method": 53
             },
             "test_paulis_file": "benchmarks/results/test_tetris_Paulis24.json"
         }

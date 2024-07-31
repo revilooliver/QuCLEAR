@@ -85,13 +85,13 @@
         {
             "num_paulis": 80,
             "times": {
-                "paulihedral_time": 3.622063636779785
+                "paulihedral_time": 0.19547533988952637
             },
             "gate_counts": {
-                "paulihedral_method": 232
+                "paulihedral_method": 230
             },
-            "circuit_depth": {
-                "paulihedral_method": 323
+            "circuit_entangling_depth": {
+                "paulihedral_method": 209
             },
             "test_paulis_file": "benchmarks/results/test_paulihedral_labs_n10_layers1.json"
         }

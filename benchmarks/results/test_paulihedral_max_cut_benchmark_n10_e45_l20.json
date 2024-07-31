@@ -1105,13 +1105,13 @@
         {
             "num_paulis": 1100,
             "times": {
-                "paulihedral_time": 10.429609537124634
+                "paulihedral_time": 0.5684845447540283
             },
             "gate_counts": {
                 "paulihedral_method": 90
             },
-            "circuit_depth": {
-                "paulihedral_method": 161
+            "circuit_entangling_depth": {
+                "paulihedral_method": 34
             },
             "test_paulis_file": "benchmarks/results/test_paulihedral_max_cut_benchmark_n10_e45_l20.json"
         }
