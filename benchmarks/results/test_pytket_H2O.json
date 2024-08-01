@@ -190,13 +190,13 @@
         {
             "num_paulis": 184,
             "times": {
-                "pytket_time": 20.86068058013916
+                "pytket_time": 18.544445753097534
             },
             "gate_counts": {
-                "pytket_method": 502
+                "pytket_method": 505
             },
             "circuit_entangling_depth": {
-                "pytket_method": 440
+                "pytket_method": 442
             },
             "test_paulis_file": "benchmarks/results/test_pytket_H2O.json"
         }

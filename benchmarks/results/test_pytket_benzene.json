@@ -1260,13 +1260,13 @@
         {
             "num_paulis": 1254,
             "times": {
-                "pytket_time": 213.91738510131836
+                "pytket_time": 210.8994414806366
             },
             "gate_counts": {
-                "pytket_method": 4733
+                "pytket_method": 4738
             },
             "circuit_entangling_depth": {
-                "pytket_method": 4088
+                "pytket_method": 4092
             },
             "test_paulis_file": "benchmarks/results/test_pytket_benzene.json"
         }
