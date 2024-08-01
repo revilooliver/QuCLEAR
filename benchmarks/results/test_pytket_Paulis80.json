@@ -1,0 +1,115 @@
+[
+    [
+        [
+            "YZXIII",
+            "XZXIII",
+            "YZYIII",
+            "XZYIII"
+        ],
+        [
+            "YZZZXI",
+            "XZZZXI",
+            "YZZZYI",
+            "XZZZYI"
+        ],
+        [
+            "IYZXII",
+            "IXZXII",
+            "IYZYII",
+            "IXZYII"
+        ],
+        [
+            "IYZZZX",
+            "IXZZZX",
+            "IYZZZY",
+            "IXZZZY"
+        ],
+        [
+            "YXYXII",
+            "XXYXII",
+            "YYYXII",
+            "XYYXII",
+            "YXYYII",
+            "XXYYII",
+            "YYYYII",
+            "XYYYII",
+            "YXXXII",
+            "XXXXII",
+            "YYXXII",
+            "XYXXII",
+            "YXXYII",
+            "XXXYII",
+            "YYXYII",
+            "XYXYII"
+        ],
+        [
+            "YXYZZX",
+            "XXYZZX",
+            "YYYZZX",
+            "XYYZZX",
+            "YXYZZY",
+            "XXYZZY",
+            "YYYZZY",
+            "XYYZZY",
+            "YXXZZX",
+            "XXXZZX",
+            "YYXZZX",
+            "XYXZZX",
+            "YXXZZY",
+            "XXXZZY",
+            "YYXZZY",
+            "XYXZZY"
+        ],
+        [
+            "YXIYXI",
+            "XXIYXI",
+            "YYIYXI",
+            "XYIYXI",
+            "YXIYYI",
+            "XXIYYI",
+            "YYIYYI",
+            "XYIYYI",
+            "YXIXXI",
+            "XXIXXI",
+            "YYIXXI",
+            "XYIXXI",
+            "YXIXYI",
+            "XXIXYI",
+            "YYIXYI",
+            "XYIXYI"
+        ],
+        [
+            "YXIIYX",
+            "XXIIYX",
+            "YYIIYX",
+            "XYIIYX",
+            "YXIIYY",
+            "XXIIYY",
+            "YYIIYY",
+            "XYIIYY",
+            "YXIIXX",
+            "XXIIXX",
+            "YYIIXX",
+            "XYIIXX",
+            "YXIIXY",
+            "XXIIXY",
+            "YYIIXY",
+            "XYIIXY"
+        ]
+    ],
+    [
+        {
+            "num_paulis": 80,
+            "times": {
+                "pytket_time": 9.243333339691162
+            },
+            "gate_counts": {
+                "pytket_method": 236
+            },
+            "circuit_entangling_depth": {
+                "pytket_method": 211
+            },
+            "test_paulis_file": "benchmarks/results/test_pytket_Paulis80.json"
+        }
+    ]
+]

@@ -1,0 +1,88 @@
+[
+    [
+        [
+            "ZZIIZZ",
+            "ZZZZII",
+            "ZZIZZI",
+            "IIZZZZ",
+            "IZZIZZ",
+            "IZZZZI",
+            "ZIZZIZ",
+            "IIIZIZ",
+            "IIZIZI",
+            "ZIIIZI",
+            "ZIZIII",
+            "IZIZII",
+            "IZIIIZ"
+        ],
+        [
+            "XIIIII",
+            "IXIIII",
+            "IIXIII",
+            "IIIXII",
+            "IIIIXI",
+            "IIIIIX"
+        ],
+        [
+            "ZZIIZZ",
+            "ZZZZII",
+            "ZZIZZI",
+            "IIZZZZ",
+            "IZZIZZ",
+            "IZZZZI",
+            "ZIZZIZ",
+            "IIIZIZ",
+            "IIZIZI",
+            "ZIIIZI",
+            "ZIZIII",
+            "IZIZII",
+            "IZIIIZ"
+        ],
+        [
+            "XIIIII",
+            "IXIIII",
+            "IIXIII",
+            "IIIXII",
+            "IIIIXI",
+            "IIIIIX"
+        ],
+        [
+            "ZZIIZZ",
+            "ZZZZII",
+            "ZZIZZI",
+            "IIZZZZ",
+            "IZZIZZ",
+            "IZZZZI",
+            "ZIZZIZ",
+            "IIIZIZ",
+            "IIZIZI",
+            "ZIIIZI",
+            "ZIZIII",
+            "IZIZII",
+            "IZIIIZ"
+        ],
+        [
+            "XIIIII",
+            "IXIIII",
+            "IIXIII",
+            "IIIXII",
+            "IIIIXI",
+            "IIIIIX"
+        ]
+    ],
+    [
+        {
+            "num_paulis": 57,
+            "times": {
+                "pytket_time": 3.0697972774505615
+            },
+            "gate_counts": {
+                "pytket_method": 96
+            },
+            "circuit_entangling_depth": {
+                "pytket_method": 87
+            },
+            "test_paulis_file": "benchmarks/results/test_pytket_labs_n6_layers3.json"
+        }
+    ]
+]

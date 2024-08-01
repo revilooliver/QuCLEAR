@@ -549,8 +549,8 @@
         {
             "num_paulis": 544,
             "times": {
-                "our_time": 135.8767213821411,
-                "combined_time": 148.37800312042236
+                "our_time": 146.2869963645935,
+                "combined_time": 130.42397046089172
             },
             "gate_counts": {
                 "our_method": 863,

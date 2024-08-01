@@ -1637,8 +1637,8 @@
         {
             "num_paulis": 1632,
             "times": {
-                "our_time": 444.8853085041046,
-                "combined_time": 439.20377469062805
+                "our_time": 399.55218148231506,
+                "combined_time": 402.03061270713806
             },
             "gate_counts": {
                 "our_method": 2545,

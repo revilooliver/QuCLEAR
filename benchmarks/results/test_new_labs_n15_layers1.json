@@ -272,8 +272,8 @@
         {
             "num_paulis": 267,
             "times": {
-                "our_time": 21.69683599472046,
-                "combined_time": 21.995200872421265
+                "our_time": 22.20645236968994,
+                "combined_time": 21.79704189300537
             },
             "gate_counts": {
                 "our_method": 385,

@@ -1,0 +1,49 @@
+[
+    [
+        [
+            "YZXI",
+            "XZXI",
+            "YZYI",
+            "XZYI"
+        ],
+        [
+            "IYZX",
+            "IXZX",
+            "IYZY",
+            "IXZY"
+        ],
+        [
+            "YXYX",
+            "XXYX",
+            "YYYX",
+            "XYYX",
+            "YXYY",
+            "XXYY",
+            "YYYY",
+            "XYYY",
+            "YXXX",
+            "XXXX",
+            "YYXX",
+            "XYXX",
+            "YXXY",
+            "XXXY",
+            "YYXY",
+            "XYXY"
+        ]
+    ],
+    [
+        {
+            "num_paulis": 24,
+            "times": {
+                "pytket_time": 2.219089984893799
+            },
+            "gate_counts": {
+                "pytket_method": 53
+            },
+            "circuit_entangling_depth": {
+                "pytket_method": 50
+            },
+            "test_paulis_file": "benchmarks/results/test_pytket_Paulis24.json"
+        }
+    ]
+]

@@ -977,8 +977,8 @@
         {
             "num_paulis": 972,
             "times": {
-                "our_time": 122.59886884689331,
-                "combined_time": 129.7100441455841
+                "our_time": 138.9831075668335,
+                "combined_time": 138.15930891036987
             },
             "gate_counts": {
                 "our_method": 1463,

@@ -977,16 +977,16 @@
         {
             "num_paulis": 972,
             "times": {
-                "our_time": 273.981618642807,
-                "combined_time": 262.08314752578735,
-                "qiskit_time": 2.0382044315338135,
-                "rustiq_time": 0.5630042552947998
+                "our_time": 303.89770770072937,
+                "combined_time": 301.59438133239746,
+                "qiskit_time": 2.081913709640503,
+                "rustiq_time": 0.6083738803863525
             },
             "gate_counts": {
                 "our_method": 1528,
                 "combined_method": 1528,
                 "qiskit_method": 4466,
-                "rustiq_method": 1660
+                "rustiq_method": 1661
             },
             "circuit_entangling_depth": {
                 "our_method": 993,

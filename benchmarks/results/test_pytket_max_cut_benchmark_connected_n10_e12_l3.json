@@ -1,0 +1,97 @@
+[
+    [
+        [
+            "IIIIIIZIZI",
+            "IIZIIIIIIZ",
+            "IZIIIIIIZI",
+            "IIIIZIIIZI",
+            "ZZIIIIIIII",
+            "IIIIIZIIIZ",
+            "IIIZIIIIZI",
+            "IIIIZIIIIZ",
+            "IIZIIZIIII",
+            "IZIIIIIIIZ",
+            "IIIZIIIZII",
+            "IIIIIZIZII"
+        ],
+        [
+            "XIIIIIIIII",
+            "IXIIIIIIII",
+            "IIXIIIIIII",
+            "IIIXIIIIII",
+            "IIIIXIIIII",
+            "IIIIIXIIII",
+            "IIIIIIXIII",
+            "IIIIIIIXII",
+            "IIIIIIIIXI",
+            "IIIIIIIIIX"
+        ],
+        [
+            "IIIIIIZIZI",
+            "IIZIIIIIIZ",
+            "IZIIIIIIZI",
+            "IIIIZIIIZI",
+            "ZZIIIIIIII",
+            "IIIIIZIIIZ",
+            "IIIZIIIIZI",
+            "IIIIZIIIIZ",
+            "IIZIIZIIII",
+            "IZIIIIIIIZ",
+            "IIIZIIIZII",
+            "IIIIIZIZII"
+        ],
+        [
+            "XIIIIIIIII",
+            "IXIIIIIIII",
+            "IIXIIIIIII",
+            "IIIXIIIIII",
+            "IIIIXIIIII",
+            "IIIIIXIIII",
+            "IIIIIIXIII",
+            "IIIIIIIXII",
+            "IIIIIIIIXI",
+            "IIIIIIIIIX"
+        ],
+        [
+            "IIIIIIZIZI",
+            "IIZIIIIIIZ",
+            "IZIIIIIIZI",
+            "IIIIZIIIZI",
+            "ZZIIIIIIII",
+            "IIIIIZIIIZ",
+            "IIIZIIIIZI",
+            "IIIIZIIIIZ",
+            "IIZIIZIIII",
+            "IZIIIIIIIZ",
+            "IIIZIIIZII",
+            "IIIIIZIZII"
+        ],
+        [
+            "XIIIIIIIII",
+            "IXIIIIIIII",
+            "IIXIIIIIII",
+            "IIIXIIIIII",
+            "IIIIXIIIII",
+            "IIIIIXIIII",
+            "IIIIIIXIII",
+            "IIIIIIIXII",
+            "IIIIIIIIXI",
+            "IIIIIIIIIX"
+        ]
+    ],
+    [
+        {
+            "num_paulis": 66,
+            "times": {
+                "pytket_time": 2.4773786067962646
+            },
+            "gate_counts": {
+                "pytket_method": 74
+            },
+            "circuit_entangling_depth": {
+                "pytket_method": 35
+            },
+            "test_paulis_file": "benchmarks/results/test_pytket_max_cut_benchmark_connected_n10_e12_l3.json"
+        }
+    ]
+]

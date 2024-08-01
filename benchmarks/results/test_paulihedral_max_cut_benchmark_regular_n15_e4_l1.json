@@ -1,0 +1,68 @@
+[
+    [
+        [
+            "IIIIIIIIIIIIIZZ",
+            "IIIIIIZIIIIIIIZ",
+            "IIIIIIIIIZIIIIZ",
+            "ZIIIIIIIIIIIIIZ",
+            "IIIIIIIIIIZIIZI",
+            "ZIIIIIIIIIIIIZI",
+            "IIIIIZIIIIIIIZI",
+            "IIIIIIIIIIIZZII",
+            "IIIIIIIIIZIIZII",
+            "IIIIZIIIIIIIZII",
+            "IIIIIIIZIIIIZII",
+            "IIIIIIIIIIZZIII",
+            "IZIIIIIIIIIZIII",
+            "IIIIZIIIIIIZIII",
+            "IIIIIIIIZIZIIII",
+            "IIIIIIZIIIZIIII",
+            "IIIIIIIIZZIIIII",
+            "IIIZIIIIIZIIIII",
+            "IIIIIZIIZIIIIII",
+            "IIIIIIIZZIIIIII",
+            "IIIIIIZZIIIIIII",
+            "IIZIIIIZIIIIIII",
+            "IIIIIZZIIIIIIII",
+            "IIZIIZIIIIIIIII",
+            "ZIIIZIIIIIIIIII",
+            "IIIZZIIIIIIIIII",
+            "IIZZIIIIIIIIIII",
+            "IZIZIIIIIIIIIII",
+            "IZZIIIIIIIIIIII",
+            "ZZIIIIIIIIIIIII"
+        ],
+        [
+            "XIIIIIIIIIIIIII",
+            "IXIIIIIIIIIIIII",
+            "IIXIIIIIIIIIIII",
+            "IIIXIIIIIIIIIII",
+            "IIIIXIIIIIIIIII",
+            "IIIIIXIIIIIIIII",
+            "IIIIIIXIIIIIIII",
+            "IIIIIIIXIIIIIII",
+            "IIIIIIIIXIIIIII",
+            "IIIIIIIIIXIIIII",
+            "IIIIIIIIIIXIIII",
+            "IIIIIIIIIIIXIII",
+            "IIIIIIIIIIIIXII",
+            "IIIIIIIIIIIIIXI",
+            "IIIIIIIIIIIIIIX"
+        ]
+    ],
+    [
+        {
+            "num_paulis": 30,
+            "times": {
+                "paulihedral_time": 0.029919147491455078
+            },
+            "gate_counts": {
+                "paulihedral_method": 60
+            },
+            "circuit_entangling_depth": {
+                "paulihedral_method": 26
+            },
+            "test_paulis_file": "benchmarks/results/test_paulihedral_max_cut_benchmark_regular_n15_e4_l1.json"
+        }
+    ]
+]

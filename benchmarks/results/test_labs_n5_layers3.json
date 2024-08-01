@@ -41,10 +41,10 @@
         {
             "num_paulis": 36,
             "times": {
-                "our_time": 0.33310937881469727,
-                "combined_time": 0.38305068016052246,
-                "qiskit_time": 0.06981229782104492,
-                "rustiq_time": 0.001994609832763672
+                "our_time": 0.3979358673095703,
+                "combined_time": 0.40990471839904785,
+                "qiskit_time": 0.059839725494384766,
+                "rustiq_time": 0.001995086669921875
             },
             "gate_counts": {
                 "our_method": 36,

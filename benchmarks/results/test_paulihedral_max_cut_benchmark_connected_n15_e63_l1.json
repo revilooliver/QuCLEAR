@@ -1,0 +1,101 @@
+[
+    [
+        [
+            "IIIIIIIIIZIIIZI",
+            "IIIIZIIIIIIIIIZ",
+            "IIZIIIIIIIIIZII",
+            "IIIIIIIZIIIIZII",
+            "IZZIIIIIIIIIIII",
+            "IIIIIIIIZIIIIIZ",
+            "IIIIIZIIIIIIZII",
+            "IIIIIIZIIIIIIIZ",
+            "IIIZIIIIZIIIIII",
+            "IZIIIIIIIIIIIZI",
+            "IIIIIZIIIIIZIII",
+            "IIIIIIIIZIIZIII",
+            "ZIIIIIIZIIIIIII",
+            "IIIIIZIIIIIIIZI",
+            "IIIZZIIIIIIIIII",
+            "IIZIZIIIIIIIIII",
+            "IIIIIIZIIIIIIZI",
+            "IIIZZIIIIIIIIII",
+            "IIIIIIZIIIIIZII",
+            "IIIIIIIZIIZIIII",
+            "ZIIIZIIIIIIIIII",
+            "IIIIIIIZIIIIIIZ",
+            "IZIIIIIIIZIIIII",
+            "IIIIIIIIZZIIIII",
+            "IIIIIZIIIIZIIII",
+            "IIZIIIZIIIIIIII",
+            "IIIIIIIIIIIZIZI",
+            "IIIIIIIZIIZIIII",
+            "IIZIIIZIIIIIIII",
+            "IZIIIIIIZIIIIII",
+            "IIIIIIZIIIIZIII",
+            "ZIIIIIIIIZIIIII",
+            "IIIIZZIIIIIIIII",
+            "IIIIIIZIIIIIZII",
+            "IIIZIIIIIIIIIIZ",
+            "IIIIZIIIIZIIIII",
+            "ZIIIIIZIIIIIIII",
+            "IIIZIIIIIIIIIZI",
+            "IIIIIIIIIIZIZII",
+            "IIIIIIIZIIIZIII",
+            "IIIIIIIIIIIIZIZ",
+            "IIIIIIIIIIIIZIZ",
+            "IIIIIIIZIIIIZII",
+            "IIIIIZIIIIIIIZI",
+            "IZIIIIIZIIIIIII",
+            "IIZIIIIIIIIZIII",
+            "IIZIIIIIIIIIIIZ",
+            "IIZIIIIIIIIIZII",
+            "IIIIIIIIIIIZIIZ",
+            "IIIZIIIIZIIIIII",
+            "IZIIIIIZIIIIIII",
+            "IIIIIZIIZIIIIII",
+            "IZIIIIIIIIZIIII",
+            "IIIIIIIIIIZIIIZ",
+            "IIIIIIIIIIIZIZI",
+            "ZIZIIIIIIIIIIII",
+            "IIIZIIZIIIIIIII",
+            "IIIIIIIIIZIIIIZ",
+            "ZIIIIZIIIIIIIII",
+            "ZIIIIZIIIIIIIII",
+            "IIIIIZIIIIIIIIZ",
+            "IZIIIIZIIIIIIII",
+            "IIIIIIIIIZZIIII"
+        ],
+        [
+            "XIIIIIIIIIIIIII",
+            "IXIIIIIIIIIIIII",
+            "IIXIIIIIIIIIIII",
+            "IIIXIIIIIIIIIII",
+            "IIIIXIIIIIIIIII",
+            "IIIIIXIIIIIIIII",
+            "IIIIIIXIIIIIIII",
+            "IIIIIIIXIIIIIII",
+            "IIIIIIIIXIIIIII",
+            "IIIIIIIIIXIIIII",
+            "IIIIIIIIIIXIIII",
+            "IIIIIIIIIIIXIII",
+            "IIIIIIIIIIIIXII",
+            "IIIIIIIIIIIIIXI",
+            "IIIIIIIIIIIIIIX"
+        ]
+    ],
+    [
+        {
+            "num_paulis": 63,
+            "times": {
+                "paulihedral_time": 0.09038639068603516
+            },
+            "gate_counts": {
+                "paulihedral_method": 102
+            },
+            "circuit_entangling_depth": {
+                "paulihedral_method": 42
+            },
+            "test_paulis_file": "benchmarks/results/test_paulihedral_max_cut_benchmark_connected_n15_e63_l1.json"
+        }
+    ]
+]

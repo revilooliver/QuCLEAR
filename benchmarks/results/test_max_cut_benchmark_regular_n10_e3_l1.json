@@ -1,0 +1,53 @@
+[
+    [
+        "IIIIIIIIZZ",
+        "ZIIIIIIIIZ",
+        "IZIIIIIIIZ",
+        "IIIZIIIIZI",
+        "IZIIIIIIZI",
+        "IIIIIIZZII",
+        "IIZIIIIZII",
+        "IIIIZIIZII",
+        "IIIZIIZIII",
+        "IIZIIIZIII",
+        "IIIIZZIIII",
+        "IIIZIZIIII",
+        "ZIIIIZIIII",
+        "IIZIZIIIII",
+        "ZZIIIIIIII",
+        "XIIIIIIIII",
+        "IXIIIIIIII",
+        "IIXIIIIIII",
+        "IIIXIIIIII",
+        "IIIIXIIIII",
+        "IIIIIXIIII",
+        "IIIIIIXIII",
+        "IIIIIIIXII",
+        "IIIIIIIIXI",
+        "IIIIIIIIIX"
+    ],
+    [
+        {
+            "num_paulis": 25,
+            "times": {
+                "our_time": 0.4918181896209717,
+                "combined_time": 0.5006616115570068,
+                "qiskit_time": 0.02991962432861328,
+                "rustiq_time": 0.008976936340332031
+            },
+            "gate_counts": {
+                "our_method": 36,
+                "combined_method": 36,
+                "qiskit_method": 28,
+                "rustiq_method": 39
+            },
+            "circuit_entangling_depth": {
+                "our_method": 21,
+                "combined_method": 21,
+                "qiskit_method": 14,
+                "rustiq_method": 24
+            },
+            "test_paulis_file": "benchmarks/results/test_max_cut_benchmark_regular_n10_e3_l1.json"
+        }
+    ]
+]

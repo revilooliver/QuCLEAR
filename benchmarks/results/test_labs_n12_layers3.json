@@ -416,10 +416,10 @@
         {
             "num_paulis": 411,
             "times": {
-                "our_time": 39.36613202095032,
-                "combined_time": 39.05883479118347,
-                "qiskit_time": 1.3464038372039795,
-                "rustiq_time": 0.10671377182006836
+                "our_time": 48.717899799346924,
+                "combined_time": 47.40499973297119,
+                "qiskit_time": 0.9100964069366455,
+                "rustiq_time": 0.10076308250427246
             },
             "gate_counts": {
                 "our_method": 586,

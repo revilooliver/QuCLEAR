@@ -1910,8 +1910,8 @@
         {
             "num_paulis": 1905,
             "times": {
-                "our_time": 804.8506636619568,
-                "combined_time": 725.9248790740967
+                "our_time": 755.6465191841125,
+                "combined_time": 850.0390231609344
             },
             "gate_counts": {
                 "our_method": 3262,

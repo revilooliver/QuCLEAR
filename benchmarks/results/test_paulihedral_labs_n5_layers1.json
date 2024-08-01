@@ -1,23 +1,27 @@
 [
     [
-        "ZZIZZ",
-        "ZZZZI",
-        "IZZZZ",
-        "ZIZII",
-        "IZIZI",
-        "ZIIIZ",
-        "IIZIZ",
-        "XIIII",
-        "IXIII",
-        "IIXII",
-        "IIIXI",
-        "IIIIX"
+        [
+            "ZZIZZ",
+            "ZZZZI",
+            "IZZZZ",
+            "ZIZII",
+            "IZIZI",
+            "ZIIIZ",
+            "IIZIZ"
+        ],
+        [
+            "XIIII",
+            "IXIII",
+            "IIXII",
+            "IIIXI",
+            "IIIIX"
+        ]
     ],
     [
         {
-            "num_paulis": 12,
+            "num_paulis": 7,
             "times": {
-                "paulihedral_time": 0.024933815002441406
+                "paulihedral_time": 0.013492584228515625
             },
             "gate_counts": {
                 "paulihedral_method": 18

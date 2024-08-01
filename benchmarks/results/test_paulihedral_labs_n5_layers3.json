@@ -1,53 +1,65 @@
 [
     [
-        "ZZIZZ",
-        "ZZZZI",
-        "IZZZZ",
-        "ZIZII",
-        "IZIZI",
-        "ZIIIZ",
-        "IIZIZ",
-        "XIIII",
-        "IXIII",
-        "IIXII",
-        "IIIXI",
-        "IIIIX",
-        "ZZIZZ",
-        "ZZZZI",
-        "IZZZZ",
-        "ZIZII",
-        "IZIZI",
-        "ZIIIZ",
-        "IIZIZ",
-        "XIIII",
-        "IXIII",
-        "IIXII",
-        "IIIXI",
-        "IIIIX",
-        "ZZIZZ",
-        "ZZZZI",
-        "IZZZZ",
-        "ZIZII",
-        "IZIZI",
-        "ZIIIZ",
-        "IIZIZ",
-        "XIIII",
-        "IXIII",
-        "IIXII",
-        "IIIXI",
-        "IIIIX"
+        [
+            "ZZIZZ",
+            "ZZZZI",
+            "IZZZZ",
+            "ZIZII",
+            "IZIZI",
+            "ZIIIZ",
+            "IIZIZ"
+        ],
+        [
+            "XIIII",
+            "IXIII",
+            "IIXII",
+            "IIIXI",
+            "IIIIX"
+        ],
+        [
+            "ZZIZZ",
+            "ZZZZI",
+            "IZZZZ",
+            "ZIZII",
+            "IZIZI",
+            "ZIIIZ",
+            "IIZIZ"
+        ],
+        [
+            "XIIII",
+            "IXIII",
+            "IIXII",
+            "IIIXI",
+            "IIIIX"
+        ],
+        [
+            "ZZIZZ",
+            "ZZZZI",
+            "IZZZZ",
+            "ZIZII",
+            "IZIZI",
+            "ZIIIZ",
+            "IIZIZ"
+        ],
+        [
+            "XIIII",
+            "IXIII",
+            "IIXII",
+            "IIIXI",
+            "IIIIX"
+        ]
     ],
     [
         {
-            "num_paulis": 36,
+            "num_paulis": 7,
             "times": {
-                "paulihedral_time": 0.04288005828857422
+                "paulihedral_time": 0.0189511775970459
             },
             "gate_counts": {
-                "paulihedral_method": 24
+                "paulihedral_method": 162
             },
             "circuit_entangling_depth": {
-                "paulihedral_method": 20
+                "paulihedral_method": 48
             },
             "test_paulis_file": "benchmarks/results/test_paulihedral_labs_n5_layers3.json"
         }

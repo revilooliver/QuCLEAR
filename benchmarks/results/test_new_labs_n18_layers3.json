@@ -1391,8 +1391,8 @@
         {
             "num_paulis": 1386,
             "times": {
-                "our_time": 350.6332471370697,
-                "combined_time": 348.54603004455566
+                "our_time": 341.51874017715454,
+                "combined_time": 342.01664447784424
             },
             "gate_counts": {
                 "our_method": 2133,

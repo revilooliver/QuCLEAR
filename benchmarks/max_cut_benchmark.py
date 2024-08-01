@@ -3,6 +3,9 @@ import rustworkx as rx
 from qiskit.quantum_info import SparsePauliOp
 from rustworkx.visualization import mpl_draw as draw_graph
 import json
+import networkx
+from rustworkx import networkx_converter, is_connected
+import random as rnd
 
 def paulis_mixer(nqubits):
     '''Returns the list of Pauli strings for the mixer Hamiltonian.'''
@@ -19,6 +22,7 @@ def max_cut_pauli_layers(graph: rx.PyGraph, totter_number):
     Args: graph: the graph for max cut.
         totter_number: the number of qaoa layers.'''
     max_cut_paulis = build_max_cut_paulis(graph)
+    print(max_cut_paulis)
     cost_hamiltonian = SparsePauliOp.from_list(max_cut_paulis)
     cost_hamiltonian_pauli=cost_hamiltonian.paulis.to_labels() 
     hamiltonian_mixer=paulis_mixer(cost_hamiltonian.num_qubits)
@@ -28,7 +32,30 @@ def max_cut_pauli_layers(graph: rx.PyGraph, totter_number):
 def build_graph(n, number_edges) -> rx.PyGraph:
     '''Creates a random graph of n nodes with number_edges edges. Undirected, not a multigraph,
     and no self loops. Outputs an Erdős-Rényi graph.'''
-    graph=rx.undirected_gnm_random_graph(n, number_edges)
+    graph=rx.undirected_gnm_random_graph(n, number_edges, seed=0) #fixed seed with given edge is reporducable
+    for u, v in graph.edge_list():
+        graph.update_edge(u,v, 1.0)
+    draw_graph(graph,node_size=600, with_labels=True)
+    return graph
+
+def build_random_connected_graph(n) -> rx.PyGraph:
+    '''Creates a random graph of n nodes with number_edges edges. Connected, undirected, not a multigraph,
+    and no self loops.'''
+    while True:
+        number_edges=rnd.randint(n-1, int(n*(n-1)/2))
+        graph=rx.undirected_gnm_random_graph(n, number_edges, seed=0) #fixed seed with given edge is reporducable
+        if is_connected(graph):
+            break
+    for u, v in graph.edge_list():
+        graph.update_edge(u,v, 1.0)
+    draw_graph(graph,node_size=600, with_labels=True)
+    return graph, number_edges
+
+def build_regular_graph(nodes, edges) -> rx.PyGraph:
+    '''Creates a random regular graph of n nodes with number_edges edges. Undirected, not a multigraph,
+    and no self loops.'''
+    graph=networkx.random_regular_graph(edges, nodes)
+    graph=networkx_converter(graph)
     for u, v in graph.edge_list():
         graph.update_edge(u,v, 1.0)
     draw_graph(graph,node_size=600, with_labels=True)

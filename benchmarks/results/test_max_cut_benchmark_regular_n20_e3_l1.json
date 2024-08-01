@@ -1,0 +1,78 @@
+[
+    [
+        "IIIIIIIIIIIIIIIIIIZZ",
+        "IIIZIIIIIIIIIIIIIIIZ",
+        "ZIIIIIIIIIIIIIIIIIIZ",
+        "IZIIIIIIIIIIIIIIIIZI",
+        "IIIIIIZIIIIIIIIIIIZI",
+        "IIIIIIIIIIIIIIIIZZII",
+        "IIIIIIIIIIIIIIIZIZII",
+        "IIIIIIIIIIZIIIIIIZII",
+        "IIIIIIIZIIIIIIIIZIII",
+        "IIIIIIIIIIZIIIIIZIII",
+        "IIIIIIIIIIIIIIZZIIII",
+        "IIIIIIIZIIIIIIIZIIII",
+        "IIIIIIIIIIIIZIZIIIII",
+        "IIZIIIIIIIIIIIZIIIII",
+        "IIIIIIIIIIIIZZIIIIII",
+        "IIIIIIIIZIIIIZIIIIII",
+        "IIIIZIIIIIIIIZIIIIII",
+        "IIIIZIIIIIIIZIIIIIII",
+        "IIIIIIIIIIZZIIIIIIII",
+        "IIIIIIIIIZIZIIIIIIII",
+        "IIZIIIIIIIIZIIIIIIII",
+        "IIIZIIIIIZIIIIIIIIII",
+        "IIIIIIIIZZIIIIIIIIII",
+        "IIZIIIIIZIIIIIIIIIII",
+        "ZIIIIIIZIIIIIIIIIIII",
+        "IIIIIZZIIIIIIIIIIIII",
+        "IZIIIIZIIIIIIIIIIIII",
+        "IZIIIZIIIIIIIIIIIIII",
+        "ZIIIIZIIIIIIIIIIIIII",
+        "IIIZZIIIIIIIIIIIIIII",
+        "XIIIIIIIIIIIIIIIIIII",
+        "IXIIIIIIIIIIIIIIIIII",
+        "IIXIIIIIIIIIIIIIIIII",
+        "IIIXIIIIIIIIIIIIIIII",
+        "IIIIXIIIIIIIIIIIIIII",
+        "IIIIIXIIIIIIIIIIIIII",
+        "IIIIIIXIIIIIIIIIIIII",
+        "IIIIIIIXIIIIIIIIIIII",
+        "IIIIIIIIXIIIIIIIIIII",
+        "IIIIIIIIIXIIIIIIIIII",
+        "IIIIIIIIIIXIIIIIIIII",
+        "IIIIIIIIIIIXIIIIIIII",
+        "IIIIIIIIIIIIXIIIIIII",
+        "IIIIIIIIIIIIIXIIIIII",
+        "IIIIIIIIIIIIIIXIIIII",
+        "IIIIIIIIIIIIIIIXIIII",
+        "IIIIIIIIIIIIIIIIXIII",
+        "IIIIIIIIIIIIIIIIIXII",
+        "IIIIIIIIIIIIIIIIIIXI",
+        "IIIIIIIIIIIIIIIIIIIX"
+    ],
+    [
+        {
+            "num_paulis": 50,
+            "times": {
+                "our_time": 2.5584065914154053,
+                "combined_time": 2.4073519706726074,
+                "qiskit_time": 0.06732892990112305,
+                "rustiq_time": 0.05984044075012207
+            },
+            "gate_counts": {
+                "our_method": 73,
+                "combined_method": 73,
+                "qiskit_method": 58,
+                "rustiq_method": 90
+            },
+            "circuit_entangling_depth": {
+                "our_method": 30,
+                "combined_method": 30,
+                "qiskit_method": 18,
+                "rustiq_method": 44
+            },
+            "test_paulis_file": "benchmarks/results/test_max_cut_benchmark_regular_n20_e3_l1.json"
+        }
+    ]
+]

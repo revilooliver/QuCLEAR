@@ -467,10 +467,10 @@
         {
             "num_paulis": 462,
             "times": {
-                "our_time": 189.78946328163147,
-                "combined_time": 192.01198506355286,
-                "qiskit_time": 0.9549000263214111,
-                "rustiq_time": 0.2673168182373047
+                "our_time": 202.66888451576233,
+                "combined_time": 208.49328422546387,
+                "qiskit_time": 0.9242959022521973,
+                "rustiq_time": 0.29920101165771484
             },
             "gate_counts": {
                 "our_method": 738,
@@ -482,7 +482,7 @@
                 "our_method": 457,
                 "combined_method": 457,
                 "qiskit_method": 1291,
-                "rustiq_method": 483
+                "rustiq_method": 480
             },
             "test_paulis_file": "benchmarks/results/test_labs_n18_layers1.json"
         }

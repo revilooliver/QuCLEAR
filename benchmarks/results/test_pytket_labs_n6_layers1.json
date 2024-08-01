@@ -1,0 +1,42 @@
+[
+    [
+        [
+            "ZZIIZZ",
+            "ZZZZII",
+            "ZZIZZI",
+            "IIZZZZ",
+            "IZZIZZ",
+            "IZZZZI",
+            "ZIZZIZ",
+            "IIIZIZ",
+            "IIZIZI",
+            "ZIIIZI",
+            "ZIZIII",
+            "IZIZII",
+            "IZIIIZ"
+        ],
+        [
+            "XIIIII",
+            "IXIIII",
+            "IIXIII",
+            "IIIXII",
+            "IIIIXI",
+            "IIIIIX"
+        ]
+    ],
+    [
+        {
+            "num_paulis": 19,
+            "times": {
+                "pytket_time": 0.5505306720733643
+            },
+            "gate_counts": {
+                "pytket_method": 24
+            },
+            "circuit_entangling_depth": {
+                "pytket_method": 19
+            },
+            "test_paulis_file": "benchmarks/results/test_pytket_labs_n6_layers1.json"
+        }
+    ]
+]

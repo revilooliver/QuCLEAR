@@ -34,8 +34,8 @@
         {
             "num_paulis": 29,
             "times": {
-                "our_time": 0.2152721881866455,
-                "combined_time": 0.2545623779296875
+                "our_time": 0.3785841464996338,
+                "combined_time": 0.38547730445861816
             },
             "gate_counts": {
                 "our_method": 33,

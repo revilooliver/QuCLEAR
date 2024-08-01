@@ -1637,22 +1637,22 @@
         {
             "num_paulis": 1632,
             "times": {
-                "our_time": 921.2959275245667,
-                "combined_time": 958.9995131492615,
-                "qiskit_time": 5.380866050720215,
-                "rustiq_time": 2.1318576335906982
+                "our_time": 896.832325220108,
+                "combined_time": 897.4863188266754,
+                "qiskit_time": 5.226768970489502,
+                "rustiq_time": 2.221855401992798
             },
             "gate_counts": {
                 "our_method": 2918,
                 "combined_method": 2918,
                 "qiskit_method": 7424,
-                "rustiq_method": 3188
+                "rustiq_method": 3191
             },
             "circuit_entangling_depth": {
                 "our_method": 1857,
                 "combined_method": 1857,
                 "qiskit_method": 4857,
-                "rustiq_method": 2043
+                "rustiq_method": 2047
             },
             "test_paulis_file": "benchmarks/results/test_labs_n19_layers3.json"
         }

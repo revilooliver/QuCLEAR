@@ -1,0 +1,73 @@
+[
+    [
+        "IIIIIIIIIIIIIZZ",
+        "IIIIIIZIIIIIIIZ",
+        "IIIIIIIIIZIIIIZ",
+        "ZIIIIIIIIIIIIIZ",
+        "IIIIIIIIIIZIIZI",
+        "ZIIIIIIIIIIIIZI",
+        "IIIIIZIIIIIIIZI",
+        "IIIIIIIIIIIZZII",
+        "IIIIIIIIIZIIZII",
+        "IIIIZIIIIIIIZII",
+        "IIIIIIIZIIIIZII",
+        "IIIIIIIIIIZZIII",
+        "IZIIIIIIIIIZIII",
+        "IIIIZIIIIIIZIII",
+        "IIIIIIIIZIZIIII",
+        "IIIIIIZIIIZIIII",
+        "IIIIIIIIZZIIIII",
+        "IIIZIIIIIZIIIII",
+        "IIIIIZIIZIIIIII",
+        "IIIIIIIZZIIIIII",
+        "IIIIIIZZIIIIIII",
+        "IIZIIIIZIIIIIII",
+        "IIIIIZZIIIIIIII",
+        "IIZIIZIIIIIIIII",
+        "ZIIIZIIIIIIIIII",
+        "IIIZZIIIIIIIIII",
+        "IIZZIIIIIIIIIII",
+        "IZIZIIIIIIIIIII",
+        "IZZIIIIIIIIIIII",
+        "ZZIIIIIIIIIIIII",
+        "XIIIIIIIIIIIIII",
+        "IXIIIIIIIIIIIII",
+        "IIXIIIIIIIIIIII",
+        "IIIXIIIIIIIIIII",
+        "IIIIXIIIIIIIIII",
+        "IIIIIXIIIIIIIII",
+        "IIIIIIXIIIIIIII",
+        "IIIIIIIXIIIIIII",
+        "IIIIIIIIXIIIIII",
+        "IIIIIIIIIXIIIII",
+        "IIIIIIIIIIXIIII",
+        "IIIIIIIIIIIXIII",
+        "IIIIIIIIIIIIXII",
+        "IIIIIIIIIIIIIXI",
+        "IIIIIIIIIIIIIIX"
+    ],
+    [
+        {
+            "num_paulis": 45,
+            "times": {
+                "our_time": 1.7718396186828613,
+                "combined_time": 1.6265678405761719,
+                "qiskit_time": 0.06781911849975586,
+                "rustiq_time": 0.03989410400390625
+            },
+            "gate_counts": {
+                "our_method": 69,
+                "combined_method": 69,
+                "qiskit_method": 58,
+                "rustiq_method": 94
+            },
+            "circuit_entangling_depth": {
+                "our_method": 37,
+                "combined_method": 37,
+                "qiskit_method": 28,
+                "rustiq_method": 50
+            },
+            "test_paulis_file": "benchmarks/results/test_max_cut_benchmark_regular_n15_e4_l1.json"
+        }
+    ]
+]

@@ -806,8 +806,8 @@
         {
             "num_paulis": 801,
             "times": {
-                "our_time": 71.25963711738586,
-                "combined_time": 70.87026309967041
+                "our_time": 77.42000770568848,
+                "combined_time": 80.64584803581238
             },
             "gate_counts": {
                 "our_method": 1121,

@@ -467,8 +467,8 @@
         {
             "num_paulis": 462,
             "times": {
-                "our_time": 91.22567892074585,
-                "combined_time": 99.07706499099731
+                "our_time": 94.63724970817566,
+                "combined_time": 95.04342699050903
             },
             "gate_counts": {
                 "our_method": 723,
