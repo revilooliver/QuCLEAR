@@ -1,0 +1,40 @@
+[
+    [
+        "ZZIZZ",
+        "ZZZZI",
+        "IZZZZ",
+        "ZIZII",
+        "IZIZI",
+        "ZIIIZ",
+        "IIZIZ",
+        "XIIII",
+        "IXIII",
+        "IIXII",
+        "IIIXI",
+        "IIIIX"
+    ],
+    [
+        {
+            "num_paulis": 12,
+            "times": {
+                "our_time": 0.2293872833251953,
+                "combined_time": 0.1326441764831543,
+                "qiskit_time": 0.06482768058776855,
+                "rustiq_time": 0.07579851150512695
+            },
+            "gate_counts": {
+                "our_method": 71,
+                "combined_method": 23,
+                "qiskit_method": 27,
+                "rustiq_method": 54
+            },
+            "circuit_entangling_depth": {
+                "our_method": 45,
+                "combined_method": 22,
+                "qiskit_method": 24,
+                "rustiq_method": 28
+            },
+            "test_paulis_file": "benchmarks/results_hardware_topology_google_sycamore/test_labs_n5_layers1.json"
+        }
+    ]
+]

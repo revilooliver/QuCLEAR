@@ -1,0 +1,40 @@
+[
+    [
+        "ZZIZZ",
+        "ZZZZI",
+        "IZZZZ",
+        "ZIZII",
+        "IZIZI",
+        "ZIIIZ",
+        "IIZIZ",
+        "XIIII",
+        "IXIII",
+        "IIXII",
+        "IIIXI",
+        "IIIIX"
+    ],
+    [
+        {
+            "num_paulis": 12,
+            "times": {
+                "our_time": 0.7041168212890625,
+                "combined_time": 0.37400150299072266,
+                "qiskit_time": 0.29421377182006836,
+                "rustiq_time": 0.2513282299041748
+            },
+            "gate_counts": {
+                "our_method": 47,
+                "combined_method": 27,
+                "qiskit_method": 35,
+                "rustiq_method": 42
+            },
+            "circuit_entangling_depth": {
+                "our_method": 36,
+                "combined_method": 25,
+                "qiskit_method": 32,
+                "rustiq_method": 29
+            },
+            "test_paulis_file": "benchmarks/results_hardware_topology_ibm_sherbrooke/test_labs_n5_layers1.json"
+        }
+    ]
+]

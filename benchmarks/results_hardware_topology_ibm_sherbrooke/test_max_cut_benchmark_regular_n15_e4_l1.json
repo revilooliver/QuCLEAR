@@ -1,0 +1,73 @@
+[
+    [
+        "IIIIIIIIIIIIIZZ",
+        "IIIIIIZIIIIIIIZ",
+        "IIIIIIIIIZIIIIZ",
+        "ZIIIIIIIIIIIIIZ",
+        "IIIIIIIIIIZIIZI",
+        "ZIIIIIIIIIIIIZI",
+        "IIIIIZIIIIIIIZI",
+        "IIIIIIIIIIIZZII",
+        "IIIIIIIIIZIIZII",
+        "IIIIZIIIIIIIZII",
+        "IIIIIIIZIIIIZII",
+        "IIIIIIIIIIZZIII",
+        "IZIIIIIIIIIZIII",
+        "IIIIZIIIIIIZIII",
+        "IIIIIIIIZIZIIII",
+        "IIIIIIZIIIZIIII",
+        "IIIIIIIIZZIIIII",
+        "IIIZIIIIIZIIIII",
+        "IIIIIZIIZIIIIII",
+        "IIIIIIIZZIIIIII",
+        "IIIIIIZZIIIIIII",
+        "IIZIIIIZIIIIIII",
+        "IIIIIZZIIIIIIII",
+        "IIZIIZIIIIIIIII",
+        "ZIIIZIIIIIIIIII",
+        "IIIZZIIIIIIIIII",
+        "IIZZIIIIIIIIIII",
+        "IZIZIIIIIIIIIII",
+        "IZZIIIIIIIIIIII",
+        "ZZIIIIIIIIIIIII",
+        "XIIIIIIIIIIIIII",
+        "IXIIIIIIIIIIIII",
+        "IIXIIIIIIIIIIII",
+        "IIIXIIIIIIIIIII",
+        "IIIIXIIIIIIIIII",
+        "IIIIIXIIIIIIIII",
+        "IIIIIIXIIIIIIII",
+        "IIIIIIIXIIIIIII",
+        "IIIIIIIIXIIIIII",
+        "IIIIIIIIIXIIIII",
+        "IIIIIIIIIIXIIII",
+        "IIIIIIIIIIIXIII",
+        "IIIIIIIIIIIIXII",
+        "IIIIIIIIIIIIIXI",
+        "IIIIIIIIIIIIIIX"
+    ],
+    [
+        {
+            "num_paulis": 45,
+            "times": {
+                "our_time": 2.5681371688842773,
+                "combined_time": 2.27392578125,
+                "qiskit_time": 0.634303092956543,
+                "rustiq_time": 1.2426791191101074
+            },
+            "gate_counts": {
+                "our_method": 645,
+                "combined_method": 216,
+                "qiskit_method": 142,
+                "rustiq_method": 1015
+            },
+            "circuit_entangling_depth": {
+                "our_method": 251,
+                "combined_method": 107,
+                "qiskit_method": 58,
+                "rustiq_method": 422
+            },
+            "test_paulis_file": "benchmarks/results_hardware_topology_ibm_sherbrooke/test_max_cut_benchmark_regular_n15_e4_l1.json"
+        }
+    ]
+]

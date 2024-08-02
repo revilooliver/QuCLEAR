@@ -1,0 +1,70 @@
+[
+    [
+        "IZZIIZZI",
+        "ZIIZZIIZ",
+        "IZZZZIII",
+        "ZIIIIIZI",
+        "IIIIIZIZ",
+        "ZZIZZIII",
+        "IIZIIIZI",
+        "ZZIIIZZI",
+        "IIIZIIIZ",
+        "IIZIZIII",
+        "ZZIIZZII",
+        "IIZZIIZZ",
+        "IZZIZZII",
+        "ZZIIIIZZ",
+        "IIZZZZII",
+        "IZZIIIZZ",
+        "ZIIIZIII",
+        "IIIZIZII",
+        "IIIZZZZI",
+        "IZIIIIIZ",
+        "ZIZIIIII",
+        "IIIZZIZZ",
+        "IZIIIZII",
+        "ZZZZIIII",
+        "IIIIZZZZ",
+        "IIZZIZZI",
+        "IZIZZIZI",
+        "ZIZIIZIZ",
+        "IIIIZIZI",
+        "IZIZIZIZ",
+        "IZIZIIII",
+        "ZIZIZIZI",
+        "ZIZZIZII",
+        "IIZIZZIZ",
+        "XIIIIIII",
+        "IXIIIIII",
+        "IIXIIIII",
+        "IIIXIIII",
+        "IIIIXIII",
+        "IIIIIXII",
+        "IIIIIIXI",
+        "IIIIIIIX"
+    ],
+    [
+        {
+            "num_paulis": 42,
+            "times": {
+                "our_time": 1.7702693939208984,
+                "combined_time": 1.6515867710113525,
+                "qiskit_time": 1.1140239238739014,
+                "rustiq_time": 0.8437440395355225
+            },
+            "gate_counts": {
+                "our_method": 297,
+                "combined_method": 162,
+                "qiskit_method": 313,
+                "rustiq_method": 363
+            },
+            "circuit_entangling_depth": {
+                "our_method": 167,
+                "combined_method": 124,
+                "qiskit_method": 252,
+                "rustiq_method": 202
+            },
+            "test_paulis_file": "benchmarks/results_hardware_topology_ibm_sherbrooke/test_labs_n8_layers1.json"
+        }
+    ]
+]

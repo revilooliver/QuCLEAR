@@ -1,0 +1,78 @@
+[
+    [
+        "IIIIIIIIIIIIIIIIIIZZ",
+        "IIIZIIIIIIIIIIIIIIIZ",
+        "ZIIIIIIIIIIIIIIIIIIZ",
+        "IZIIIIIIIIIIIIIIIIZI",
+        "IIIIIIZIIIIIIIIIIIZI",
+        "IIIIIIIIIIIIIIIIZZII",
+        "IIIIIIIIIIIIIIIZIZII",
+        "IIIIIIIIIIZIIIIIIZII",
+        "IIIIIIIZIIIIIIIIZIII",
+        "IIIIIIIIIIZIIIIIZIII",
+        "IIIIIIIIIIIIIIZZIIII",
+        "IIIIIIIZIIIIIIIZIIII",
+        "IIIIIIIIIIIIZIZIIIII",
+        "IIZIIIIIIIIIIIZIIIII",
+        "IIIIIIIIIIIIZZIIIIII",
+        "IIIIIIIIZIIIIZIIIIII",
+        "IIIIZIIIIIIIIZIIIIII",
+        "IIIIZIIIIIIIZIIIIIII",
+        "IIIIIIIIIIZZIIIIIIII",
+        "IIIIIIIIIZIZIIIIIIII",
+        "IIZIIIIIIIIZIIIIIIII",
+        "IIIZIIIIIZIIIIIIIIII",
+        "IIIIIIIIZZIIIIIIIIII",
+        "IIZIIIIIZIIIIIIIIIII",
+        "ZIIIIIIZIIIIIIIIIIII",
+        "IIIIIZZIIIIIIIIIIIII",
+        "IZIIIIZIIIIIIIIIIIII",
+        "IZIIIZIIIIIIIIIIIIII",
+        "ZIIIIZIIIIIIIIIIIIII",
+        "IIIZZIIIIIIIIIIIIIII",
+        "XIIIIIIIIIIIIIIIIIII",
+        "IXIIIIIIIIIIIIIIIIII",
+        "IIXIIIIIIIIIIIIIIIII",
+        "IIIXIIIIIIIIIIIIIIII",
+        "IIIIXIIIIIIIIIIIIIII",
+        "IIIIIXIIIIIIIIIIIIII",
+        "IIIIIIXIIIIIIIIIIIII",
+        "IIIIIIIXIIIIIIIIIIII",
+        "IIIIIIIIXIIIIIIIIIII",
+        "IIIIIIIIIXIIIIIIIIII",
+        "IIIIIIIIIIXIIIIIIIII",
+        "IIIIIIIIIIIXIIIIIIII",
+        "IIIIIIIIIIIIXIIIIIII",
+        "IIIIIIIIIIIIIXIIIIII",
+        "IIIIIIIIIIIIIIXIIIII",
+        "IIIIIIIIIIIIIIIXIIII",
+        "IIIIIIIIIIIIIIIIXIII",
+        "IIIIIIIIIIIIIIIIIXII",
+        "IIIIIIIIIIIIIIIIIIXI",
+        "IIIIIIIIIIIIIIIIIIIX"
+    ],
+    [
+        {
+            "num_paulis": 50,
+            "times": {
+                "our_time": 3.2872157096862793,
+                "combined_time": 3.253308057785034,
+                "qiskit_time": 0.44082045555114746,
+                "rustiq_time": 1.1539161205291748
+            },
+            "gate_counts": {
+                "our_method": 748,
+                "combined_method": 247,
+                "qiskit_method": 125,
+                "rustiq_method": 777
+            },
+            "circuit_entangling_depth": {
+                "our_method": 241,
+                "combined_method": 92,
+                "qiskit_method": 56,
+                "rustiq_method": 282
+            },
+            "test_paulis_file": "benchmarks/results_hardware_topology_ibm_sherbrooke/test_max_cut_benchmark_regular_n20_e3_l1.json"
+        }
+    ]
+]

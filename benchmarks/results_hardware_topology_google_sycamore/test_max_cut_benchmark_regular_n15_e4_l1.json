@@ -1,0 +1,73 @@
+[
+    [
+        "IIIIIIIIIIIIIZZ",
+        "IIIIIIZIIIIIIIZ",
+        "IIIIIIIIIZIIIIZ",
+        "ZIIIIIIIIIIIIIZ",
+        "IIIIIIIIIIZIIZI",
+        "ZIIIIIIIIIIIIZI",
+        "IIIIIZIIIIIIIZI",
+        "IIIIIIIIIIIZZII",
+        "IIIIIIIIIZIIZII",
+        "IIIIZIIIIIIIZII",
+        "IIIIIIIZIIIIZII",
+        "IIIIIIIIIIZZIII",
+        "IZIIIIIIIIIZIII",
+        "IIIIZIIIIIIZIII",
+        "IIIIIIIIZIZIIII",
+        "IIIIIIZIIIZIIII",
+        "IIIIIIIIZZIIIII",
+        "IIIZIIIIIZIIIII",
+        "IIIIIZIIZIIIIII",
+        "IIIIIIIZZIIIIII",
+        "IIIIIIZZIIIIIII",
+        "IIZIIIIZIIIIIII",
+        "IIIIIZZIIIIIIII",
+        "IIZIIZIIIIIIIII",
+        "ZIIIZIIIIIIIIII",
+        "IIIZZIIIIIIIIII",
+        "IIZZIIIIIIIIIII",
+        "IZIZIIIIIIIIIII",
+        "IZZIIIIIIIIIIII",
+        "ZZIIIIIIIIIIIII",
+        "XIIIIIIIIIIIIII",
+        "IXIIIIIIIIIIIII",
+        "IIXIIIIIIIIIIII",
+        "IIIXIIIIIIIIIII",
+        "IIIIXIIIIIIIIII",
+        "IIIIIXIIIIIIIII",
+        "IIIIIIXIIIIIIII",
+        "IIIIIIIXIIIIIII",
+        "IIIIIIIIXIIIIII",
+        "IIIIIIIIIXIIIII",
+        "IIIIIIIIIIXIIII",
+        "IIIIIIIIIIIXIII",
+        "IIIIIIIIIIIIXII",
+        "IIIIIIIIIIIIIXI",
+        "IIIIIIIIIIIIIIX"
+    ],
+    [
+        {
+            "num_paulis": 45,
+            "times": {
+                "our_time": 1.8909473419189453,
+                "combined_time": 1.8221299648284912,
+                "qiskit_time": 0.12865996360778809,
+                "rustiq_time": 0.35803914070129395
+            },
+            "gate_counts": {
+                "our_method": 510,
+                "combined_method": 157,
+                "qiskit_method": 92,
+                "rustiq_method": 686
+            },
+            "circuit_entangling_depth": {
+                "our_method": 184,
+                "combined_method": 105,
+                "qiskit_method": 54,
+                "rustiq_method": 258
+            },
+            "test_paulis_file": "benchmarks/results_hardware_topology_google_sycamore/test_max_cut_benchmark_regular_n15_e4_l1.json"
+        }
+    ]
+]

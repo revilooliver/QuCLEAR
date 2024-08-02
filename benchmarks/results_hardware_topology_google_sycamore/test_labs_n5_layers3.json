@@ -1,0 +1,64 @@
+[
+    [
+        "ZZIZZ",
+        "ZZZZI",
+        "IZZZZ",
+        "ZIZII",
+        "IZIZI",
+        "ZIIIZ",
+        "IIZIZ",
+        "XIIII",
+        "IXIII",
+        "IIXII",
+        "IIIXI",
+        "IIIIX",
+        "ZZIZZ",
+        "ZZZZI",
+        "IZZZZ",
+        "ZIZII",
+        "IZIZI",
+        "ZIIIZ",
+        "IIZIZ",
+        "XIIII",
+        "IXIII",
+        "IIXII",
+        "IIIXI",
+        "IIIIX",
+        "ZZIZZ",
+        "ZZZZI",
+        "IZZZZ",
+        "ZIZII",
+        "IZIZI",
+        "ZIIIZ",
+        "IIZIZ",
+        "XIIII",
+        "IXIII",
+        "IIXII",
+        "IIIXI",
+        "IIIIX"
+    ],
+    [
+        {
+            "num_paulis": 36,
+            "times": {
+                "our_time": 0.6781883239746094,
+                "combined_time": 0.43982386589050293,
+                "qiskit_time": 0.09973454475402832,
+                "rustiq_time": 0.16755151748657227
+            },
+            "gate_counts": {
+                "our_method": 144,
+                "combined_method": 58,
+                "qiskit_method": 101,
+                "rustiq_method": 109
+            },
+            "circuit_entangling_depth": {
+                "our_method": 100,
+                "combined_method": 51,
+                "qiskit_method": 94,
+                "rustiq_method": 71
+            },
+            "test_paulis_file": "benchmarks/results_hardware_topology_google_sycamore/test_labs_n5_layers3.json"
+        }
+    ]
+]
