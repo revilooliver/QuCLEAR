@@ -1,0 +1,47 @@
+[
+    [
+        "IIIIIIIIZZ",
+        "ZIIIIIIIIZ",
+        "IZIIIIIIIZ",
+        "IIIZIIIIZI",
+        "IZIIIIIIZI",
+        "IIIIIIZZII",
+        "IIZIIIIZII",
+        "IIIIZIIZII",
+        "IIIZIIZIII",
+        "IIZIIIZIII",
+        "IIIIZZIIII",
+        "IIIZIZIIII",
+        "ZIIIIZIIII",
+        "IIZIZIIIII",
+        "ZZIIIIIIII",
+        "XIIIIIIIII",
+        "IXIIIIIIII",
+        "IIXIIIIIII",
+        "IIIXIIIIII",
+        "IIIIXIIIII",
+        "IIIIIXIIII",
+        "IIIIIIXIII",
+        "IIIIIIIXII",
+        "IIIIIIIIXI",
+        "IIIIIIIIIX"
+    ],
+    [
+        {
+            "num_paulis": 25,
+            "times": {
+                "our_time": 1.266615390777588,
+                "combined_time": 1.122002124786377
+            },
+            "gate_counts": {
+                "our_method": 309,
+                "combined_method": 97
+            },
+            "circuit_entangling_depth": {
+                "our_method": 149,
+                "combined_method": 68
+            },
+            "test_paulis_file": "benchmarks/results_hardware_topology_ibm_sherbrooke/test_new_max_cut_benchmark_regular_n10_e3_l1.json"
+        }
+    ]
+]

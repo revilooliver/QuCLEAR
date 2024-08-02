@@ -1,0 +1,34 @@
+[
+    [
+        "ZZIZZ",
+        "ZZZZI",
+        "IZZZZ",
+        "ZIZII",
+        "IZIZI",
+        "ZIIIZ",
+        "IIZIZ",
+        "XIIII",
+        "IXIII",
+        "IIXII",
+        "IIIXI",
+        "IIIIX"
+    ],
+    [
+        {
+            "num_paulis": 12,
+            "times": {
+                "our_time": 0.2184147834777832,
+                "combined_time": 0.13464021682739258
+            },
+            "gate_counts": {
+                "our_method": 63,
+                "combined_method": 19
+            },
+            "circuit_entangling_depth": {
+                "our_method": 44,
+                "combined_method": 16
+            },
+            "test_paulis_file": "benchmarks/results_hardware_topology_google_sycamore/test_new_labs_n5_layers1.json"
+        }
+    ]
+]

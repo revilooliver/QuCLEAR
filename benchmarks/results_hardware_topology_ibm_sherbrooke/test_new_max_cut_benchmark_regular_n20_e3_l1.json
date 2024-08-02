@@ -1,0 +1,72 @@
+[
+    [
+        "IIIIIIIIIIIIIIIIIIZZ",
+        "IIIZIIIIIIIIIIIIIIIZ",
+        "ZIIIIIIIIIIIIIIIIIIZ",
+        "IZIIIIIIIIIIIIIIIIZI",
+        "IIIIIIZIIIIIIIIIIIZI",
+        "IIIIIIIIIIIIIIIIZZII",
+        "IIIIIIIIIIIIIIIZIZII",
+        "IIIIIIIIIIZIIIIIIZII",
+        "IIIIIIIZIIIIIIIIZIII",
+        "IIIIIIIIIIZIIIIIZIII",
+        "IIIIIIIIIIIIIIZZIIII",
+        "IIIIIIIZIIIIIIIZIIII",
+        "IIIIIIIIIIIIZIZIIIII",
+        "IIZIIIIIIIIIIIZIIIII",
+        "IIIIIIIIIIIIZZIIIIII",
+        "IIIIIIIIZIIIIZIIIIII",
+        "IIIIZIIIIIIIIZIIIIII",
+        "IIIIZIIIIIIIZIIIIIII",
+        "IIIIIIIIIIZZIIIIIIII",
+        "IIIIIIIIIZIZIIIIIIII",
+        "IIZIIIIIIIIZIIIIIIII",
+        "IIIZIIIIIZIIIIIIIIII",
+        "IIIIIIIIZZIIIIIIIIII",
+        "IIZIIIIIZIIIIIIIIIII",
+        "ZIIIIIIZIIIIIIIIIIII",
+        "IIIIIZZIIIIIIIIIIIII",
+        "IZIIIIZIIIIIIIIIIIII",
+        "IZIIIZIIIIIIIIIIIIII",
+        "ZIIIIZIIIIIIIIIIIIII",
+        "IIIZZIIIIIIIIIIIIIII",
+        "XIIIIIIIIIIIIIIIIIII",
+        "IXIIIIIIIIIIIIIIIIII",
+        "IIXIIIIIIIIIIIIIIIII",
+        "IIIXIIIIIIIIIIIIIIII",
+        "IIIIXIIIIIIIIIIIIIII",
+        "IIIIIXIIIIIIIIIIIIII",
+        "IIIIIIXIIIIIIIIIIIII",
+        "IIIIIIIXIIIIIIIIIIII",
+        "IIIIIIIIXIIIIIIIIIII",
+        "IIIIIIIIIXIIIIIIIIII",
+        "IIIIIIIIIIXIIIIIIIII",
+        "IIIIIIIIIIIXIIIIIIII",
+        "IIIIIIIIIIIIXIIIIIII",
+        "IIIIIIIIIIIIIXIIIIII",
+        "IIIIIIIIIIIIIIXIIIII",
+        "IIIIIIIIIIIIIIIXIIII",
+        "IIIIIIIIIIIIIIIIXIII",
+        "IIIIIIIIIIIIIIIIIXII",
+        "IIIIIIIIIIIIIIIIIIXI",
+        "IIIIIIIIIIIIIIIIIIIX"
+    ],
+    [
+        {
+            "num_paulis": 50,
+            "times": {
+                "our_time": 2.9301698207855225,
+                "combined_time": 3.1426029205322266
+            },
+            "gate_counts": {
+                "our_method": 686,
+                "combined_method": 151
+            },
+            "circuit_entangling_depth": {
+                "our_method": 194,
+                "combined_method": 58
+            },
+            "test_paulis_file": "benchmarks/results_hardware_topology_ibm_sherbrooke/test_new_max_cut_benchmark_regular_n20_e3_l1.json"
+        }
+    ]
+]

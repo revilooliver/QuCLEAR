@@ -1,0 +1,83 @@
+[
+    [
+        [
+            "IIIIIIIIIIIIIIIIIIZZ",
+            "IIIIIIIIIZIIIIIIIIIZ",
+            "IIIIIIIZIIIIIIIIIIIZ",
+            "IIIIIIIIIIZIIIIIIIIZ",
+            "IIIIIIIIIIIZIIIIIIZI",
+            "ZIIIIIIIIIIIIIIIIIZI",
+            "IIIIIIZIIIIIIIIIIIZI",
+            "IIIIIIIIIIIIIIIIZZII",
+            "IIIIIZIIIIIIIIIIIZII",
+            "IIIZIIIIIIIIIIIIIZII",
+            "IZIIIIIIIIIIIIIIIZII",
+            "IIIIIIIIIIIIZIIIZIII",
+            "IZIIIIIIIIIIIIIIZIII",
+            "IIIIIIIZIIIIIIIIZIII",
+            "IIIIIIIIIIIIIIZZIIII",
+            "IIIIIIIIIIIIIZIZIIII",
+            "IIIIIIIIIZIIIIIZIIII",
+            "IIIZIIIIIIIIIIIZIIII",
+            "IIIIIIIIIIIIZIZIIIII",
+            "IIIIIIIIIIIZIIZIIIII",
+            "IIIIIIIZIIIIIIZIIIII",
+            "IIIIIIZIIIIIIZIIIIII",
+            "IIIIIIIIZIIIIZIIIIII",
+            "IIIIIIIIIIZIIZIIIIII",
+            "ZIIIIIIIIIIIZIIIIIII",
+            "IIIZIIIIIIIIZIIIIIII",
+            "IIZIIIIIIIIZIIIIIIII",
+            "ZIIIIIIIIIIZIIIIIIII",
+            "IIIIIIIIIZZIIIIIIIII",
+            "IIIIIIIIZIZIIIIIIIII",
+            "IIIIZIIIIZIIIIIIIIII",
+            "IIIIIIIZZIIIIIIIIIII",
+            "IZIIIIIIZIIIIIIIIIII",
+            "IIZIIIZIIIIIIIIIIIII",
+            "IIIIZIZIIIIIIIIIIIII",
+            "IIIZIZIIIIIIIIIIIIII",
+            "IZIIIZIIIIIIIIIIIIII",
+            "IIZIIZIIIIIIIIIIIIII",
+            "IIZIZIIIIIIIIIIIIIII",
+            "ZIIIZIIIIIIIIIIIIIII"
+        ],
+        [
+            "XIIIIIIIIIIIIIIIIIII",
+            "IXIIIIIIIIIIIIIIIIII",
+            "IIXIIIIIIIIIIIIIIIII",
+            "IIIXIIIIIIIIIIIIIIII",
+            "IIIIXIIIIIIIIIIIIIII",
+            "IIIIIXIIIIIIIIIIIIII",
+            "IIIIIIXIIIIIIIIIIIII",
+            "IIIIIIIXIIIIIIIIIIII",
+            "IIIIIIIIXIIIIIIIIIII",
+            "IIIIIIIIIXIIIIIIIIII",
+            "IIIIIIIIIIXIIIIIIIII",
+            "IIIIIIIIIIIXIIIIIIII",
+            "IIIIIIIIIIIIXIIIIIII",
+            "IIIIIIIIIIIIIXIIIIII",
+            "IIIIIIIIIIIIIIXIIIII",
+            "IIIIIIIIIIIIIIIXIIII",
+            "IIIIIIIIIIIIIIIIXIII",
+            "IIIIIIIIIIIIIIIIIXII",
+            "IIIIIIIIIIIIIIIIIIXI",
+            "IIIIIIIIIIIIIIIIIIIX"
+        ]
+    ],
+    [
+        {
+            "num_paulis": 40,
+            "times": {
+                "paulihedral_time": 0.03989148139953613
+            },
+            "gate_counts": {
+                "paulihedral_method": 80
+            },
+            "circuit_entangling_depth": {
+                "paulihedral_method": 22
+            },
+            "test_paulis_file": "benchmarks/results/test_paulihedral_max_cut_benchmark_regular_n20_e4_l1.json"
+        }
+    ]
+]

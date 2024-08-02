@@ -1,0 +1,44 @@
+[
+    [
+        "IIIIIIZIZI",
+        "IIZIIIIIIZ",
+        "IZIIIIIIZI",
+        "IIIIZIIIZI",
+        "ZZIIIIIIII",
+        "IIIIIZIIIZ",
+        "IIIZIIIIZI",
+        "IIIIZIIIIZ",
+        "IIZIIZIIII",
+        "IZIIIIIIIZ",
+        "IIIZIIIZII",
+        "IIIIIZIZII",
+        "XIIIIIIIII",
+        "IXIIIIIIII",
+        "IIXIIIIIII",
+        "IIIXIIIIII",
+        "IIIIXIIIII",
+        "IIIIIXIIII",
+        "IIIIIIXIII",
+        "IIIIIIIXII",
+        "IIIIIIIIXI",
+        "IIIIIIIIIX"
+    ],
+    [
+        {
+            "num_paulis": 22,
+            "times": {
+                "our_time": 0.485701322555542,
+                "combined_time": 0.31316423416137695
+            },
+            "gate_counts": {
+                "our_method": 248,
+                "combined_method": 44
+            },
+            "circuit_entangling_depth": {
+                "our_method": 117,
+                "combined_method": 38
+            },
+            "test_paulis_file": "benchmarks/results_hardware_topology_google_sycamore/test_new_max_cut_benchmark_connected_n10_e12_l1.json"
+        }
+    ]
+]

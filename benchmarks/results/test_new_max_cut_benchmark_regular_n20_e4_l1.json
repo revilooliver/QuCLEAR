@@ -1,0 +1,82 @@
+[
+    [
+        "IIIIIIIIIIIIIIIIIIZZ",
+        "IIIIIIIIIZIIIIIIIIIZ",
+        "IIIIIIIZIIIIIIIIIIIZ",
+        "IIIIIIIIIIZIIIIIIIIZ",
+        "IIIIIIIIIIIZIIIIIIZI",
+        "ZIIIIIIIIIIIIIIIIIZI",
+        "IIIIIIZIIIIIIIIIIIZI",
+        "IIIIIIIIIIIIIIIIZZII",
+        "IIIIIZIIIIIIIIIIIZII",
+        "IIIZIIIIIIIIIIIIIZII",
+        "IZIIIIIIIIIIIIIIIZII",
+        "IIIIIIIIIIIIZIIIZIII",
+        "IZIIIIIIIIIIIIIIZIII",
+        "IIIIIIIZIIIIIIIIZIII",
+        "IIIIIIIIIIIIIIZZIIII",
+        "IIIIIIIIIIIIIZIZIIII",
+        "IIIIIIIIIZIIIIIZIIII",
+        "IIIZIIIIIIIIIIIZIIII",
+        "IIIIIIIIIIIIZIZIIIII",
+        "IIIIIIIIIIIZIIZIIIII",
+        "IIIIIIIZIIIIIIZIIIII",
+        "IIIIIIZIIIIIIZIIIIII",
+        "IIIIIIIIZIIIIZIIIIII",
+        "IIIIIIIIIIZIIZIIIIII",
+        "ZIIIIIIIIIIIZIIIIIII",
+        "IIIZIIIIIIIIZIIIIIII",
+        "IIZIIIIIIIIZIIIIIIII",
+        "ZIIIIIIIIIIZIIIIIIII",
+        "IIIIIIIIIZZIIIIIIIII",
+        "IIIIIIIIZIZIIIIIIIII",
+        "IIIIZIIIIZIIIIIIIIII",
+        "IIIIIIIZZIIIIIIIIIII",
+        "IZIIIIIIZIIIIIIIIIII",
+        "IIZIIIZIIIIIIIIIIIII",
+        "IIIIZIZIIIIIIIIIIIII",
+        "IIIZIZIIIIIIIIIIIIII",
+        "IZIIIZIIIIIIIIIIIIII",
+        "IIZIIZIIIIIIIIIIIIII",
+        "IIZIZIIIIIIIIIIIIIII",
+        "ZIIIZIIIIIIIIIIIIIII",
+        "XIIIIIIIIIIIIIIIIIII",
+        "IXIIIIIIIIIIIIIIIIII",
+        "IIXIIIIIIIIIIIIIIIII",
+        "IIIXIIIIIIIIIIIIIIII",
+        "IIIIXIIIIIIIIIIIIIII",
+        "IIIIIXIIIIIIIIIIIIII",
+        "IIIIIIXIIIIIIIIIIIII",
+        "IIIIIIIXIIIIIIIIIIII",
+        "IIIIIIIIXIIIIIIIIIII",
+        "IIIIIIIIIXIIIIIIIIII",
+        "IIIIIIIIIIXIIIIIIIII",
+        "IIIIIIIIIIIXIIIIIIII",
+        "IIIIIIIIIIIIXIIIIIII",
+        "IIIIIIIIIIIIIXIIIIII",
+        "IIIIIIIIIIIIIIXIIIII",
+        "IIIIIIIIIIIIIIIXIIII",
+        "IIIIIIIIIIIIIIIIXIII",
+        "IIIIIIIIIIIIIIIIIXII",
+        "IIIIIIIIIIIIIIIIIIXI",
+        "IIIIIIIIIIIIIIIIIIIX"
+    ],
+    [
+        {
+            "num_paulis": 60,
+            "times": {
+                "our_time": 2.371663808822632,
+                "combined_time": 2.1981241703033447
+            },
+            "gate_counts": {
+                "our_method": 90,
+                "combined_method": 88
+            },
+            "circuit_entangling_depth": {
+                "our_method": 35,
+                "combined_method": 34
+            },
+            "test_paulis_file": "benchmarks/results/test_new_max_cut_benchmark_regular_n20_e4_l1.json"
+        }
+    ]
+]

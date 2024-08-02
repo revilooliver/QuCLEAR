@@ -2,6 +2,26 @@ import re
 import random
 from itertools import product
 from typing import List
+import os
+
+def load_sycamore_coupling_map():
+    reduced = True
+    pth = os.path.join('sycamore_64.txt')
+
+    coupling = []
+    n = 0
+    with open(pth, 'r') as file:
+        lines = file.readlines()
+        num_nodes, num_edges = map(int, lines[0].split()[:2])
+        n = num_nodes
+        
+        # Add edges to the graph
+        for edge in lines[1:]:
+            node1, node2 = map(int, edge.split()[:2])
+            coupling.append([node1, node2])
+            coupling.append([node2, node1])
+
+    return coupling
 
 def generate_meas_strings(n):
     # Define the possible Pauli operators excluding the all-identity string
