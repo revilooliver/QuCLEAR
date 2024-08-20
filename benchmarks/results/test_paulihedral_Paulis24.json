@@ -1,41 +1,47 @@
 [
     [
-        "YZXI",
-        "XZXI",
-        "YZYI",
-        "XZYI",
-        "IYZX",
-        "IXZX",
-        "IYZY",
-        "IXZY",
-        "YXYX",
-        "XXYX",
-        "YYYX",
-        "XYYX",
-        "YXYY",
-        "XXYY",
-        "YYYY",
-        "XYYY",
-        "YXXX",
-        "XXXX",
-        "YYXX",
-        "XYXX",
-        "YXXY",
-        "XXXY",
-        "YYXY",
-        "XYXY"
+        [
+            "YZXI",
+            "XZXI",
+            "YZYI",
+            "XZYI"
+        ],
+        [
+            "IYZX",
+            "IXZX",
+            "IYZY",
+            "IXZY"
+        ],
+        [
+            "YXYX",
+            "XXYX",
+            "YYYX",
+            "XYYX",
+            "YXYY",
+            "XXYY",
+            "YYYY",
+            "XYYY",
+            "YXXX",
+            "XXXX",
+            "YYXX",
+            "XYXX",
+            "YXXY",
+            "XXXY",
+            "YYXY",
+            "XYXY"
+        ]
     ],
     [
         {
             "num_paulis": 24,
             "times": {
-                "paulihedral_time": 0.11668705940246582
+                "paulihedral_time": 0.17054104804992676
             },
             "gate_counts": {
-                "paulihedral_method": 31
+                "paulihedral_method": 48
             },
             "circuit_entangling_depth": {
-                "paulihedral_method": 31
+                "paulihedral_method": 48
             },
             "test_paulis_file": "benchmarks/results/test_paulihedral_Paulis24.json"
         }
