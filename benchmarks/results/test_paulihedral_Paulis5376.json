@@ -6101,13 +6101,13 @@
         {
             "num_paulis": 5376,
             "times": {
-                "paulihedral_time": 5.257931470870972
+                "paulihedral_time": 137.97289276123047
             },
             "gate_counts": {
-                "paulihedral_method": 1795
+                "paulihedral_method": 23389
             },
             "circuit_entangling_depth": {
-                "paulihedral_method": 1795
+                "paulihedral_method": 23333
             },
             "test_paulis_file": "benchmarks/results/test_paulihedral_Paulis5376.json"
         }

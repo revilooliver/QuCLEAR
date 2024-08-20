@@ -377,7 +377,7 @@
         {
             "num_paulis": 320,
             "times": {
-                "paulihedral_time": 3.080756187438965
+                "paulihedral_time": 3.247403383255005
             },
             "gate_counts": {
                 "paulihedral_method": 947
