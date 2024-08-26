@@ -1,4 +1,4 @@
-# Clifford_extraction
-Artifact for the Clifford extraction paper
+# QuCLEAR
+Artifact for the QuCLEAR paper
 
 Qiskit version: 1.1.1
