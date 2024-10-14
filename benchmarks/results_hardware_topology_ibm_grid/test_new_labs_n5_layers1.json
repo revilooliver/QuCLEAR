@@ -1,0 +1,34 @@
+[
+    [
+        "ZZIZZ",
+        "ZZZZI",
+        "IZZZZ",
+        "ZIZII",
+        "IZIZI",
+        "ZIIIZ",
+        "IIZIZ",
+        "XIIII",
+        "IXIII",
+        "IIXII",
+        "IIIXI",
+        "IIIIX"
+    ],
+    [
+        {
+            "num_paulis": 12,
+            "times": {
+                "our_time": 0.11966633796691895,
+                "combined_time": 0.09577775001525879
+            },
+            "gate_counts": {
+                "our_method": 42,
+                "combined_method": 19
+            },
+            "circuit_entangling_depth": {
+                "our_method": 32,
+                "combined_method": 17
+            },
+            "test_paulis_file": "benchmarks/results_hardware_topology_ibm_grid/test_new_labs_n5_layers1.json"
+        }
+    ]
+]

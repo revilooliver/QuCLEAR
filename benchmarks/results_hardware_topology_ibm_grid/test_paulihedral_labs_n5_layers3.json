@@ -1,0 +1,67 @@
+[
+    [
+        [
+            "ZZIZZ",
+            "ZZZZI",
+            "IZZZZ",
+            "ZIZII",
+            "IZIZI",
+            "ZIIIZ",
+            "IIZIZ"
+        ],
+        [
+            "XIIII",
+            "IXIII",
+            "IIXII",
+            "IIIXI",
+            "IIIIX"
+        ],
+        [
+            "ZZIZZ",
+            "ZZZZI",
+            "IZZZZ",
+            "ZIZII",
+            "IZIZI",
+            "ZIIIZ",
+            "IIZIZ"
+        ],
+        [
+            "XIIII",
+            "IXIII",
+            "IIXII",
+            "IIIXI",
+            "IIIIX"
+        ],
+        [
+            "ZZIZZ",
+            "ZZZZI",
+            "IZZZZ",
+            "ZIZII",
+            "IZIZI",
+            "ZIIIZ",
+            "IIZIZ"
+        ],
+        [
+            "XIIII",
+            "IXIII",
+            "IIXII",
+            "IIIXI",
+            "IIIIX"
+        ]
+    ],
+    [
+        {
+            "num_paulis": 7,
+            "times": {
+                "paulihedral_time": 0.9597694873809814
+            },
+            "gate_counts": {
+                "paulihedral_method": 297
+            },
+            "circuit_entangling_depth": {
+                "paulihedral_method": 96
+            },
+            "test_paulis_file": "benchmarks/results_hardware_topology_ibm_grid/test_paulihedral_labs_n5_layers3.json"
+        }
+    ]
+]

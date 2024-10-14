@@ -1,0 +1,52 @@
+[
+    [
+        "YZXI",
+        "XZXI",
+        "YZYI",
+        "XZYI",
+        "IYZX",
+        "IXZX",
+        "IYZY",
+        "IXZY",
+        "YXYX",
+        "XXYX",
+        "YYYX",
+        "XYYX",
+        "YXYY",
+        "XXYY",
+        "YYYY",
+        "XYYY",
+        "YXXX",
+        "XXXX",
+        "YYXX",
+        "XYXX",
+        "YXXY",
+        "XXXY",
+        "YYXY",
+        "XYXY"
+    ],
+    [
+        {
+            "num_paulis": 24,
+            "times": {
+                "our_time": 0.519160270690918,
+                "combined_time": 0.2732691764831543,
+                "qiskit_time": 0.27725958824157715,
+                "rustiq_time": 0.160081148147583
+            },
+            "gate_counts": {
+                "our_method": 66,
+                "combined_method": 41,
+                "qiskit_method": 41,
+                "rustiq_method": 84
+            },
+            "circuit_entangling_depth": {
+                "our_method": 56,
+                "combined_method": 34,
+                "qiskit_method": 41,
+                "rustiq_method": 72
+            },
+            "test_paulis_file": "benchmarks/results_hardware_topology_ibm_grid/test_Paulis24.json"
+        }
+    ]
+]

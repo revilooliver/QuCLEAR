@@ -1,0 +1,51 @@
+[
+    [
+        "IZZZZII",
+        "ZIIIIIZ",
+        "IZZIIZZ",
+        "ZIIIZII",
+        "ZZIZZII",
+        "IIZIIIZ",
+        "ZZIIIZZ",
+        "IIZIZII",
+        "ZZIIZZI",
+        "IZZIZZI",
+        "IIIZZZZ",
+        "ZIZIIII",
+        "ZZZZIII",
+        "IIIIZIZ",
+        "IIZZIZZ",
+        "IIZZZZI",
+        "ZIZIZIZ",
+        "IZIZIII",
+        "IIIZIZI",
+        "ZIZZIZI",
+        "IZIZZIZ",
+        "IZIIIZI",
+        "XIIIIII",
+        "IXIIIII",
+        "IIXIIII",
+        "IIIXIII",
+        "IIIIXII",
+        "IIIIIXI",
+        "IIIIIIX"
+    ],
+    [
+        {
+            "num_paulis": 29,
+            "times": {
+                "our_time": 0.3281223773956299,
+                "combined_time": 0.24837589263916016
+            },
+            "gate_counts": {
+                "our_method": 204,
+                "combined_method": 67
+            },
+            "circuit_entangling_depth": {
+                "our_method": 118,
+                "combined_method": 58
+            },
+            "test_paulis_file": "benchmarks/results_hardware_topology_ibm_grid/test_new_labs_n7_layers1.json"
+        }
+    ]
+]

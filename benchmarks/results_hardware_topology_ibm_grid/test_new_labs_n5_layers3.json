@@ -1,0 +1,58 @@
+[
+    [
+        "ZZIZZ",
+        "ZZZZI",
+        "IZZZZ",
+        "ZIZII",
+        "IZIZI",
+        "ZIIIZ",
+        "IIZIZ",
+        "XIIII",
+        "IXIII",
+        "IIXII",
+        "IIIXI",
+        "IIIIX",
+        "ZZIZZ",
+        "ZZZZI",
+        "IZZZZ",
+        "ZIZII",
+        "IZIZI",
+        "ZIIIZ",
+        "IIZIZ",
+        "XIIII",
+        "IXIII",
+        "IIXII",
+        "IIIXI",
+        "IIIIX",
+        "ZZIZZ",
+        "ZZZZI",
+        "IZZZZ",
+        "ZIZII",
+        "IZIZI",
+        "ZIIIZ",
+        "IIZIZ",
+        "XIIII",
+        "IXIII",
+        "IIXII",
+        "IIIXI",
+        "IIIIX"
+    ],
+    [
+        {
+            "num_paulis": 36,
+            "times": {
+                "our_time": 0.2882533073425293,
+                "combined_time": 0.19148802757263184
+            },
+            "gate_counts": {
+                "our_method": 120,
+                "combined_method": 63
+            },
+            "circuit_entangling_depth": {
+                "our_method": 93,
+                "combined_method": 54
+            },
+            "test_paulis_file": "benchmarks/results_hardware_topology_ibm_grid/test_new_labs_n5_layers3.json"
+        }
+    ]
+]

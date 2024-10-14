@@ -1,0 +1,50 @@
+[
+    [
+        "IIIIIIZIZI",
+        "IIZIIIIIIZ",
+        "IZIIIIIIZI",
+        "IIIIZIIIZI",
+        "ZZIIIIIIII",
+        "IIIIIZIIIZ",
+        "IIIZIIIIZI",
+        "IIIIZIIIIZ",
+        "IIZIIZIIII",
+        "IZIIIIIIIZ",
+        "IIIZIIIZII",
+        "IIIIIZIZII",
+        "XIIIIIIIII",
+        "IXIIIIIIII",
+        "IIXIIIIIII",
+        "IIIXIIIIII",
+        "IIIIXIIIII",
+        "IIIIIXIIII",
+        "IIIIIIXIII",
+        "IIIIIIIXII",
+        "IIIIIIIIXI",
+        "IIIIIIIIIX"
+    ],
+    [
+        {
+            "num_paulis": 22,
+            "times": {
+                "our_time": 0.4507935047149658,
+                "combined_time": 0.43914008140563965,
+                "qiskit_time": 0.05584979057312012,
+                "rustiq_time": 0.09578919410705566
+            },
+            "gate_counts": {
+                "our_method": 237,
+                "combined_method": 60,
+                "qiskit_method": 28,
+                "rustiq_method": 231
+            },
+            "circuit_entangling_depth": {
+                "our_method": 117,
+                "combined_method": 46,
+                "qiskit_method": 18,
+                "rustiq_method": 102
+            },
+            "test_paulis_file": "benchmarks/results_hardware_topology_ibm_grid/test_max_cut_benchmark_connected_n10_e12_l1.json"
+        }
+    ]
+]
