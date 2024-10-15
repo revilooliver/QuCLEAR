@@ -1,0 +1,35 @@
+[
+    [
+        [
+            "ZZIZZ",
+            "ZZZZI",
+            "IZZZZ",
+            "ZIZII",
+            "IZIZI",
+            "ZIIIZ",
+            "IIZIZ"
+        ],
+        [
+            "XIIII",
+            "IXIII",
+            "IIXII",
+            "IIIXI",
+            "IIIIX"
+        ]
+    ],
+    [
+        {
+            "num_paulis": 7,
+            "times": {
+                "paulihedral_time": 0.25331926345825195
+            },
+            "gate_counts": {
+                "paulihedral_method": 38
+            },
+            "circuit_entangling_depth": {
+                "paulihedral_method": 33
+            },
+            "test_paulis_file": "benchmarks/results_hardware_topology_ibm_sherbrooke/test_paulihedral_labs_n5_layers1.json"
+        }
+    ]
+]
