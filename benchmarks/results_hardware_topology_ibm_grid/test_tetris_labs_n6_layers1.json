@@ -1,0 +1,42 @@
+[
+    [
+        [
+            "ZZIIZZ",
+            "ZZZZII",
+            "ZZIZZI",
+            "IIZZZZ",
+            "IZZIZZ",
+            "IZZZZI",
+            "ZIZZIZ",
+            "IIIZIZ",
+            "IIZIZI",
+            "ZIIIZI",
+            "ZIZIII",
+            "IZIZII",
+            "IZIIIZ"
+        ],
+        [
+            "XIIIII",
+            "IXIIII",
+            "IIXIII",
+            "IIIXII",
+            "IIIIXI",
+            "IIIIIX"
+        ]
+    ],
+    [
+        {
+            "num_paulis": 13,
+            "times": {
+                "tetris_time": 1.4565753936767578
+            },
+            "gate_counts": {
+                "tetris_method": 44
+            },
+            "circuit_entangling_depth": {
+                "tetris_method": 39
+            },
+            "test_paulis_file": "benchmarks/results_hardware_topology_ibm_grid/test_tetris_labs_n6_layers1.json"
+        }
+    ]
+]
