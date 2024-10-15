@@ -1,0 +1,49 @@
+[
+    [
+        [
+            "YZXI",
+            "XZXI",
+            "YZYI",
+            "XZYI"
+        ],
+        [
+            "IYZX",
+            "IXZX",
+            "IYZY",
+            "IXZY"
+        ],
+        [
+            "YXYX",
+            "XXYX",
+            "YYYX",
+            "XYYX",
+            "YXYY",
+            "XXYY",
+            "YYYY",
+            "XYYY",
+            "YXXX",
+            "XXXX",
+            "YYXX",
+            "XYXX",
+            "YXXY",
+            "XXXY",
+            "YYXY",
+            "XYXY"
+        ]
+    ],
+    [
+        {
+            "num_paulis": 24,
+            "times": {
+                "pytket_time": 2.317359685897827
+            },
+            "gate_counts": {
+                "pytket_method": 90
+            },
+            "circuit_entangling_depth": {
+                "pytket_method": 82
+            },
+            "test_paulis_file": "benchmarks/results_hardware_topology_ibm_sherbrooke/test_pytket_Paulis24.json"
+        }
+    ]
+]

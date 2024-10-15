@@ -1,0 +1,47 @@
+[
+    [
+        "ZZIIZZ",
+        "ZZZZII",
+        "ZZIZZI",
+        "IIZZZZ",
+        "IZZIZZ",
+        "IZZZZI",
+        "ZIZZIZ",
+        "IIIZIZ",
+        "IIZIZI",
+        "ZIIIZI",
+        "ZIZIII",
+        "IZIZII",
+        "IZIIIZ",
+        "XIIIII",
+        "IXIIII",
+        "IIXIII",
+        "IIIXII",
+        "IIIIXI",
+        "IIIIIX"
+    ],
+    [
+        {
+            "num_paulis": 19,
+            "times": {
+                "our_time": 0.4582693576812744,
+                "combined_time": 0.2485795021057129,
+                "qiskit_time": 0.06792306900024414,
+                "rustiq_time": 0.08583426475524902
+            },
+            "gate_counts": {
+                "our_method": 99,
+                "combined_method": 34,
+                "qiskit_method": 64,
+                "rustiq_method": 92
+            },
+            "circuit_entangling_depth": {
+                "our_method": 69,
+                "combined_method": 29,
+                "qiskit_method": 55,
+                "rustiq_method": 63
+            },
+            "test_paulis_file": "benchmarks/results_hardware_topology_ibm_grid/test_labs_n6_layers1.json"
+        }
+    ]
+]

@@ -1,0 +1,35 @@
+[
+    [
+        [
+            "ZZIZZ",
+            "ZZZZI",
+            "IZZZZ",
+            "ZIZII",
+            "IZIZI",
+            "ZIIIZ",
+            "IIZIZ"
+        ],
+        [
+            "XIIII",
+            "IXIII",
+            "IIXII",
+            "IIIXI",
+            "IIIIX"
+        ]
+    ],
+    [
+        {
+            "num_paulis": 12,
+            "times": {
+                "pytket_time": 0.43979454040527344
+            },
+            "gate_counts": {
+                "pytket_method": 40
+            },
+            "circuit_entangling_depth": {
+                "pytket_method": 31
+            },
+            "test_paulis_file": "benchmarks/results_hardware_topology_ibm_sherbrooke/test_pytket_labs_n5_layers1.json"
+        }
+    ]
+]

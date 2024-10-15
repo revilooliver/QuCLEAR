@@ -1,0 +1,64 @@
+[
+    [
+        "ZZIZZ",
+        "ZZZZI",
+        "IZZZZ",
+        "ZIZII",
+        "IZIZI",
+        "ZIIIZ",
+        "IIZIZ",
+        "XIIII",
+        "IXIII",
+        "IIXII",
+        "IIIXI",
+        "IIIIX",
+        "ZZIZZ",
+        "ZZZZI",
+        "IZZZZ",
+        "ZIZII",
+        "IZIZI",
+        "ZIIIZ",
+        "IIZIZ",
+        "XIIII",
+        "IXIII",
+        "IIXII",
+        "IIIXI",
+        "IIIIX",
+        "ZZIZZ",
+        "ZZZZI",
+        "IZZZZ",
+        "ZIZII",
+        "IZIZI",
+        "ZIIIZ",
+        "IIZIZ",
+        "XIIII",
+        "IXIII",
+        "IIXII",
+        "IIIXI",
+        "IIIIX"
+    ],
+    [
+        {
+            "num_paulis": 36,
+            "times": {
+                "our_time": 0.5017299652099609,
+                "combined_time": 0.38164687156677246,
+                "qiskit_time": 0.0747992992401123,
+                "rustiq_time": 0.10892224311828613
+            },
+            "gate_counts": {
+                "our_method": 135,
+                "combined_method": 58,
+                "qiskit_method": 101,
+                "rustiq_method": 121
+            },
+            "circuit_entangling_depth": {
+                "our_method": 104,
+                "combined_method": 51,
+                "qiskit_method": 95,
+                "rustiq_method": 97
+            },
+            "test_paulis_file": "benchmarks/results_hardware_topology_ibm_grid/test_labs_n5_layers3.json"
+        }
+    ]
+]
