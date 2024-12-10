@@ -142,12 +142,12 @@
         {
             "num_paulis": 137,
             "gate_counts": {
-                "combined_method": 473,
-                "qiskit_method": 452
+                "combined_method": 478,
+                "qiskit_method": 488
             },
             "circuit_entangling_depth": {
-                "combined_method": 223,
-                "qiskit_method": 186
+                "combined_method": 219,
+                "qiskit_method": 217
             },
             "test_paulis_file": "experiments/results_google/test_max_cut_benchmark_connected_n20_e117_l1.json"
         }

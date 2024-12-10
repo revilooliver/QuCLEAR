@@ -27,12 +27,12 @@
         {
             "num_paulis": 22,
             "gate_counts": {
-                "combined_method": 55,
-                "qiskit_method": 41
+                "combined_method": 69,
+                "qiskit_method": 38
             },
             "circuit_entangling_depth": {
-                "combined_method": 39,
-                "qiskit_method": 19
+                "combined_method": 46,
+                "qiskit_method": 25
             },
             "test_paulis_file": "experiments/results_ibm/test_max_cut_benchmark_connected_n10_e12_l1.json"
         }

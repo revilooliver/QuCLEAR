@@ -272,12 +272,12 @@
         {
             "num_paulis": 267,
             "gate_counts": {
-                "combined_method": 1196,
-                "qiskit_method": 2438
+                "combined_method": 1166,
+                "qiskit_method": 2467
             },
             "circuit_entangling_depth": {
-                "combined_method": 731,
-                "qiskit_method": 1471
+                "combined_method": 729,
+                "qiskit_method": 1483
             },
             "test_paulis_file": "experiments/results_google/test_labs_n15_layers1.json"
         }

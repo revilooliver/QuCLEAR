@@ -83,12 +83,12 @@
         {
             "num_paulis": 78,
             "gate_counts": {
-                "combined_method": 215,
-                "qiskit_method": 225
+                "combined_method": 211,
+                "qiskit_method": 217
             },
             "circuit_entangling_depth": {
-                "combined_method": 131,
-                "qiskit_method": 108
+                "combined_method": 121,
+                "qiskit_method": 81
             },
             "test_paulis_file": "experiments/results_google/test_max_cut_benchmark_connected_n15_e63_l1.json"
         }

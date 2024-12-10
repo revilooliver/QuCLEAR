@@ -189,12 +189,12 @@
         {
             "num_paulis": 184,
             "gate_counts": {
-                "combined_method": 743,
-                "qiskit_method": 1204
+                "combined_method": 751,
+                "qiskit_method": 1210
             },
             "circuit_entangling_depth": {
-                "combined_method": 575,
-                "qiskit_method": 969
+                "combined_method": 577,
+                "qiskit_method": 973
             },
             "test_paulis_file": "experiments/results_ibm/test_H2O.json"
         }

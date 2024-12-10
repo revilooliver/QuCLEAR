@@ -66,11 +66,11 @@
         {
             "num_paulis": 61,
             "gate_counts": {
-                "combined_method": 152,
+                "combined_method": 158,
                 "qiskit_method": 217
             },
             "circuit_entangling_depth": {
-                "combined_method": 143,
+                "combined_method": 142,
                 "qiskit_method": 201
             },
             "test_paulis_file": "experiments/results_ibm/test_LiH.json"

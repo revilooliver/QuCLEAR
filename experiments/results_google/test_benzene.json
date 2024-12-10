@@ -1259,12 +1259,12 @@
         {
             "num_paulis": 1254,
             "gate_counts": {
-                "combined_method": 6205,
-                "qiskit_method": 9124
+                "combined_method": 6229,
+                "qiskit_method": 9012
             },
             "circuit_entangling_depth": {
-                "combined_method": 4106,
-                "qiskit_method": 8075
+                "combined_method": 4134,
+                "qiskit_method": 8065
             },
             "test_paulis_file": "experiments/results_google/test_benzene.json"
         }

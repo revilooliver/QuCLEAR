@@ -1259,12 +1259,12 @@
         {
             "num_paulis": 1254,
             "gate_counts": {
-                "combined_method": 9745,
-                "qiskit_method": 10447
+                "combined_method": 10316,
+                "qiskit_method": 10450
             },
             "circuit_entangling_depth": {
-                "combined_method": 6393,
-                "qiskit_method": 8886
+                "combined_method": 6216,
+                "qiskit_method": 8901
             },
             "test_paulis_file": "experiments/results_ibm/test_benzene.json"
         }
