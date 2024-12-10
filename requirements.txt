@@ -1,0 +1,8 @@
+qiskit == 1.1.1
+qiskit-ibm-runtime == 0.24.1
+pytket == 1.31 
+pytket-qiskit == 0.54.0
+notebook
+qiskit-aer
+pennylane
+openfermion

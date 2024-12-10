@@ -46,8 +46,8 @@ def generate_UCCSD_entanglers(electrons, orbitals):
 
 def generate_UCCSD_entanglers_blocks():
     '''For tetris. We need the Hamiltonians in blocks.'''
-    electrons_list = [2, 2, 4, 6, 8, 10, 12]
-    orbitals_list = [4, 6, 8, 12, 16, 20, 24]
+    electrons_list = [2, 2, 4, 6, 8, 10]
+    orbitals_list = [4, 6, 8, 12, 16, 20]
     for electrons, orbitals in zip(electrons_list, orbitals_list):
         singles, doubles = qml.qchem.excitations(electrons, orbitals)
         UCCSD_Paulis = []
@@ -81,6 +81,11 @@ def generate_UCCSD_entanglers_blocks():
                 entangler_excitation.append(entangler)
             
             entanglers.append(entangler_excitation)
-        file_name=f"uccsd_hamiltonian_e{electrons}_o{orbitals}.json"
-        with open(f'uccsd_hamiltonians/' + file_name, 'w') as paulis_file:
+        file_name=f"uccsd_Paulis_e{electrons}_o{orbitals}.json"
+        with open(f'uccsd_Paulis_blocks/' + file_name, 'w') as paulis_file:
             json.dump(entanglers, paulis_file, indent=4)
+
+        flattened_list = [pauli_string for sublist in entanglers for pauli_string in sublist]
+        file_name=f"uccsd_Paulis_e{electrons}_o{orbitals}.json"
+        with open(f'uccsd_Paulis/' + file_name, 'w') as paulis_file:
+            json.dump(flattened_list, paulis_file, indent=4)

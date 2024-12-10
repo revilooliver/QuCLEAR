@@ -1,0 +1,73 @@
+[
+    [
+        "IIIIIIIIIIIIIZZ",
+        "IIIIIIZIIIIIIIZ",
+        "IIIIIIIIIZIIIIZ",
+        "ZIIIIIIIIIIIIIZ",
+        "IIIIIIIIIIZIIZI",
+        "ZIIIIIIIIIIIIZI",
+        "IIIIIZIIIIIIIZI",
+        "IIIIIIIIIIIZZII",
+        "IIIIIIIIIZIIZII",
+        "IIIIZIIIIIIIZII",
+        "IIIIIIIZIIIIZII",
+        "IIIIIIIIIIZZIII",
+        "IZIIIIIIIIIZIII",
+        "IIIIZIIIIIIZIII",
+        "IIIIIIIIZIZIIII",
+        "IIIIIIZIIIZIIII",
+        "IIIIIIIIZZIIIII",
+        "IIIZIIIIIZIIIII",
+        "IIIIIZIIZIIIIII",
+        "IIIIIIIZZIIIIII",
+        "IIIIIIZZIIIIIII",
+        "IIZIIIIZIIIIIII",
+        "IIIIIZZIIIIIIII",
+        "IIZIIZIIIIIIIII",
+        "ZIIIZIIIIIIIIII",
+        "IIIZZIIIIIIIIII",
+        "IIZZIIIIIIIIIII",
+        "IZIZIIIIIIIIIII",
+        "IZZIIIIIIIIIIII",
+        "ZZIIIIIIIIIIIII",
+        "XIIIIIIIIIIIIII",
+        "IXIIIIIIIIIIIII",
+        "IIXIIIIIIIIIIII",
+        "IIIXIIIIIIIIIII",
+        "IIIIXIIIIIIIIII",
+        "IIIIIXIIIIIIIII",
+        "IIIIIIXIIIIIIII",
+        "IIIIIIIXIIIIIII",
+        "IIIIIIIIXIIIIII",
+        "IIIIIIIIIXIIIII",
+        "IIIIIIIIIIXIIII",
+        "IIIIIIIIIIIXIII",
+        "IIIIIIIIIIIIXII",
+        "IIIIIIIIIIIIIXI",
+        "IIIIIIIIIIIIIIX"
+    ],
+    [
+        {
+            "num_paulis": 45,
+            "times": {
+                "our_time": 1.8176109790802002,
+                "combined_time": 1.9130029678344727,
+                "qiskit_time": 0.05798983573913574,
+                "rustiq_time": 0.042608022689819336
+            },
+            "gate_counts": {
+                "our_method": 67,
+                "combined_method": 67,
+                "qiskit_method": 58,
+                "rustiq_method": 92
+            },
+            "circuit_entangling_depth": {
+                "our_method": 31,
+                "combined_method": 31,
+                "qiskit_method": 28,
+                "rustiq_method": 47
+            },
+            "test_paulis_file": "experiments/results_fullyconnected/test_max_cut_benchmark_regular_n15_e4_l1.json"
+        }
+    ]
+]
