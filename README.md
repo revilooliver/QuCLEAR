@@ -24,16 +24,37 @@ pip install -r requirements.txt
 ```
 
 ### **3. Environment Setup for Artifact Evaluation**
-For artifact evaluation, we compare **QuCLEAR** with several other tools: **Rustiq**, **Qiskit**, **Paulihedral**, and **pytket**. To simplify the installation and environment management, we provide an automated script, `install_all.sh`, located in the `artifact_evaluation` folder:
+
+For artifact evaluation, **QuCLEAR** is compared with several tools: **Rustiq**, **Qiskit**, **Paulihedral**, and **pytket**. To simplify installation and environment management, we provide an automated script, `install_all.sh`, located in the `artifact_evaluation` folder:
 
 ```bash
 cd artifact_evaluation
 ./install_all.sh
 ```
 
-This script will create two Anaconda virtual environments:
-- `QuCLEAR_env`: Contains Qiskit, Rustiq, and pytket.
-- `PH_env`: Contains Paulihedral.
+This script creates two Anaconda virtual environments:
+- **`QuCLEAR_env`**: Contains QuCLEAR, Qiskit, and pytket.  
+- **`PH_env`**: Contains Paulihedral.  
+
+#### **Install Rust and Rustiq in the `QuCLEAR_env`**
+
+After setting up the environments, you will need to manually install **Rust** and **Rustiq** in the `QuCLEAR_env`.
+
+1. **Activate the QuCLEAR environment**:
+   ```bash
+   conda activate QuCLEAR_env
+   ```
+
+2. **Install Rust**:  
+   Follow the installation instructions provided on the official Rust website:  
+   [Rust Installation Guide](https://www.rust-lang.org/tools/install)
+
+3. **Install Rustiq**:  
+   Clone and install Rustiq from its GitHub repository:  
+   [Rustiq Repository](https://github.com/smartiel/rustiq/tree/main)
+
+Once these steps are complete, all required dependencies for artifact evaluation will be ready.
+
 
 ### **4. Test Installation**
 We provide a simple test script to validate the installation. It will compile the circuits for Hamiltonian simulation:
