@@ -11,17 +11,28 @@ check_file() {
     fi
 }
 
+# Function to check if a Conda environment exists
+env_exists() {
+    conda env list | grep -qE "^$1\s"
+}
+
 # Function to create and activate a Conda environment
 create_and_activate_env() {
     local env_file=$1
     local env_name=$2
 
     echo "----------------------------------------"
-    echo "Creating Conda environment for $env_name..."
-    check_file "$env_file"
+    echo "Checking for existing Conda environment: $env_name..."
 
-    conda env create -f "$env_file" || { echo "Failed to create $env_name environment"; exit 1; }
-    echo "Environment $env_name created successfully."
+    if env_exists "$env_name"; then
+        echo "Environment '$env_name' already exists. Skipping creation."
+    else
+        echo "Creating Conda environment '$env_name'..."
+        check_file "$env_file"
+
+        conda env create -f "$env_file" || { echo "Failed to create $env_name environment"; exit 1; }
+        echo "Environment '$env_name' created successfully."
+    fi
 
     echo "Activating $env_name environment..."
     # Shell-compatible activation
@@ -57,4 +68,4 @@ cd ../artifact_evaluation
 conda deactivate
 
 echo "----------------------------------------"
-echo "QuCLEAR, Pytket and PH installations completed successfully. Now please install rustiq"
+echo "QuCLEAR, Pytket, and PH installations completed successfully. Now please install RustiQ."

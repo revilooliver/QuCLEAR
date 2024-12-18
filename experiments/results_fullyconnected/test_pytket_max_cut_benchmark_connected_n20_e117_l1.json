@@ -146,7 +146,7 @@
         {
             "num_paulis": 137,
             "times": {
-                "pytket_time": 5.523766040802002
+                "pytket_time": 6.104310035705566
             },
             "gate_counts": {
                 "pytket_method": 298
