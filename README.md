@@ -41,8 +41,18 @@ After setting up the environments, you will need to manually install **Rust** an
 2. **Install Rust**:  
    Follow the installation instructions provided on the official Rust website:  
    [Rust Installation Guide](https://www.rust-lang.org/tools/install)
+   
+   After installation, source your .bashrc file to enable Rust in your current session:
+   ```bash
+   source ~/.bashrc
+   ```
+   If you are working in a Conda environment, you may need to reactivate the environment to ensure the paths are properly configured:
+      ```bash
+   conda deactivate
+   conda activate QuCLEAR_env
+   ```
 
-3. **Install Rustiq**:  
+4. **Install Rustiq**:  
    Clone and install Rustiq from its GitHub repository:  
    [Rustiq Repository](https://github.com/smartiel/rustiq/tree/main)
 
