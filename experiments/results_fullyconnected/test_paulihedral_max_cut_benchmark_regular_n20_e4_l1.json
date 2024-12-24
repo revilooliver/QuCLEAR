@@ -69,15 +69,15 @@
         {
             "num_paulis": 40,
             "times": {
-                "paulihedral_time": 0.03356671333312988
+                "paulihedral_time": 0.12997674942016602
             },
             "gate_counts": {
-                "paulihedral_method": 80
+                "paulihedral_method": 204
             },
             "circuit_entangling_depth": {
-                "paulihedral_method": 22
+                "paulihedral_method": 55
             },
-            "test_paulis_file": "../experiments/results_fullyconnected/test_paulihedral_max_cut_benchmark_regular_n20_e4_l1.json"
+            "test_paulis_file": "../experiments/results_ibm/test_paulihedral_max_cut_benchmark_regular_n20_e4_l1.json"
         }
     ]
 ]

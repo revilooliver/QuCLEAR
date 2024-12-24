@@ -15155,15 +15155,15 @@
         {
             "num_paulis": 13400,
             "times": {
-                "paulihedral_time": 562.3052439689636
+                "paulihedral_time": 6243.918176174164
             },
             "gate_counts": {
-                "paulihedral_method": 67336
+                "paulihedral_method": 120492
             },
             "circuit_entangling_depth": {
-                "paulihedral_method": 67237
+                "paulihedral_method": 108392
             },
-            "test_paulis_file": "../experiments/results_fullyconnected/test_paulihedral_Paulis13400.json"
+            "test_paulis_file": "../experiments/results_ibm/test_paulihedral_Paulis13400.json"
         }
     ]
 ]

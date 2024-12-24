@@ -1259,22 +1259,22 @@
         {
             "num_paulis": 1254,
             "times": {
-                "our_time": 13.280921220779419,
-                "combined_time": 15.744943857192993,
-                "qiskit_time": 9.516340970993042,
-                "rustiq_time": 4.080456972122192
+                "our_time": 15.428984880447388,
+                "combined_time": 19.005834817886353,
+                "qiskit_time": 10.624876260757446,
+                "rustiq_time": 3.804569721221924
             },
             "gate_counts": {
                 "our_method": 2479,
                 "combined_method": 2470,
                 "qiskit_method": 7602,
-                "rustiq_method": 3356
+                "rustiq_method": 3352
             },
             "circuit_entangling_depth": {
                 "our_method": 1486,
                 "combined_method": 1481,
                 "qiskit_method": 7477,
-                "rustiq_method": 2313
+                "rustiq_method": 2322
             },
             "test_paulis_file": "experiments/results_fullyconnected/test_quclear_benzene.json"
         }

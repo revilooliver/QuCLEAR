@@ -85,10 +85,10 @@
         {
             "num_paulis": 80,
             "times": {
-                "our_time": 4.93082594871521,
-                "combined_time": 3.8309860229492188,
-                "qiskit_time": 0.11831402778625488,
-                "rustiq_time": 0.013764142990112305
+                "our_time": 4.445764780044556,
+                "combined_time": 3.6155200004577637,
+                "qiskit_time": 0.11379098892211914,
+                "rustiq_time": 0.009057044982910156
             },
             "gate_counts": {
                 "our_method": 106,
@@ -102,7 +102,7 @@
                 "qiskit_method": 173,
                 "rustiq_method": 77
             },
-            "test_paulis_file": "experiments/results_fullyconnected/test_labs_n10_layers1.json"
+            "test_paulis_file": "experiments/results_fullyconnected/test_quclear_labs_n10_layers1.json"
         }
     ]
 ]

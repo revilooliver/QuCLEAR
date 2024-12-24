@@ -1,0 +1,49 @@
+[
+    [
+        [
+            "YZXI",
+            "XZXI",
+            "YZYI",
+            "XZYI"
+        ],
+        [
+            "IYZX",
+            "IXZX",
+            "IYZY",
+            "IXZY"
+        ],
+        [
+            "YXYX",
+            "XXYX",
+            "YYYX",
+            "XYYX",
+            "YXYY",
+            "XXYY",
+            "YYYY",
+            "XYYY",
+            "YXXX",
+            "XXXX",
+            "YYXX",
+            "XYXX",
+            "YXXY",
+            "XXXY",
+            "YYXY",
+            "XYXY"
+        ]
+    ],
+    [
+        {
+            "num_paulis": 24,
+            "times": {
+                "tetris_time": 0.4480717182159424
+            },
+            "gate_counts": {
+                "tetris_method": 107
+            },
+            "circuit_entangling_depth": {
+                "tetris_method": 107
+            },
+            "test_paulis_file": "../experiments/results_ibm/test_tetris_Paulis24.json"
+        }
+    ]
+]

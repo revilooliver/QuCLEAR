@@ -67,15 +67,15 @@
         {
             "num_paulis": 62,
             "times": {
-                "paulihedral_time": 1.3137319087982178
+                "paulihedral_time": 0.5905361175537109
             },
             "gate_counts": {
-                "paulihedral_method": 117
+                "paulihedral_method": 188
             },
             "circuit_entangling_depth": {
-                "paulihedral_method": 115
+                "paulihedral_method": 174
             },
-            "test_paulis_file": "../experiments/results_fullyconnected/test_paulihedral_LiH.json"
+            "test_paulis_file": "../experiments/results_ibm/test_paulihedral_LiH.json"
         }
     ]
 ]

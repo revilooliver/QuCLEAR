@@ -325,10 +325,10 @@
         {
             "num_paulis": 320,
             "times": {
-                "our_time": 2.290482997894287,
-                "combined_time": 2.726691246032715,
-                "qiskit_time": 2.718395948410034,
-                "rustiq_time": 0.11527895927429199
+                "our_time": 1.718888282775879,
+                "combined_time": 2.88234281539917,
+                "qiskit_time": 2.1374669075012207,
+                "rustiq_time": 0.10577082633972168
             },
             "gate_counts": {
                 "our_method": 507,
@@ -340,9 +340,9 @@
                 "our_method": 385,
                 "combined_method": 335,
                 "qiskit_method": 990,
-                "rustiq_method": 664
+                "rustiq_method": 662
             },
-            "test_paulis_file": "experiments/results_fullyconnected/test_uccsd_paulis_e4_o8.json"
+            "test_paulis_file": "experiments/results_fullyconnected/test_quclear_Paulis320.json"
         }
     ]
 ]

@@ -67,5 +67,18 @@ echo "Deactivating PH environment..."
 cd ../artifact_evaluation
 conda deactivate
 
+# PH Installation
+echo "========== Running Tetris Installation =========="
+create_and_activate_env "Tetris_env.yaml" "Tetris_env"
+
+echo "Installing Tetris dependencies..."
+cd ../vqe_tetris-master
+pip install --no-cache-dir -r requirements.txt
+echo "Tetris dependencies installed successfully."
+
+echo "Deactivating Tetris environment..."
+cd ../artifact_evaluation
+conda deactivate
+
 echo "----------------------------------------"
-echo "QuCLEAR, Pytket, and PH installations completed successfully. Now please install RustiQ."
+echo "QuCLEAR, Pytket, PH, and Tetris installations completed successfully. Now please install RustiQ."

@@ -190,15 +190,15 @@
         {
             "num_paulis": 185,
             "times": {
-                "paulihedral_time": 0.7786555290222168
+                "paulihedral_time": 2.0336992740631104
             },
             "gate_counts": {
-                "paulihedral_method": 620
+                "paulihedral_method": 1006
             },
             "circuit_entangling_depth": {
-                "paulihedral_method": 610
+                "paulihedral_method": 860
             },
-            "test_paulis_file": "../experiments/results_fullyconnected/test_paulihedral_H2O.json"
+            "test_paulis_file": "../experiments/results_ibm/test_paulihedral_H2O.json"
         }
     ]
 ]

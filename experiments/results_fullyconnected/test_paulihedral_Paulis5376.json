@@ -6101,15 +6101,15 @@
         {
             "num_paulis": 5376,
             "times": {
-                "paulihedral_time": 111.1299901008606
+                "paulihedral_time": 150.9835979938507
             },
             "gate_counts": {
-                "paulihedral_method": 23389
+                "paulihedral_method": 30782
             },
             "circuit_entangling_depth": {
-                "paulihedral_method": 23333
+                "paulihedral_method": 27545
             },
-            "test_paulis_file": "../experiments/results_fullyconnected/test_paulihedral_Paulis5376.json"
+            "test_paulis_file": "../experiments/results_ibm/test_paulihedral_Paulis5376.json"
         }
     ]
 ]

@@ -85,24 +85,24 @@
         {
             "num_paulis": 80,
             "times": {
-                "our_time": 0.4145500659942627,
-                "combined_time": 0.692650556564331,
-                "qiskit_time": 0.5157513618469238,
-                "rustiq_time": 0.008050918579101562
+                "our_time": 0.4466209411621094,
+                "combined_time": 0.5122549533843994,
+                "qiskit_time": 0.431149959564209,
+                "rustiq_time": 0.005661964416503906
             },
             "gate_counts": {
                 "our_method": 119,
                 "combined_method": 106,
                 "qiskit_method": 181,
-                "rustiq_method": 161
+                "rustiq_method": 162
             },
             "circuit_entangling_depth": {
                 "our_method": 94,
                 "combined_method": 82,
                 "qiskit_method": 178,
-                "rustiq_method": 143
+                "rustiq_method": 147
             },
-            "test_paulis_file": "experiments/results_fullyconnected/test_uccsd_paulis_e2_o6.json"
+            "test_paulis_file": "experiments/results_fullyconnected/test_quclear_Paulis80.json"
         }
     ]
 ]

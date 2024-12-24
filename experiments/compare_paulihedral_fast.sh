@@ -50,7 +50,7 @@ else
 fi
 
 # Run benchmark scripts
-echo "Running PH init scripts..."
+echo "Running PH opt scripts..."
 for script in "benchmark_comparison_PH_opt.py"; do
     if [ -f "$script" ]; then
         echo "Executing: python $script fast"

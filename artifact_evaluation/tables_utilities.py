@@ -67,6 +67,16 @@ def get_metrics(data,tag):
         results[k]={"num_paulis": paulis, "times": times, "cnots": cnots, "circuit_entangling_depth": depth, "num_qubits": v["num_qubits"]}
     return results
 
+def get_gate_counts(data,tag):
+    results={}
+    for k, v in data.items():
+        # print(k)
+        # print(v)
+        paulis=v["num_paulis"]
+        cnots=filter_dict_val_for_tag(v["gate_counts"], tag)
+        results[k]={"num_paulis": paulis,"cnots": cnots, "num_qubits": v["num_qubits"]}
+    return results
+
 def test_lenghts_res(data):
     # test
     print(all([len(elem) for block in data for elem in block]))
@@ -81,3 +91,13 @@ def get_data_handles(quclear, qiskit, rustiq, paulih, pytket, file) -> Tuple[Dic
     paulih_f=paulih[file.replace("_quclear_", "_paulihedral_")]
     pytket_f=pytket[file.replace("_quclear_", "_pytket_")]
     return quclear_f, qiskit_f, rustiq_f, paulih_f, pytket_f
+
+def get_hardware_data_handles(qiskit, pytket, paulih, tetris, quclear, file) -> Tuple[Dict, Dict, Dict, Dict, Dict]:
+    '''Gets handles for specific file. Returns in the specific order:
+    quclear, qiskit, rustiq, paulihedral, pytket'''
+    quclear_f=quclear[file]
+    qiskit_f=qiskit[file]
+    tetris_f=tetris[file.replace("_quclear_", "_tetris_")]
+    paulih_f=paulih[file.replace("_quclear_", "_paulihedral_")]
+    pytket_f=pytket[file.replace("_quclear_", "_pytket_")]
+    return qiskit_f, pytket_f, paulih_f, tetris_f, quclear_f

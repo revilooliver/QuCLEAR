@@ -189,22 +189,22 @@
         {
             "num_paulis": 184,
             "times": {
-                "our_time": 1.2316110134124756,
-                "combined_time": 1.514981985092163,
-                "qiskit_time": 1.0271170139312744,
-                "rustiq_time": 0.02046823501586914
+                "our_time": 1.1458697319030762,
+                "combined_time": 1.711406946182251,
+                "qiskit_time": 1.2872810363769531,
+                "rustiq_time": 0.025658130645751953
             },
             "gate_counts": {
                 "our_method": 277,
                 "combined_method": 274,
                 "qiskit_method": 786,
-                "rustiq_method": 352
+                "rustiq_method": 351
             },
             "circuit_entangling_depth": {
                 "our_method": 191,
                 "combined_method": 189,
                 "qiskit_method": 769,
-                "rustiq_method": 265
+                "rustiq_method": 272
             },
             "test_paulis_file": "experiments/results_fullyconnected/test_quclear_H2O.json"
         }
