@@ -25,9 +25,10 @@ cd artifact_evaluation
 ./install_all.sh
 ```
 
-This script creates two Anaconda virtual environments:
+This script creates three Anaconda virtual environments:
 - **`QuCLEAR_env`**: Contains QuCLEAR, Qiskit, and pytket.  
-- **`PH_env`**: Contains Paulihedral.  
+- **`PH_env`**: Contains Paulihedral.
+- **`Tetris_env`**: Contains Tetris. 
 
 #### **Install Rust and Rustiq in the `QuCLEAR_env`**
 
@@ -66,19 +67,27 @@ We provide a simple test script to validate the installation. It will compile th
 ./test_experiments_fast.sh
 ```
 
+We also provide a simple test script to validate the experiments for mapping to hardware:
+```bash
+./test_mapping_experiments_fast.sh
+```
+
+
 ---
 
 ## Validating the Experiments
 
-The experimental data can be validated by running the full experiment script:
+The experimental data can be validated by running the full experiment scripts:
 
 ```bash
 cd artifact_evaluation
 ./test_experiments_full.sh
+./test_mapping_experiments_full.sh
 ```
 
 ### **Results**
 The compilation results are saved as JSON files in the `experiments/results_fullyconnected` folder.  
+The hardware mapping results are also saved as JSON files in the `experiments/results_ibm` and  `experiments/results_google` folder
 
 For example:  
 - **`test_quclear_LiH.json`** contains results for **QuCLEAR**, **Qiskit**, and **Rustiq** for the LiH benchmark.  
@@ -94,9 +103,12 @@ For example:
 To generate the experimental tables in our paper, use the provided Jupyter notebooks:
 
 1. **`generate_table3.ipynb`**: Generates data for Table 3.  
-2. **`generate_table4.ipynb`**: Generates data for Table 4.  
+2. **`generate_table4.ipynb`**: Generates data for Table 4.
+3. **`generate_figure9.ipynb`**: Generates data for Figure 9.
+4. **`generate_figure10.ipynb`**: Generates data for Figure 10.
+5. **`generate_figure11_google.ipynb`** and **`generate_figure11_ibm.ipynb`**: Generates data for Figure 11.
 
-These notebooks process results stored in the `experiments/results_fullyconnected` folder.
+These notebooks process results stored in the `experiments/results_fullyconnected` folder. The notebooks for figure11 process results in the `experiments/results_ibm` and  `experiments/results_google` folders.
 
 ---
 
