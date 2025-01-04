@@ -41,6 +41,8 @@ def construct_qcc_circuit(entanglers: List[str], params: List[float], truncation
     for i in range(num_blocks):
         circuit = QuantumCircuit(num_qubits)
         key = entanglers[i]
+        if all(c == 'I' for c in key):
+            continue
         coupler_map = []
         # We first construct coupler_map according to the key.
         for j in range(num_qubits):
@@ -528,6 +530,9 @@ def convert_commute_sets(Paulis: List[str], params: List[float]) -> List[List[st
     
     for idx in range(len(Paulis)):
         pauli = Paulis[idx]
+        if all(c == 'I' for c in pauli):
+            #This is a pauli string with all identity, should be removed
+            continue
         if not current_set:
             current_set.append([pauli, params[idx]])
         else:
@@ -677,6 +682,8 @@ def convert_order_sets(Paulis: List[str], params: List[float]) -> List[List[str]
         #current_set.append([Paulis[idx], params[idx]])
         paulis_sets.append([[Paulis[idx], params[idx]]])
     return paulis_sets
+
+
 
 def CE_recur_tree_seq(entanglers: List[str], params: List[float], barrier=False, threshold = 1):
     '''This function defines the optimized fully connected tree block for hamtiltonian simulation in commute list format, also considering lookahead
