@@ -11,7 +11,7 @@ from .CE_module import split_pauli_string
 
 def extract_CNOT_network(append_clifford: QuantumCircuit):
     #decompose the swap to CNOT
-    append_clifford = transpile(append_clifford, basis_gates = ["cx", "h"])
+    append_clifford = transpile(append_clifford, basis_gates = ['swap', "cx", "h"])
     dag = circuit_to_dag(append_clifford.inverse())
     num_qubits = len(append_clifford.qubits)
     cnot_network = QuantumCircuit(num_qubits)
@@ -21,17 +21,33 @@ def extract_CNOT_network(append_clifford: QuantumCircuit):
             raise Exception("Circuit contains s or sdg gate")
         if node.name == 'h':
             hadamard_counts[node.qargs[0]._index] += 1
-
+        if node.name == 'swap':
+            temp_count = hadamard_counts[node.qargs[0]._index]
+            hadamard_counts[node.qargs[0]._index] = hadamard_counts[node.qargs[1]._index]
+            hadamard_counts[node.qargs[1]._index] = temp_count
+            cnot_network.cx(node.qargs[0]._index, node.qargs[1]._index)
+            cnot_network.cx(node.qargs[1]._index, node.qargs[0]._index)
+            cnot_network.cx(node.qargs[0]._index, node.qargs[1]._index)
         if node.name == 'cx':
             control_qubit = node.qargs[0]._index 
             target_qubit = node.qargs[1]._index
-            if max(hadamard_counts[node.qargs[0]._index], hadamard_counts[node.qargs[1]._index]) % 2 == 1:
+            if hadamard_counts[node.qargs[0]._index] != hadamard_counts[node.qargs[1]._index]:
+                raise Exception("Incorrect hadamard gate count")
+            if hadamard_counts[node.qargs[0]._index] % 2 == 1:
                 #Switch the control and the target qubit for even layers of hadamard gates
                 temp = control_qubit 
                 control_qubit = target_qubit
                 target_qubit = temp
             cnot_network.cx(control_qubit, target_qubit)
-    return cnot_network.inverse()
+    return cnot_network.inverse(), hadamard_counts
+
+def CA_post_QAOA(opt_qc: QuantumCircuit, hadamard_counts: List[int]):
+    # Add single qubit Hadamard gates according to the hadamard counts
+    for idx in range(len(hadamard_counts)):
+        if hadamard_counts[idx] % 2 == 1:
+            opt_qc.h(idx)
+    opt_qc.measure_active()
+    return opt_qc
 
 def apply_cnot(binary_value, control_index, target_index):
     # Convert binary string to a list of characters for easy manipulation
