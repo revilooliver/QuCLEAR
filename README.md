@@ -125,3 +125,6 @@ Run the `VQE_observables.ipynb` notebook to learn how to:
 Run the `QAOA_probabilities.ipynb` notebook to see examples of:  
 - Absorbing CNOT networks.  
 - Optimizing circuits for QAOA.
+  
+## License
+This project is licensed under the Apache License 2.0
