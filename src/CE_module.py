@@ -407,6 +407,8 @@ def find_leaves(sorted_entanglers_params_inv: List[List[str]], curr_pauli, updat
     I_leaves = []
     if depth > max_depth:
         print(depth)
+        for index in tree_list[1:]:
+            qc_tree.cx(index, tree_list[0])
         final_root = tree_list[0]
         return final_root
     try:
