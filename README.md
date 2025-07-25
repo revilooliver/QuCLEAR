@@ -16,7 +16,21 @@ git clone https://github.com/revilooliver/QuCLEAR.git
 cd QuCLEAR
 ```
 
-### **2. Environment Setup for Artifact Evaluation**
+---
+
+### **2. Install QuCLEAR**
+
+If you only wish to use **QuCLEAR** (without running the artifact evaluation against other tools), you can install the required dependencies with:
+
+```bash
+pip install -r requirements.txt
+```
+
+You may skip Sections 3 and 4 and instead refer to the examples in the `tutorial` folder.
+
+---
+
+### **3. Environment Setup for Artifact Evaluation**
 
 For artifact evaluation, **QuCLEAR** is compared with several tools: **Rustiq**, **Qiskit**, **Paulihedral**, and **pytket**. To simplify installation and environment management, we provide an automated script, `install_all.sh`, located in the `artifact_evaluation` folder:
 
@@ -60,7 +74,7 @@ After setting up the environments, you will need to manually install **Rust** an
 Once these steps are complete, all required dependencies for artifact evaluation will be ready.
 
 
-### **3. Test Installation**
+### **4. Test Installation**
 We provide a simple test script to validate the installation. It will compile the circuits for Hamiltonian simulation:
 
 ```bash
